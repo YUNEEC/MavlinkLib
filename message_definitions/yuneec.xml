@@ -291,7 +291,6 @@
       <description>The location of a visual tracking</description>
       <field type="uint64_t" name="time_usec">Timestamp (microseconds since boot or Unix epoch)</field>
       <field type="uint8_t" name="track_quality">= 0: abnormal or lost; = 1: weak signal ; = 2: signal health</field>
-      <field type="uint8_t" name="task_ready">=0 task ready fail;=1 task is being ready;=2 task ready ok</field>
       <field type="float" name="size">=The size of the visual target</field>
       <field type="float" name="width">=The width of the visual target</field>
       <field type="float" name="height">=The height of the visual target</field>

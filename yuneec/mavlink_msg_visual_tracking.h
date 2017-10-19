@@ -12,16 +12,15 @@ typedef struct __mavlink_visual_tracking_t {
  float x; /*< =Coordinate value x*/
  float y; /*< =Coordinate value y*/
  uint8_t track_quality; /*< = 0: abnormal or lost; = 1: weak signal ; = 2: signal health*/
- uint8_t task_ready; /*< =0 task ready fail;=1 task is being ready;=2 task ready ok*/
 }) mavlink_visual_tracking_t;
 
-#define MAVLINK_MSG_ID_VISUAL_TRACKING_LEN 30
-#define MAVLINK_MSG_ID_VISUAL_TRACKING_MIN_LEN 30
-#define MAVLINK_MSG_ID_4000_LEN 30
-#define MAVLINK_MSG_ID_4000_MIN_LEN 30
+#define MAVLINK_MSG_ID_VISUAL_TRACKING_LEN 29
+#define MAVLINK_MSG_ID_VISUAL_TRACKING_MIN_LEN 29
+#define MAVLINK_MSG_ID_4000_LEN 29
+#define MAVLINK_MSG_ID_4000_MIN_LEN 29
 
-#define MAVLINK_MSG_ID_VISUAL_TRACKING_CRC 151
-#define MAVLINK_MSG_ID_4000_CRC 151
+#define MAVLINK_MSG_ID_VISUAL_TRACKING_CRC 96
+#define MAVLINK_MSG_ID_4000_CRC 96
 
 
 
@@ -29,10 +28,9 @@ typedef struct __mavlink_visual_tracking_t {
 #define MAVLINK_MESSAGE_INFO_VISUAL_TRACKING { \
     4000, \
     "VISUAL_TRACKING", \
-    8, \
+    7, \
     {  { "time_usec", NULL, MAVLINK_TYPE_UINT64_T, 0, 0, offsetof(mavlink_visual_tracking_t, time_usec) }, \
          { "track_quality", NULL, MAVLINK_TYPE_UINT8_T, 0, 28, offsetof(mavlink_visual_tracking_t, track_quality) }, \
-         { "task_ready", NULL, MAVLINK_TYPE_UINT8_T, 0, 29, offsetof(mavlink_visual_tracking_t, task_ready) }, \
          { "size", NULL, MAVLINK_TYPE_FLOAT, 0, 8, offsetof(mavlink_visual_tracking_t, size) }, \
          { "width", NULL, MAVLINK_TYPE_FLOAT, 0, 12, offsetof(mavlink_visual_tracking_t, width) }, \
          { "height", NULL, MAVLINK_TYPE_FLOAT, 0, 16, offsetof(mavlink_visual_tracking_t, height) }, \
@@ -43,10 +41,9 @@ typedef struct __mavlink_visual_tracking_t {
 #else
 #define MAVLINK_MESSAGE_INFO_VISUAL_TRACKING { \
     "VISUAL_TRACKING", \
-    8, \
+    7, \
     {  { "time_usec", NULL, MAVLINK_TYPE_UINT64_T, 0, 0, offsetof(mavlink_visual_tracking_t, time_usec) }, \
          { "track_quality", NULL, MAVLINK_TYPE_UINT8_T, 0, 28, offsetof(mavlink_visual_tracking_t, track_quality) }, \
-         { "task_ready", NULL, MAVLINK_TYPE_UINT8_T, 0, 29, offsetof(mavlink_visual_tracking_t, task_ready) }, \
          { "size", NULL, MAVLINK_TYPE_FLOAT, 0, 8, offsetof(mavlink_visual_tracking_t, size) }, \
          { "width", NULL, MAVLINK_TYPE_FLOAT, 0, 12, offsetof(mavlink_visual_tracking_t, width) }, \
          { "height", NULL, MAVLINK_TYPE_FLOAT, 0, 16, offsetof(mavlink_visual_tracking_t, height) }, \
@@ -64,7 +61,6 @@ typedef struct __mavlink_visual_tracking_t {
  *
  * @param time_usec Timestamp (microseconds since boot or Unix epoch)
  * @param track_quality = 0: abnormal or lost; = 1: weak signal ; = 2: signal health
- * @param task_ready =0 task ready fail;=1 task is being ready;=2 task ready ok
  * @param size =The size of the visual target
  * @param width =The width of the visual target
  * @param height =The height of the visual target
@@ -73,7 +69,7 @@ typedef struct __mavlink_visual_tracking_t {
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_visual_tracking_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
-                               uint64_t time_usec, uint8_t track_quality, uint8_t task_ready, float size, float width, float height, float x, float y)
+                               uint64_t time_usec, uint8_t track_quality, float size, float width, float height, float x, float y)
 {
 #if MAVLINK_NEED_BYTE_SWAP || !MAVLINK_ALIGNED_FIELDS
     char buf[MAVLINK_MSG_ID_VISUAL_TRACKING_LEN];
@@ -84,7 +80,6 @@ static inline uint16_t mavlink_msg_visual_tracking_pack(uint8_t system_id, uint8
     _mav_put_float(buf, 20, x);
     _mav_put_float(buf, 24, y);
     _mav_put_uint8_t(buf, 28, track_quality);
-    _mav_put_uint8_t(buf, 29, task_ready);
 
         memcpy(_MAV_PAYLOAD_NON_CONST(msg), buf, MAVLINK_MSG_ID_VISUAL_TRACKING_LEN);
 #else
@@ -96,7 +91,6 @@ static inline uint16_t mavlink_msg_visual_tracking_pack(uint8_t system_id, uint8
     packet.x = x;
     packet.y = y;
     packet.track_quality = track_quality;
-    packet.task_ready = task_ready;
 
         memcpy(_MAV_PAYLOAD_NON_CONST(msg), &packet, MAVLINK_MSG_ID_VISUAL_TRACKING_LEN);
 #endif
@@ -113,7 +107,6 @@ static inline uint16_t mavlink_msg_visual_tracking_pack(uint8_t system_id, uint8
  * @param msg The MAVLink message to compress the data into
  * @param time_usec Timestamp (microseconds since boot or Unix epoch)
  * @param track_quality = 0: abnormal or lost; = 1: weak signal ; = 2: signal health
- * @param task_ready =0 task ready fail;=1 task is being ready;=2 task ready ok
  * @param size =The size of the visual target
  * @param width =The width of the visual target
  * @param height =The height of the visual target
@@ -123,7 +116,7 @@ static inline uint16_t mavlink_msg_visual_tracking_pack(uint8_t system_id, uint8
  */
 static inline uint16_t mavlink_msg_visual_tracking_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
                                mavlink_message_t* msg,
-                                   uint64_t time_usec,uint8_t track_quality,uint8_t task_ready,float size,float width,float height,float x,float y)
+                                   uint64_t time_usec,uint8_t track_quality,float size,float width,float height,float x,float y)
 {
 #if MAVLINK_NEED_BYTE_SWAP || !MAVLINK_ALIGNED_FIELDS
     char buf[MAVLINK_MSG_ID_VISUAL_TRACKING_LEN];
@@ -134,7 +127,6 @@ static inline uint16_t mavlink_msg_visual_tracking_pack_chan(uint8_t system_id, 
     _mav_put_float(buf, 20, x);
     _mav_put_float(buf, 24, y);
     _mav_put_uint8_t(buf, 28, track_quality);
-    _mav_put_uint8_t(buf, 29, task_ready);
 
         memcpy(_MAV_PAYLOAD_NON_CONST(msg), buf, MAVLINK_MSG_ID_VISUAL_TRACKING_LEN);
 #else
@@ -146,7 +138,6 @@ static inline uint16_t mavlink_msg_visual_tracking_pack_chan(uint8_t system_id, 
     packet.x = x;
     packet.y = y;
     packet.track_quality = track_quality;
-    packet.task_ready = task_ready;
 
         memcpy(_MAV_PAYLOAD_NON_CONST(msg), &packet, MAVLINK_MSG_ID_VISUAL_TRACKING_LEN);
 #endif
@@ -165,7 +156,7 @@ static inline uint16_t mavlink_msg_visual_tracking_pack_chan(uint8_t system_id, 
  */
 static inline uint16_t mavlink_msg_visual_tracking_encode(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg, const mavlink_visual_tracking_t* visual_tracking)
 {
-    return mavlink_msg_visual_tracking_pack(system_id, component_id, msg, visual_tracking->time_usec, visual_tracking->track_quality, visual_tracking->task_ready, visual_tracking->size, visual_tracking->width, visual_tracking->height, visual_tracking->x, visual_tracking->y);
+    return mavlink_msg_visual_tracking_pack(system_id, component_id, msg, visual_tracking->time_usec, visual_tracking->track_quality, visual_tracking->size, visual_tracking->width, visual_tracking->height, visual_tracking->x, visual_tracking->y);
 }
 
 /**
@@ -179,7 +170,7 @@ static inline uint16_t mavlink_msg_visual_tracking_encode(uint8_t system_id, uin
  */
 static inline uint16_t mavlink_msg_visual_tracking_encode_chan(uint8_t system_id, uint8_t component_id, uint8_t chan, mavlink_message_t* msg, const mavlink_visual_tracking_t* visual_tracking)
 {
-    return mavlink_msg_visual_tracking_pack_chan(system_id, component_id, chan, msg, visual_tracking->time_usec, visual_tracking->track_quality, visual_tracking->task_ready, visual_tracking->size, visual_tracking->width, visual_tracking->height, visual_tracking->x, visual_tracking->y);
+    return mavlink_msg_visual_tracking_pack_chan(system_id, component_id, chan, msg, visual_tracking->time_usec, visual_tracking->track_quality, visual_tracking->size, visual_tracking->width, visual_tracking->height, visual_tracking->x, visual_tracking->y);
 }
 
 /**
@@ -188,7 +179,6 @@ static inline uint16_t mavlink_msg_visual_tracking_encode_chan(uint8_t system_id
  *
  * @param time_usec Timestamp (microseconds since boot or Unix epoch)
  * @param track_quality = 0: abnormal or lost; = 1: weak signal ; = 2: signal health
- * @param task_ready =0 task ready fail;=1 task is being ready;=2 task ready ok
  * @param size =The size of the visual target
  * @param width =The width of the visual target
  * @param height =The height of the visual target
@@ -197,7 +187,7 @@ static inline uint16_t mavlink_msg_visual_tracking_encode_chan(uint8_t system_id
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
-static inline void mavlink_msg_visual_tracking_send(mavlink_channel_t chan, uint64_t time_usec, uint8_t track_quality, uint8_t task_ready, float size, float width, float height, float x, float y)
+static inline void mavlink_msg_visual_tracking_send(mavlink_channel_t chan, uint64_t time_usec, uint8_t track_quality, float size, float width, float height, float x, float y)
 {
 #if MAVLINK_NEED_BYTE_SWAP || !MAVLINK_ALIGNED_FIELDS
     char buf[MAVLINK_MSG_ID_VISUAL_TRACKING_LEN];
@@ -208,7 +198,6 @@ static inline void mavlink_msg_visual_tracking_send(mavlink_channel_t chan, uint
     _mav_put_float(buf, 20, x);
     _mav_put_float(buf, 24, y);
     _mav_put_uint8_t(buf, 28, track_quality);
-    _mav_put_uint8_t(buf, 29, task_ready);
 
     _mav_finalize_message_chan_send(chan, MAVLINK_MSG_ID_VISUAL_TRACKING, buf, MAVLINK_MSG_ID_VISUAL_TRACKING_MIN_LEN, MAVLINK_MSG_ID_VISUAL_TRACKING_LEN, MAVLINK_MSG_ID_VISUAL_TRACKING_CRC);
 #else
@@ -220,7 +209,6 @@ static inline void mavlink_msg_visual_tracking_send(mavlink_channel_t chan, uint
     packet.x = x;
     packet.y = y;
     packet.track_quality = track_quality;
-    packet.task_ready = task_ready;
 
     _mav_finalize_message_chan_send(chan, MAVLINK_MSG_ID_VISUAL_TRACKING, (const char *)&packet, MAVLINK_MSG_ID_VISUAL_TRACKING_MIN_LEN, MAVLINK_MSG_ID_VISUAL_TRACKING_LEN, MAVLINK_MSG_ID_VISUAL_TRACKING_CRC);
 #endif
@@ -234,7 +222,7 @@ static inline void mavlink_msg_visual_tracking_send(mavlink_channel_t chan, uint
 static inline void mavlink_msg_visual_tracking_send_struct(mavlink_channel_t chan, const mavlink_visual_tracking_t* visual_tracking)
 {
 #if MAVLINK_NEED_BYTE_SWAP || !MAVLINK_ALIGNED_FIELDS
-    mavlink_msg_visual_tracking_send(chan, visual_tracking->time_usec, visual_tracking->track_quality, visual_tracking->task_ready, visual_tracking->size, visual_tracking->width, visual_tracking->height, visual_tracking->x, visual_tracking->y);
+    mavlink_msg_visual_tracking_send(chan, visual_tracking->time_usec, visual_tracking->track_quality, visual_tracking->size, visual_tracking->width, visual_tracking->height, visual_tracking->x, visual_tracking->y);
 #else
     _mav_finalize_message_chan_send(chan, MAVLINK_MSG_ID_VISUAL_TRACKING, (const char *)visual_tracking, MAVLINK_MSG_ID_VISUAL_TRACKING_MIN_LEN, MAVLINK_MSG_ID_VISUAL_TRACKING_LEN, MAVLINK_MSG_ID_VISUAL_TRACKING_CRC);
 #endif
@@ -248,7 +236,7 @@ static inline void mavlink_msg_visual_tracking_send_struct(mavlink_channel_t cha
   is usually the receive buffer for the channel, and allows a reply to an
   incoming message with minimum stack space usage.
  */
-static inline void mavlink_msg_visual_tracking_send_buf(mavlink_message_t *msgbuf, mavlink_channel_t chan,  uint64_t time_usec, uint8_t track_quality, uint8_t task_ready, float size, float width, float height, float x, float y)
+static inline void mavlink_msg_visual_tracking_send_buf(mavlink_message_t *msgbuf, mavlink_channel_t chan,  uint64_t time_usec, uint8_t track_quality, float size, float width, float height, float x, float y)
 {
 #if MAVLINK_NEED_BYTE_SWAP || !MAVLINK_ALIGNED_FIELDS
     char *buf = (char *)msgbuf;
@@ -259,7 +247,6 @@ static inline void mavlink_msg_visual_tracking_send_buf(mavlink_message_t *msgbu
     _mav_put_float(buf, 20, x);
     _mav_put_float(buf, 24, y);
     _mav_put_uint8_t(buf, 28, track_quality);
-    _mav_put_uint8_t(buf, 29, task_ready);
 
     _mav_finalize_message_chan_send(chan, MAVLINK_MSG_ID_VISUAL_TRACKING, buf, MAVLINK_MSG_ID_VISUAL_TRACKING_MIN_LEN, MAVLINK_MSG_ID_VISUAL_TRACKING_LEN, MAVLINK_MSG_ID_VISUAL_TRACKING_CRC);
 #else
@@ -271,7 +258,6 @@ static inline void mavlink_msg_visual_tracking_send_buf(mavlink_message_t *msgbu
     packet->x = x;
     packet->y = y;
     packet->track_quality = track_quality;
-    packet->task_ready = task_ready;
 
     _mav_finalize_message_chan_send(chan, MAVLINK_MSG_ID_VISUAL_TRACKING, (const char *)packet, MAVLINK_MSG_ID_VISUAL_TRACKING_MIN_LEN, MAVLINK_MSG_ID_VISUAL_TRACKING_LEN, MAVLINK_MSG_ID_VISUAL_TRACKING_CRC);
 #endif
@@ -301,16 +287,6 @@ static inline uint64_t mavlink_msg_visual_tracking_get_time_usec(const mavlink_m
 static inline uint8_t mavlink_msg_visual_tracking_get_track_quality(const mavlink_message_t* msg)
 {
     return _MAV_RETURN_uint8_t(msg,  28);
-}
-
-/**
- * @brief Get field task_ready from visual_tracking message
- *
- * @return =0 task ready fail;=1 task is being ready;=2 task ready ok
- */
-static inline uint8_t mavlink_msg_visual_tracking_get_task_ready(const mavlink_message_t* msg)
-{
-    return _MAV_RETURN_uint8_t(msg,  29);
 }
 
 /**
@@ -379,7 +355,6 @@ static inline void mavlink_msg_visual_tracking_decode(const mavlink_message_t* m
     visual_tracking->x = mavlink_msg_visual_tracking_get_x(msg);
     visual_tracking->y = mavlink_msg_visual_tracking_get_y(msg);
     visual_tracking->track_quality = mavlink_msg_visual_tracking_get_track_quality(msg);
-    visual_tracking->task_ready = mavlink_msg_visual_tracking_get_task_ready(msg);
 #else
         uint8_t len = msg->len < MAVLINK_MSG_ID_VISUAL_TRACKING_LEN? msg->len : MAVLINK_MSG_ID_VISUAL_TRACKING_LEN;
         memset(visual_tracking, 0, MAVLINK_MSG_ID_VISUAL_TRACKING_LEN);
