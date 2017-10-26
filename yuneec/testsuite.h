@@ -37,7 +37,7 @@ static void mavlink_test_visual_tracking(uint8_t system_id, uint8_t component_id
         uint8_t buffer[MAVLINK_MAX_PACKET_LEN];
         uint16_t i;
     mavlink_visual_tracking_t packet_in = {
-        93372036854775807ULL,73.0,101.0,129.0,157.0,185.0,89
+        93372036854775807ULL,73.0,101.0,129.0,157.0,185.0,213.0,241.0,113,180
     };
     mavlink_visual_tracking_t packet1, packet2;
         memset(&packet1, 0, sizeof(packet1));
@@ -47,7 +47,10 @@ static void mavlink_test_visual_tracking(uint8_t system_id, uint8_t component_id
         packet1.height = packet_in.height;
         packet1.x = packet_in.x;
         packet1.y = packet_in.y;
+        packet1.center_x = packet_in.center_x;
+        packet1.center_y = packet_in.center_y;
         packet1.track_quality = packet_in.track_quality;
+        packet1.task_ready = packet_in.task_ready;
         
         
 #ifdef MAVLINK_STATUS_FLAG_OUT_MAVLINK1
@@ -62,12 +65,12 @@ static void mavlink_test_visual_tracking(uint8_t system_id, uint8_t component_id
         MAVLINK_ASSERT(memcmp(&packet1, &packet2, sizeof(packet1)) == 0);
 
         memset(&packet2, 0, sizeof(packet2));
-    mavlink_msg_visual_tracking_pack(system_id, component_id, &msg , packet1.time_usec , packet1.track_quality , packet1.size , packet1.width , packet1.height , packet1.x , packet1.y );
+    mavlink_msg_visual_tracking_pack(system_id, component_id, &msg , packet1.time_usec , packet1.track_quality , packet1.task_ready , packet1.size , packet1.width , packet1.height , packet1.x , packet1.y , packet1.center_x , packet1.center_y );
     mavlink_msg_visual_tracking_decode(&msg, &packet2);
         MAVLINK_ASSERT(memcmp(&packet1, &packet2, sizeof(packet1)) == 0);
 
         memset(&packet2, 0, sizeof(packet2));
-    mavlink_msg_visual_tracking_pack_chan(system_id, component_id, MAVLINK_COMM_0, &msg , packet1.time_usec , packet1.track_quality , packet1.size , packet1.width , packet1.height , packet1.x , packet1.y );
+    mavlink_msg_visual_tracking_pack_chan(system_id, component_id, MAVLINK_COMM_0, &msg , packet1.time_usec , packet1.track_quality , packet1.task_ready , packet1.size , packet1.width , packet1.height , packet1.x , packet1.y , packet1.center_x , packet1.center_y );
     mavlink_msg_visual_tracking_decode(&msg, &packet2);
         MAVLINK_ASSERT(memcmp(&packet1, &packet2, sizeof(packet1)) == 0);
 
@@ -80,7 +83,7 @@ static void mavlink_test_visual_tracking(uint8_t system_id, uint8_t component_id
         MAVLINK_ASSERT(memcmp(&packet1, &packet2, sizeof(packet1)) == 0);
         
         memset(&packet2, 0, sizeof(packet2));
-    mavlink_msg_visual_tracking_send(MAVLINK_COMM_1 , packet1.time_usec , packet1.track_quality , packet1.size , packet1.width , packet1.height , packet1.x , packet1.y );
+    mavlink_msg_visual_tracking_send(MAVLINK_COMM_1 , packet1.time_usec , packet1.track_quality , packet1.task_ready , packet1.size , packet1.width , packet1.height , packet1.x , packet1.y , packet1.center_x , packet1.center_y );
     mavlink_msg_visual_tracking_decode(last_msg, &packet2);
         MAVLINK_ASSERT(memcmp(&packet1, &packet2, sizeof(packet1)) == 0);
 }

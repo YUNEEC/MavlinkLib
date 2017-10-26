@@ -26,6 +26,16 @@
         <param index="6">Empty</param>
         <param index="7">Empty</param>
       </entry>
+      <entry value="32770" name="MAV_CMD_OPTICAL_FLOW_UPGRADE">
+        <description>Start the optical flow upgrade command.</description>
+        <param index="1">=0,Stop the optical flow upgrade;=1,Start the optical flow upgrade</param>
+        <param index="2">Empty</param>
+        <param index="3">Empty</param>
+        <param index="4">Empty</param>
+        <param index="5">Empty</param>
+        <param index="6">Empty</param>
+        <param index="7">Empty</param>
+      </entry>
     </enum>
     <enum name="FLIGHT_TASK">
       <description> The advanced function mode.</description>
@@ -378,14 +388,17 @@
   <messages>
     <!-- taken from original yuneec.xml -->
     <message id="4000" name="VISUAL_TRACKING">
-      <description>The location of a visual tracking</description>
-      <field type="uint64_t" name="time_usec">Timestamp (microseconds since boot or Unix epoch)</field>
-      <field type="uint8_t" name="track_quality">= 0: abnormal or lost; = 1: weak signal ; = 2: signal health</field>
-      <field type="float" name="size">=The size of the visual target</field>
-      <field type="float" name="width">=The width of the visual target</field>
-      <field type="float" name="height">=The height of the visual target</field>
-      <field type="float" name="x">=Coordinate value x</field>
-      <field type="float" name="y">=Coordinate value y</field>
+      <description>The location of a visual tracking.</description>
+      <field type="uint64_t" name="time_usec">Timestamp (microseconds since boot or Unix epoch).</field>
+      <field type="uint8_t" name="track_quality">= 0: abnormal or lost; = 1: weak signal ; = 2: signal health.</field>
+      <field type="uint8_t" name="task_ready">=0 task ready fail;=1 task is being ready;=2 task ready ok.</field>
+      <field type="float" name="size">The size of the visual target (no unit).</field>
+      <field type="float" name="width">The width of the visual target (no unit).</field>
+      <field type="float" name="height">The height of the visual target (no unit).</field>
+      <field type="float" name="x">Upper left coordinate value x (normalized, no unit).</field>
+      <field type="float" name="y">Upper left coordinate value y (normalized, no unit).</field>
+      <field type="float" name="center_x">Center coordinate value x (normalized, no unit).</field>
+      <field type="float" name="center_y">Center coordinate value y (normalized, no unit).</field>
     </message>
     <message id="4001" name="TASK_UP_MIS">
       <description>Upward link (CCC and POI)mission items.</description>
