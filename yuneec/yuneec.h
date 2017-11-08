@@ -178,7 +178,8 @@ typedef enum MAV_CMD
    MAV_CMD_TASK_MODE=32768, /* advance function flying mode command |advance function mode(see FLIGHT_TASK enum)| Empty| Empty| Empty| Empty| Empty| Empty|  */
    MAV_CMD_SMART_BATTERY=32769, /* Command of host to battery. |Command ID for smart battery, as define by enum COMMAND_LIST| Communication status, 0 indicates not work, 1 indicates work.| Synchronize status, 0 indicates not asynchronous, 1 indicates synchronous.| Flying check, 0 indicates not flying, 1 indicates flying.| Empty| Empty| Empty|  */
    MAV_CMD_OPTICAL_FLOW_UPGRADE=32770, /* Start the optical flow upgrade command. |=0,Stop the optical flow upgrade;=1,Start the optical flow upgrade| Empty| Empty| Empty| Empty| Empty| Empty|  */
-   MAV_CMD_ENUM_END=32771, /*  | */
+   MAV_CMD_TEAM_MODE=32771, /* Switch Team Mode ON/OFF; OFF: One remote controls aircraft and gimbal; ON: The master remote controls the aircraft, the slave remote controls the gimbal. |0 = OFF Team Mode; 1 = ON Team Mode.| Empty| Empty| Empty| Empty| Empty| Empty|  */
+   MAV_CMD_ENUM_END=32772, /*  | */
 } MAV_CMD;
 #endif
 
@@ -346,6 +347,8 @@ typedef enum MAV_COMPONENT
 {
    MAV_COMP_ID_ALL=0, /*  | */
    MAV_COMP_ID_AUTOPILOT1=1, /*  | */
+   MAV_COMP_ID_REMOTE_MASTER=90, /*  | */
+   MAV_COMP_ID_REMOTE_SLAVE=91, /*  | */
    MAV_COMP_ID_SMART_BATTERY=92, /*  | */
    MAV_COMP_ID_SMART_BATTERY2=93, /*  | */
    MAV_COMP_ID_SMART_BATTERY3=94, /*  | */

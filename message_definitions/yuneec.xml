@@ -3,7 +3,6 @@
   <include>common.xml</include>
   <dialect>2</dialect>
   <enums>
-    <!-- taken from original yuneec.xml -->
     <enum name="MAV_CMD">
       <description>Commands to be executed by the YUNEEC MAV. They can be executed on user request, or as part of a mission script. If the action is used in a mission, the parameter mapping to the waypoint/mission message is as follows: Param 1, Param 2, Param 3, Param 4, X: Param 5, Y:Param 6, Z:Param 7. This command list is similar what ARINC 424 is for commercial aircraft: A data format how to interpret waypoint/mission data.</description>
       <entry value="32768" name="MAV_CMD_TASK_MODE">
@@ -29,6 +28,16 @@
       <entry value="32770" name="MAV_CMD_OPTICAL_FLOW_UPGRADE">
         <description>Start the optical flow upgrade command.</description>
         <param index="1">=0,Stop the optical flow upgrade;=1,Start the optical flow upgrade</param>
+        <param index="2">Empty</param>
+        <param index="3">Empty</param>
+        <param index="4">Empty</param>
+        <param index="5">Empty</param>
+        <param index="6">Empty</param>
+        <param index="7">Empty</param>
+      </entry>
+      <entry value="32771" name="MAV_CMD_TEAM_MODE">
+        <description>Switch Team Mode ON/OFF; OFF: One remote controls aircraft and gimbal; ON: The master remote controls the aircraft, the slave remote controls the gimbal.</description>
+        <param index="1">0 = OFF Team Mode; 1 = ON Team Mode.</param>
         <param index="2">Empty</param>
         <param index="3">Empty</param>
         <param index="4">Empty</param>
@@ -184,7 +193,6 @@
         <description>stop video.</description>
       </entry>
     </enum>
-    <!-- taken from yuneec_rc.xml -->
     <enum name="MAV_RC_COMMAND">
       <description>Remote controller Instruction Set</description>
       <entry value="1" name="MAV_RC_CMD_GET_BATTERY">
@@ -334,8 +342,13 @@
         <description>Unknown Error</description>
       </entry>
     </enum>
-    <!-- taken from yuneec_battery.xml -->
     <enum name="MAV_COMPONENT">
+      <entry value="90" name="MAV_COMP_ID_REMOTE_MASTER">
+        <description/>
+      </entry>
+      <entry value="91" name="MAV_COMP_ID_REMOTE_SLAVE">
+        <description/>
+      </entry>
       <entry value="92" name="MAV_COMP_ID_SMART_BATTERY">
         <description/>
       </entry>
@@ -386,7 +399,6 @@
     </enum>
   </enums>
   <messages>
-    <!-- taken from original yuneec.xml -->
     <message id="4000" name="VISUAL_TRACKING">
       <description>The location of a visual tracking.</description>
       <field type="uint64_t" name="time_usec">Timestamp (microseconds since boot or Unix epoch).</field>
@@ -469,7 +481,6 @@
       <description>Gimbal bootload data packet(133 bytes).</description>
       <field type="int8_t[133]" name="bootload_data">gimbal bootload data.</field>
     </message>
-    <!-- taken from yuneec_rc.xml -->
     <message id="7050" name="MAV_RC_CMD">
       <field type="uint8_t" name="command" enum="MAV_RC_COMMAND"/>
       <field type="uint8_t[254]" name="params"/>
@@ -479,7 +490,6 @@
       <field type="uint8_t" name="code" enum="MAV_RC_ERROR_CODE"/>
       <field type="uint8_t[253]" name="params"/>
     </message>
-    <!-- taken from yuneec_battery.xml -->
     <message id="9002" name="BAT_GENERAL_INFO">
       <description>command of host to battery.</description>
       <field type="uint16_t" name="capacity" units="mAh">the full battery capacity in units mAh, it will reduce with usage.</field>
