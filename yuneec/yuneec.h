@@ -194,8 +194,10 @@ typedef enum FLIGHT_TASK
    FLIGHT_TASK_JOUR=3, /* Journey mode,from a point according to the set distance, velocity, flight video. |=1, Pause the current task; =0 Continue/start the current task| One way flight distance, unit is meters, range (5-50m).| One way flight velocity, unit is m/s, range (1-10).| Empty| Empty| Empty|  */
    FLIGHT_TASK_GPS_FOLLOW=4, /* Move through the gps follow the target. |=1, Pause the current task; =0 Continue/start the current task.| sub_mode, =0 follow me; =1 watch and follow me| Empty| Empty|  =1, gimbal visuial adjust| Empty|  */
    FLIGHT_TASK_CCC=5, /* Spline Curves. Full name:Curve Cable Cam. |=1, Pause the current task; =0 Continue/start the current task.| sub_mode, see enum (CURVE_CABLE_CAM).| Empty| Empty| Empty| Empty|  */
-   FLIGHT_TASK_AUTO_RECORD=6, /* auto record mode. |=1, Pause the current task; =2 Continue the current task| sub_mode, see enum(AUTO_RECORD)| Empty| Empty| Empty| Empty|  */
-   FLIGHT_TASK_ENUM_END=7, /*  | */
+   FLIGHT_TASK_AUTO_RECORD=6, /* auto record mode. |=1, Pause the current task; =2 Continue/Start the current task| sub_mode, see enum(AUTO_RECORD)| Empty| Empty| Empty| Empty|  */
+   FLIGHT_TASK_SPEECH_RECOGNITION=7, /* speech recogition mode. |=1 Pause the current task; =2 Continue/Start the current task.| sub_mode, see enum(SPEECH_RECOGNITION)| Empty| Empty| Empty| Empty|  */
+   FLIGHT_TASK_FACE_RECOGNITION=8, /* face recogition mode. |=1 Pause the current task; =2 Continue/Start the current task.| face numbers. 0 : No face recognized.| Empty| Empty| Empty| Empty|  */
+   FLIGHT_TASK_ENUM_END=9, /*  | */
 } FLIGHT_TASK;
 #endif
 
@@ -236,6 +238,24 @@ typedef enum AUTO_RECORD
    COM_PAN_PHOTO=6, /* Comprehensive panorama take photo. | */
    AUTO_RECORD_ENUM_END=7, /*  | */
 } AUTO_RECORD;
+#endif
+
+/** @brief Several sub modes under speech recognition mode. */
+#ifndef HAVE_ENUM_SPEECH_RECOGNITION
+#define HAVE_ENUM_SPEECH_RECOGNITION
+typedef enum SPEECH_RECOGNITION
+{
+   GO_FORWARD=1, /* The voice said go forward, the aircraft moved forward 0.5m, velocity is 1m/s. | */
+   GO_BACKWARD=2, /* The voice said go backward, the aircraft moved backward 0.5m, velocity is 1m/s. | */
+   GO_LEFT=3, /* The voice said go left, the aircraft moved left 0.5m, velocity is 1m/s. | */
+   GO_RIGHT=4, /* The voice said turn right, the aircraft moved right 0.5m, velocity is 1m/s. | */
+   GO_UP=5, /* The voice said go up, the aircraft moved up 0.5m, velocity is 1m/s. | */
+   GO_DOWN=6, /* The voice said go down, the aircraft moved down 0.5m, velocity is 1m/s. | */
+   TURN_RIGHT=7, /* The voice said turn right, the aircraft turn right rotate 45 degree, max velocity 120 degree/s. | */
+   TURN_LEFT=8, /* The voice said turn left, the aircraft turn left rotate 45 degree, max velocity 120 degree/s. | */
+   EMERGENCY_STOP=9, /* The aircraft emergency brake, and keep hovering. | */
+   SPEECH_RECOGNITION_ENUM_END=10, /*  | */
+} SPEECH_RECOGNITION;
 #endif
 
 /** @brief task result type */

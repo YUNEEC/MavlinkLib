@@ -104,8 +104,26 @@
       </entry>
       <entry value="6" name="FLIGHT_TASK_AUTO_RECORD">
         <description>auto record mode.</description>
-        <param index="2">=1, Pause the current task; =2 Continue the current task</param>
+        <param index="2">=1, Pause the current task; =2 Continue/Start the current task</param>
         <param index="3">sub_mode, see enum(AUTO_RECORD)</param>
+        <param index="4">Empty</param>
+        <param index="5">Empty</param>
+        <param index="6">Empty</param>
+        <param index="7">Empty</param>
+      </entry>
+      <entry value="7" name="FLIGHT_TASK_SPEECH_RECOGNITION">
+        <description>speech recogition mode.</description>
+        <param index="2">=1 Pause the current task; =2 Continue/Start the current task.</param>
+        <param index="3">sub_mode, see enum(SPEECH_RECOGNITION)</param>
+        <param index="4">Empty</param>
+        <param index="5">Empty</param>
+        <param index="6">Empty</param>
+        <param index="7">Empty</param>
+      </entry>
+      <entry value="8" name="FLIGHT_TASK_FACE_RECOGNITION">
+        <description>face recogition mode.</description>
+        <param index="2">=1 Pause the current task; =2 Continue/Start the current task.</param>
+        <param index="3">face numbers. 0 : No face recognized.</param>
         <param index="4">Empty</param>
         <param index="5">Empty</param>
         <param index="6">Empty</param>
@@ -155,6 +173,36 @@
       </entry>
       <entry value="6" name="COM_PAN_PHOTO">
         <description>Comprehensive panorama take photo.</description>
+      </entry>
+    </enum>
+    <enum name="SPEECH_RECOGNITION">
+      <description>Several sub modes under speech recognition mode.</description>
+      <entry value="1" name="GO_FORWARD">
+        <description>The voice said go forward, the aircraft moved forward 0.5m, velocity is 1m/s.</description>
+      </entry>
+      <entry value="2" name="GO_BACKWARD">
+        <description>The voice said go backward, the aircraft moved backward 0.5m, velocity is 1m/s.</description>
+      </entry>
+      <entry value="3" name="GO_LEFT">
+        <description>The voice said go left, the aircraft moved left 0.5m, velocity is 1m/s.</description>
+      </entry>
+      <entry value="4" name="GO_RIGHT">
+        <description>The voice said turn right, the aircraft moved right 0.5m, velocity is 1m/s.</description>
+      </entry>
+      <entry value="5" name="GO_UP">
+        <description>The voice said go up, the aircraft moved up 0.5m, velocity is 1m/s.</description>
+      </entry>
+      <entry value="6" name="GO_DOWN">
+        <description>The voice said go down, the aircraft moved down 0.5m, velocity is 1m/s.</description>
+      </entry>
+      <entry value="7" name="TURN_RIGHT">
+        <description>The voice said turn right, the aircraft turn right rotate 45 degree, max velocity 120 degree/s.</description>
+      </entry>
+      <entry value="8" name="TURN_LEFT">
+        <description>The voice said turn left, the aircraft turn left rotate 45 degree, max velocity 120 degree/s.</description>
+      </entry>
+      <entry value="9" name="EMERGENCY_STOP">
+        <description>The aircraft emergency brake, and keep hovering.</description>
       </entry>
     </enum>
     <enum name="MAV_TASK_TYPE">
