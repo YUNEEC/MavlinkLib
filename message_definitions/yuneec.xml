@@ -499,7 +499,7 @@
       <field type="int16_t[4]" name="quaternion">drone's quaternion, multiplied by 10000.</field>
       <field type="int16_t" name="hvel">drone's horizontal velocity in cm/s unit.</field>
       <field type="int16_t" name="hacc">drone's horizontal acceleration in cm/s/s unit.</field>
-      <field type="int16_t" name="yaw_deg_desire">yaw desired angle, drone send to gimbal,precise 0.1 degree, multiply 0.1 to use.</field>
+      <field type="int16_t" name="yaw_deg_desire">Current yaw angular rate in of drone in 0.1*degrees/second.</field>
       <field type="uint16_t" name="yaw_channel">yaw channel value,value range 0-4096,follow point ahead mode is none;degree = -((channel_value-2048)*0.03dgree+45dgree); velocity=-(channel_value-2130)/41 or velocity=-(channel_value-1966)/41 there has a lsb deadline.</field>
       <field type="uint16_t" name="pitch_channel">pitch channel value,value range 0-4096,follow point ahead mode is none;degree = -((channel_value-2048)*0.03dgree+45dgree); velocity=-(channel_value-2130)/41 or velocity=-(channel_value-1966)/41 there has a lsb deadline.</field>
       <field type="uint16_t" name="roll_channel">roll channel value,value range 0-4096,follow point ahead mode is none;degree = -((channel_value-2048)*0.03dgree+45dgree); velocity=-(channel_value-2130)/41 or velocity=-(channel_value-1966)/41 there has a lsb deadline.</field>

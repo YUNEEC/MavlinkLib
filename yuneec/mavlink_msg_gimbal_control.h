@@ -8,7 +8,7 @@ typedef struct __mavlink_gimbal_control_t {
  int16_t quaternion[4]; /*< drone's quaternion, multiplied by 10000.*/
  int16_t hvel; /*< drone's horizontal velocity in cm/s unit.*/
  int16_t hacc; /*< drone's horizontal acceleration in cm/s/s unit.*/
- int16_t yaw_deg_desire; /*< yaw desired angle, drone send to gimbal,precise 0.1 degree, multiply 0.1 to use.*/
+ int16_t yaw_deg_desire; /*< Current yaw angular rate in of drone in 0.1*degrees/second.*/
  uint16_t yaw_channel; /*< yaw channel value,value range 0-4096,follow point ahead mode is none;degree = -((channel_value-2048)*0.03dgree+45dgree); velocity=-(channel_value-2130)/41 or velocity=-(channel_value-1966)/41 there has a lsb deadline.*/
  uint16_t pitch_channel; /*< pitch channel value,value range 0-4096,follow point ahead mode is none;degree = -((channel_value-2048)*0.03dgree+45dgree); velocity=-(channel_value-2130)/41 or velocity=-(channel_value-1966)/41 there has a lsb deadline.*/
  uint16_t roll_channel; /*< roll channel value,value range 0-4096,follow point ahead mode is none;degree = -((channel_value-2048)*0.03dgree+45dgree); velocity=-(channel_value-2130)/41 or velocity=-(channel_value-1966)/41 there has a lsb deadline.*/
@@ -71,7 +71,7 @@ typedef struct __mavlink_gimbal_control_t {
  * @param quaternion drone's quaternion, multiplied by 10000.
  * @param hvel drone's horizontal velocity in cm/s unit.
  * @param hacc drone's horizontal acceleration in cm/s/s unit.
- * @param yaw_deg_desire yaw desired angle, drone send to gimbal,precise 0.1 degree, multiply 0.1 to use.
+ * @param yaw_deg_desire Current yaw angular rate in of drone in 0.1*degrees/second.
  * @param yaw_channel yaw channel value,value range 0-4096,follow point ahead mode is none;degree = -((channel_value-2048)*0.03dgree+45dgree); velocity=-(channel_value-2130)/41 or velocity=-(channel_value-1966)/41 there has a lsb deadline.
  * @param pitch_channel pitch channel value,value range 0-4096,follow point ahead mode is none;degree = -((channel_value-2048)*0.03dgree+45dgree); velocity=-(channel_value-2130)/41 or velocity=-(channel_value-1966)/41 there has a lsb deadline.
  * @param roll_channel roll channel value,value range 0-4096,follow point ahead mode is none;degree = -((channel_value-2048)*0.03dgree+45dgree); velocity=-(channel_value-2130)/41 or velocity=-(channel_value-1966)/41 there has a lsb deadline.
@@ -124,7 +124,7 @@ static inline uint16_t mavlink_msg_gimbal_control_pack(uint8_t system_id, uint8_
  * @param quaternion drone's quaternion, multiplied by 10000.
  * @param hvel drone's horizontal velocity in cm/s unit.
  * @param hacc drone's horizontal acceleration in cm/s/s unit.
- * @param yaw_deg_desire yaw desired angle, drone send to gimbal,precise 0.1 degree, multiply 0.1 to use.
+ * @param yaw_deg_desire Current yaw angular rate in of drone in 0.1*degrees/second.
  * @param yaw_channel yaw channel value,value range 0-4096,follow point ahead mode is none;degree = -((channel_value-2048)*0.03dgree+45dgree); velocity=-(channel_value-2130)/41 or velocity=-(channel_value-1966)/41 there has a lsb deadline.
  * @param pitch_channel pitch channel value,value range 0-4096,follow point ahead mode is none;degree = -((channel_value-2048)*0.03dgree+45dgree); velocity=-(channel_value-2130)/41 or velocity=-(channel_value-1966)/41 there has a lsb deadline.
  * @param roll_channel roll channel value,value range 0-4096,follow point ahead mode is none;degree = -((channel_value-2048)*0.03dgree+45dgree); velocity=-(channel_value-2130)/41 or velocity=-(channel_value-1966)/41 there has a lsb deadline.
@@ -203,7 +203,7 @@ static inline uint16_t mavlink_msg_gimbal_control_encode_chan(uint8_t system_id,
  * @param quaternion drone's quaternion, multiplied by 10000.
  * @param hvel drone's horizontal velocity in cm/s unit.
  * @param hacc drone's horizontal acceleration in cm/s/s unit.
- * @param yaw_deg_desire yaw desired angle, drone send to gimbal,precise 0.1 degree, multiply 0.1 to use.
+ * @param yaw_deg_desire Current yaw angular rate in of drone in 0.1*degrees/second.
  * @param yaw_channel yaw channel value,value range 0-4096,follow point ahead mode is none;degree = -((channel_value-2048)*0.03dgree+45dgree); velocity=-(channel_value-2130)/41 or velocity=-(channel_value-1966)/41 there has a lsb deadline.
  * @param pitch_channel pitch channel value,value range 0-4096,follow point ahead mode is none;degree = -((channel_value-2048)*0.03dgree+45dgree); velocity=-(channel_value-2130)/41 or velocity=-(channel_value-1966)/41 there has a lsb deadline.
  * @param roll_channel roll channel value,value range 0-4096,follow point ahead mode is none;degree = -((channel_value-2048)*0.03dgree+45dgree); velocity=-(channel_value-2130)/41 or velocity=-(channel_value-1966)/41 there has a lsb deadline.
@@ -336,7 +336,7 @@ static inline int16_t mavlink_msg_gimbal_control_get_hacc(const mavlink_message_
 /**
  * @brief Get field yaw_deg_desire from gimbal_control message
  *
- * @return yaw desired angle, drone send to gimbal,precise 0.1 degree, multiply 0.1 to use.
+ * @return Current yaw angular rate in of drone in 0.1*degrees/second.
  */
 static inline int16_t mavlink_msg_gimbal_control_get_yaw_deg_desire(const mavlink_message_t* msg)
 {
