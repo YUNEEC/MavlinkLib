@@ -57,7 +57,7 @@
         <param index="6">Empty</param>
         <param index="7">Empty</param>
       </entry>
-      <entry value="1" name="FLIGHT_TASK_OBRIT">
+      <entry value="1" name="FLIGHT_TASK_ORBIT">
         <description>Flying around the user.</description>
         <param index="2">=1, Pause the current task; =0 Continue/start the current task</param>
         <param index="3">Around the radius, the unit is meters, range (5-50m)</param>
