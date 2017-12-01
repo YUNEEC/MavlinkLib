@@ -188,7 +188,6 @@ typedef enum MAV_CMD
 #define HAVE_ENUM_FLIGHT_TASK
 typedef enum FLIGHT_TASK
 {
-   FLIGHT_TASK_VISUAL_TRACKING=0, /* visual tracking. |=1,Pause the current task; =0 Continue/start the current task| Sub-mode under the visual tracking,see enum (VISUAL_TRACKING_MODE).| Empty| Empty| Empty| Empty|  */
    FLIGHT_TASK_ORBIT=1, /* Flying around the user. |=1, Pause the current task; =0 Continue/start the current task| Around the radius, the unit is meters, range (5-50m)| Flight velocity, unit is m/s,range (1-10).| Surround direction, =0 clockwise rotation,=1 Anticlockwise rotation.| =1 gimbal visual adjust.| Empty|  */
    FLIGHT_TASK_POI=2, /* Specify points of interest and fly around points of interest. |=1, Pause the current task; =0 Continue/start the current task.| Around the radius, the unit is meters, range (5-50m)| Flight velocity, unit is m/s,range (1-10)| Surround direction, =0 clockwise rotation, =1 Anticlockwise rotation.| Empty| Empty|  */
    FLIGHT_TASK_JOUR=3, /* Journey mode,from a point according to the set distance, velocity, flight video. |=1, Pause the current task; =0 Continue/start the current task| One way flight distance, unit is meters, range (5-50m).| One way flight velocity, unit is m/s, range (1-10).| Empty| Empty| Empty|  */
@@ -197,7 +196,8 @@ typedef enum FLIGHT_TASK
    FLIGHT_TASK_AUTO_RECORD=6, /* auto record mode. |=1, Pause the current task; =2 Continue/Start the current task| sub_mode, see enum(AUTO_RECORD)| Empty| Empty| Empty| Empty|  */
    FLIGHT_TASK_SPEECH_RECOGNITION=7, /* speech recogition mode. |=1 Pause the current task; =2 Continue/Start the current task.| sub_mode, see enum(SPEECH_RECOGNITION)| Empty| Empty| Empty| Empty|  */
    FLIGHT_TASK_FACE_RECOGNITION=8, /* face recogition mode. |=1 Pause the current task; =2 Continue/Start the current task.| face numbers. 0 : No face recognized.| Empty| Empty| Empty| Empty|  */
-   FLIGHT_TASK_ENUM_END=9, /*  | */
+   FLIGHT_TASK_VISUAL_TRACKING=9, /* visual tracking. |=1,Pause the current task; =0 Continue/start the current task| Sub-mode under the visual tracking,see enum (VISUAL_TRACKING_MODE).| Empty| Empty| Empty| Empty|  */
+   FLIGHT_TASK_ENUM_END=10, /*  | */
 } FLIGHT_TASK;
 #endif
 
