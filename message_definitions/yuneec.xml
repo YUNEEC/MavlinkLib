@@ -45,6 +45,16 @@
         <param index="6">Empty</param>
         <param index="7">Empty</param>
       </entry>
+      <entry value="32772" name="MAV_CMD_LED_CONTROL">
+        <description>Led control(color,mode).</description>
+        <param index="1">Set led mode, according to mask (param 3), see enum LED_MODE, (e.g: (uint8)param 3 : 0000 0010 , param2 = 1, led1, color red and mode selected from this param).</param>
+        <param index="2">Set led color, according to mask (param3), see enum LED_COLOR (e.g: (uint8)param 3 : 0000 0010 , param1 = 1, led1, turned on and color from this param).</param>
+        <param index="3">Set led mask for mode and colors, led7|led6|led5|led4|led3|led2|led1|led0.</param>
+        <param index="4">Set led num_blinks, how many times to blink (number of on-off cycles if mode is one of MODE_BLINK_*) . Set to 0 for infinite, in MODE_FLASH it is the number of cycles (infinite is not possible).</param>
+        <param index="5">Empty</param>
+        <param index="6">Empty</param>
+        <param index="7">Empty</param>
+      </entry>
     </enum>
     <enum name="FLIGHT_TASK">
       <description> The advanced function mode.</description>
@@ -227,6 +237,63 @@
       </entry>
       <entry value="3" name="MAV_TASK_UNSUPPORTED">
         <description>command is not supported.</description>
+      </entry>
+    </enum>
+    <enum name="LED_COLOR">
+      <description>Set led color control.</description>
+      <entry value="0" name="COLOR_OFF">
+        <description>set led off</description>
+      </entry>
+      <entry value="1" name="COLOR_RED">
+        <description>set color to red.</description>
+      </entry>
+      <entry value="2" name="COLOR_GREEN">
+        <description>set color to green.</description>
+      </entry>
+      <entry value="3" name="COLOR_BLUE">
+        <description>set color to blue.</description>
+      </entry>
+      <entry value="4" name="COLOR_YELLOW">
+        <description>set color to yellow.</description>
+      </entry>
+      <entry value="5" name="COLOR_PURPLE">
+        <description>set color to purple.</description>
+      </entry>
+      <entry value="6" name="COLOR_AMBER">
+        <description>set color to amber.</description>
+      </entry>
+      <entry value="7" name="COLOR_CYAN">
+        <description>set color to cyan.</description>
+      </entry>
+      <entry value="8" name="COLOR_WHITE">
+        <description>set color to white.</description>
+      </entry>
+    </enum>
+    <enum name="LED_MODE">
+      <description>Set led mode control.</description>
+      <entry value="0" name="MODE_OFF">
+        <description>Turn off the led.</description>
+      </entry>
+      <entry value="1" name="MODE_ON">
+        <description>Turn on the led.</description>
+      </entry>
+      <entry value="2" name="MODE_DISABLE">
+        <description>Disable this priority (switch to lower priority setting).</description>
+      </entry>
+      <entry value="3" name="MODE_BLINK_SLOW">
+        <description>Set blinking speed to slow.</description>
+      </entry>
+      <entry value="4" name="MODE_BLINK_NORMAL">
+        <description>Set blinking speed to normal.</description>
+      </entry>
+      <entry value="5" name="MODE_BLINK_FAST">
+        <description>Set blinking speed to fast.</description>
+      </entry>
+      <entry value="6" name="MODE_BREATHE">
+        <description>continuously increase , decrease brightness (solid color if driver does not support it).</description>
+      </entry>
+      <entry value="7" name="MODE_FLASH">
+        <description>two fast blinks (on/off) with timing as in MODE_BLINK_FAST and then off for a while.</description>
       </entry>
     </enum>
     <enum name="TASK_ACTION">

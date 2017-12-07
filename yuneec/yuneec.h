@@ -179,7 +179,8 @@ typedef enum MAV_CMD
    MAV_CMD_SMART_BATTERY=32769, /* Command of host to battery. |Command ID for smart battery, as define by enum COMMAND_LIST| Communication status, 0 indicates not work, 1 indicates work.| Synchronize status, 0 indicates not asynchronous, 1 indicates synchronous.| Flying check, 0 indicates not flying, 1 indicates flying.| Empty| Empty| Empty|  */
    MAV_CMD_OPTICAL_FLOW_UPGRADE=32770, /* Start the optical flow upgrade command. |=0,Stop the optical flow upgrade;=1,Start the optical flow upgrade| Empty| Empty| Empty| Empty| Empty| Empty|  */
    MAV_CMD_TEAM_MODE=32771, /* Switch Team Mode ON/OFF; OFF: One remote controls aircraft and gimbal; ON: The master remote controls the aircraft, the slave remote controls the gimbal. |0 = OFF Team Mode; 1 = ON Team Mode.| Empty| Empty| Empty| Empty| Empty| Empty|  */
-   MAV_CMD_ENUM_END=32772, /*  | */
+   MAV_CMD_LED_CONTROL=32772, /* Led control(color,mode). |Set led mode, according to mask (param 3), see enum LED_MODE, (e.g: (uint8)param 3 : 0000 0010 , param2 = 1, led1, color red and mode selected from this param).| Set led color, according to mask (param3), see enum LED_COLOR (e.g: (uint8)param 3 : 0000 0010 , param1 = 1, led1, turned on and color from this param).| Set led mask for mode and colors, led7|led6|led5|led4|led3|led2|led1|led0.| Set led num_blinks, how many times to blink (number of on-off cycles if mode is one of MODE_BLINK_*) . Set to 0 for infinite, in MODE_FLASH it is the number of cycles (infinite is not possible).| Empty| Empty| Empty|  */
+   MAV_CMD_ENUM_END=32773, /*  | */
 } MAV_CMD;
 #endif
 
@@ -280,6 +281,41 @@ typedef enum MAV_TASK_RESULT
    MAV_TASK_UNSUPPORTED=3, /* command is not supported. | */
    MAV_TASK_RESULT_ENUM_END=4, /*  | */
 } MAV_TASK_RESULT;
+#endif
+
+/** @brief Set led color control. */
+#ifndef HAVE_ENUM_LED_COLOR
+#define HAVE_ENUM_LED_COLOR
+typedef enum LED_COLOR
+{
+   COLOR_OFF=0, /* set led off | */
+   COLOR_RED=1, /* set color to red. | */
+   COLOR_GREEN=2, /* set color to green. | */
+   COLOR_BLUE=3, /* set color to blue. | */
+   COLOR_YELLOW=4, /* set color to yellow. | */
+   COLOR_PURPLE=5, /* set color to purple. | */
+   COLOR_AMBER=6, /* set color to amber. | */
+   COLOR_CYAN=7, /* set color to cyan. | */
+   COLOR_WHITE=8, /* set color to white. | */
+   LED_COLOR_ENUM_END=9, /*  | */
+} LED_COLOR;
+#endif
+
+/** @brief Set led mode control. */
+#ifndef HAVE_ENUM_LED_MODE
+#define HAVE_ENUM_LED_MODE
+typedef enum LED_MODE
+{
+   MODE_OFF=0, /* Turn off the led. | */
+   MODE_ON=1, /* Turn on the led. | */
+   MODE_DISABLE=2, /* Disable this priority (switch to lower priority setting). | */
+   MODE_BLINK_SLOW=3, /* Set blinking speed to slow. | */
+   MODE_BLINK_NORMAL=4, /* Set blinking speed to normal. | */
+   MODE_BLINK_FAST=5, /* Set blinking speed to fast. | */
+   MODE_BREATHE=6, /* continuously increase , decrease brightness (solid color if driver does not support it). | */
+   MODE_FLASH=7, /* two fast blinks (on/off) with timing as in MODE_BLINK_FAST and then off for a while. | */
+   LED_MODE_ENUM_END=8, /*  | */
+} LED_MODE;
 #endif
 
 /** @brief The waypoint camera performs the action. */
