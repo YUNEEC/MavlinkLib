@@ -113,7 +113,7 @@
         <param index="7">Empty</param>
       </entry>
       <entry value="7" name="FLIGHT_TASK_SPEECH_RECOGNITION">
-        <description>speech recogition mode.</description>
+        <description>speech recognition mode.</description>
         <param index="2">=1 Pause the current task; =2 Continue/Start the current task.</param>
         <param index="3">sub_mode, see enum(SPEECH_RECOGNITION)</param>
         <param index="4">Empty</param>
@@ -122,7 +122,7 @@
         <param index="7">Empty</param>
       </entry>
       <entry value="8" name="FLIGHT_TASK_FACE_RECOGNITION">
-        <description>face recogition mode.</description>
+        <description>face recognition mode.</description>
         <param index="2">=1 Pause the current task; =2 Continue/Start the current task.</param>
         <param index="3">face numbers. 0 : No face recognized.</param>
         <param index="4">Empty</param>
@@ -306,6 +306,111 @@
       </entry>
       <entry value="2" name="STOP_VIDEO">
         <description>stop video.</description>
+      </entry>
+    </enum>
+    <enum name="TASK_STATE">
+      <description>Flight tasks state.</description>
+      <entry value="1" name="TASK_WAITING">
+        <description>The flight task mode is currently waiting</description>
+      </entry>
+      <entry value="2" name="TASK_RUNNING">
+        <description>sThe flight task mode is currently running.</description>
+      </entry>
+      <entry value="3" name="TASK_FINISH">
+        <description>The flight task mode is currently finished.</description>
+      </entry>
+    </enum>
+    <enum name="TASK_CMD">
+      <description>Flight tasks mode and state data display.</description>
+      <entry value="1" name="TASK_ORBIT_MODE">
+        <description>Flying around the user(orbit me mode).</description>
+        <param index="1">The distance from the vehicle to the point of interest, unit is m</param>
+        <param index="2">Empty</param>
+        <param index="3">Empty</param>
+        <param index="4">Empty</param>
+        <param index="5">Empty</param>
+        <param index="6">Empty</param>
+        <param index="7">Empty</param>
+      </entry>
+      <entry value="2" name="TASK_POI_MODE">
+        <description>Specify points of interest and fly around points of interest(poi mode).</description>
+        <param index="1">The distance from the vehicle to the point of interest, unit is m</param>
+        <param index="2">Latitude, waypooint of interest coordinates</param>
+        <param index="3">Longitude, waypooint of interest coordinates</param>
+        <param index="4">Empty</param>
+        <param index="5">Empty</param>
+        <param index="6">Empty</param>
+        <param index="7">Empty</param>
+      </entry>
+      <entry value="3" name="TASK_JOUR_MODE">
+        <description>Journey mode, from a point according to the set distance, velocity, flight video.</description>
+        <param index="1">Empty</param>
+        <param index="2">Empty</param>
+        <param index="3">Empty</param>
+        <param index="4">Empty</param>
+        <param index="5">Empty</param>
+        <param index="6">Empty</param>
+        <param index="7">Empty</param>
+      </entry>
+      <entry value="4" name="TASK_GPS_FOLLOW_MODE">
+        <description>Gps follow me mode, move through the gps follow the target.</description>
+        <param index="1">Empty</param>
+        <param index="2">Empty</param>
+        <param index="3">Empty</param>
+        <param index="4">Empty</param>
+        <param index="5">Empty</param>
+        <param index="6">Empty</param>
+        <param index="7">Empty</param>
+      </entry>
+      <entry value="5" name="TASK_CCC_MODE">
+        <description>CCC mode, spline Curves. Full name: Curve Cable Cam.</description>
+        <param index="1">Waypoint execute direction, =0 Positive movement, =1 Reverse movement.</param>
+        <param index="2">The current number of waypoints.</param>
+        <param index="3">The distance from the current waypoint to the next waypoint.</param>
+        <param index="4">Empty</param>
+        <param index="5">Empty</param>
+        <param index="6">Empty</param>
+        <param index="7">Empty</param>
+      </entry>
+      <entry value="6" name="TASK_AUTO_RECORD_MODE">
+        <description>Auto record mode.</description>
+        <param index="1">Empty</param>
+        <param index="2">Empty</param>
+        <param index="3">Empty</param>
+        <param index="4">Empty</param>
+        <param index="5">Empty</param>
+        <param index="6">Empty</param>
+        <param index="7">Empty</param>
+      </entry>
+      <entry value="7" name="TASK_SPEECH_RECOGNITION_MODE">
+        <description>speech recognition mode.</description>
+        <param index="1">Empty</param>
+        <param index="2">Empty</param>
+        <param index="3">Empty</param>
+        <param index="4">Empty</param>
+        <param index="5">Empty</param>
+        <param index="6">Empty</param>
+        <param index="7">Empty</param>
+      </entry>
+      <entry value="8" name="TASK_FACE_RECOGNITION_MODE">
+        <description>face recognition mode.</description>
+        <param index="1">Empty</param>
+        <param index="2">Empty</param>
+        <param index="3">Empty</param>
+        <param index="4">Empty</param>
+        <param index="5">Empty</param>
+        <param index="6">Empty</param>
+        <param index="7">Empty</param>
+      </entry>
+      <entry value="9" name="TASK_VISUAL_TRACKING_MODE">
+        <description>visual tracking mode.</description>
+        <param index="1">Empty</param>
+        <param index="2">Empty</param>
+        <param index="3">Empty</param>
+        <param index="4">Empty</param>
+        <param index="5">Empty</param>
+        <param index="6">Empty</param>
+        <param index="7">Empty</param>
       </entry>
     </enum>
     <enum name="MAV_RC_COMMAND">
@@ -560,6 +665,18 @@
       <field type="uint8_t" name="target_system">System ID</field>
       <field type="uint8_t" name="target_component">Component ID</field>
       <field type="uint8_t" name="result">ack result, see enum(MAV_TASK_RESULT)</field>
+    </message>
+    <message id="4005" name="TASK_STATE_FEEDBACK">
+      <description>Advanced function tasks mode and status feedback display.</description>
+      <field type="uint8_t" name="task_mode">Flight tasks mode, as defined by TASK_CMD enum</field>
+      <field type="uint8_t" name="task_state">Flight tasks state, as defined by TASK_STATE enum</field>
+      <field type="float" name="param1">Parameter 1, as defined by TASK_CMD enum.</field>
+      <field type="float" name="param2">Parameter 2, as defined by TASK_CMD enum.</field>
+      <field type="float" name="param3">Parameter 3, as defined by TASK_CMD enum.</field>
+      <field type="float" name="param4">Parameter 4, as defined by TASK_CMD enum.</field>
+      <field type="float" name="param5">Parameter 5, as defined by TASK_CMD enum.</field>
+      <field type="float" name="param6">Parameter 6, as defined by TASK_CMD enum.</field>
+      <field type="float" name="param7">Parameter 7, as defined by TASK_CMD enum.</field>
     </message>
     <message id="5000" name="GIMBAL_CONTROL">
       <description>Gimbal control packet from flight control.</description>
