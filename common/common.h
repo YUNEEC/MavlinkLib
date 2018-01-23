@@ -96,7 +96,8 @@ typedef enum MAV_TYPE
    MAV_TYPE_GIMBAL=26, /* Onboard gimbal | */
    MAV_TYPE_ADSB=27, /* Onboard ADSB peripheral | */
    MAV_TYPE_PARAFOIL=28, /* Steerable, nonrigid airfoil | */
-   MAV_TYPE_ENUM_END=29, /*  | */
+   MAV_TYPE_DODECAROTOR=29, /* Dodecarotor | */
+   MAV_TYPE_ENUM_END=30, /*  | */
 } MAV_TYPE;
 #endif
 
@@ -359,7 +360,7 @@ typedef enum MAV_DATA_STREAM
 } MAV_DATA_STREAM;
 #endif
 
-/** @brief  The ROI (region of interest) for the vehicle. This can be
+/** @brief THIS INTERFACE IS DEPRECATED AS OF JANUARY 2018. Please use MAV_CMD_DO_SET_ROI_* messages instead. The ROI (region of interest) for the vehicle. This can be
                 be used by the vehicle for camera/vehicle attitude alignment (see
                 MAV_CMD_NAV_ROI). */
 #ifndef HAVE_ENUM_MAV_ROI
@@ -367,7 +368,7 @@ typedef enum MAV_DATA_STREAM
 typedef enum MAV_ROI
 {
    MAV_ROI_NONE=0, /* No region of interest. | */
-   MAV_ROI_WPNEXT=1, /* Point toward next waypoint. | */
+   MAV_ROI_WPNEXT=1, /* Point toward next waypoint, with optional pitch/roll/yaw offset. | */
    MAV_ROI_WPINDEX=2, /* Point toward given waypoint. | */
    MAV_ROI_LOCATION=3, /* Point toward fixed location. | */
    MAV_ROI_TARGET=4, /* Point toward of given id. | */
@@ -789,6 +790,18 @@ typedef enum ESTIMATOR_STATUS_FLAGS
 #endif
 
 /** @brief  */
+#ifndef HAVE_ENUM_MOTOR_TEST_ORDER
+#define HAVE_ENUM_MOTOR_TEST_ORDER
+typedef enum MOTOR_TEST_ORDER
+{
+   MOTOR_TEST_ORDER_DEFAULT=0, /* default autopilot motor test method | */
+   MOTOR_TEST_ORDER_SEQUENCE=1, /* motor numbers are specified as their index in a predefined vehicle-specific sequence | */
+   MOTOR_TEST_ORDER_BOARD=2, /* motor numbers are specified as the output as labeled on the board | */
+   MOTOR_TEST_ORDER_ENUM_END=3, /*  | */
+} MOTOR_TEST_ORDER;
+#endif
+
+/** @brief  */
 #ifndef HAVE_ENUM_MOTOR_TEST_THROTTLE_TYPE
 #define HAVE_ENUM_MOTOR_TEST_THROTTLE_TYPE
 typedef enum MOTOR_TEST_THROTTLE_TYPE
@@ -796,7 +809,8 @@ typedef enum MOTOR_TEST_THROTTLE_TYPE
    MOTOR_TEST_THROTTLE_PERCENT=0, /* throttle as a percentage from 0 ~ 100 | */
    MOTOR_TEST_THROTTLE_PWM=1, /* throttle as an absolute PWM value (normally in range of 1000~2000) | */
    MOTOR_TEST_THROTTLE_PILOT=2, /* throttle pass-through from pilot's transmitter | */
-   MOTOR_TEST_THROTTLE_TYPE_ENUM_END=3, /*  | */
+   MOTOR_TEST_COMPASS_CAL=3, /* per-motor compass calibration test | */
+   MOTOR_TEST_THROTTLE_TYPE_ENUM_END=4, /*  | */
 } MOTOR_TEST_THROTTLE_TYPE;
 #endif
 
@@ -954,6 +968,17 @@ typedef enum MAV_ARM_AUTH_DENIED_REASON
    MAV_ARM_AUTH_DENIED_REASON_BAD_WEATHER=5, /* Weather is not good to fly | */
    MAV_ARM_AUTH_DENIED_REASON_ENUM_END=6, /*  | */
 } MAV_ARM_AUTH_DENIED_REASON;
+#endif
+
+/** @brief RTK GPS baseline coordinate system, used for RTK corrections */
+#ifndef HAVE_ENUM_RTK_BASELINE_COORDINATE_SYSTEM
+#define HAVE_ENUM_RTK_BASELINE_COORDINATE_SYSTEM
+typedef enum RTK_BASELINE_COORDINATE_SYSTEM
+{
+   RTK_BASELINE_COORDINATE_SYSTEM_ECEF=0, /* Earth-centered, Earth-fixed | */
+   RTK_BASELINE_COORDINATE_SYSTEM_NED=1, /* North, East, Down | */
+   RTK_BASELINE_COORDINATE_SYSTEM_ENUM_END=2, /*  | */
+} RTK_BASELINE_COORDINATE_SYSTEM;
 #endif
 
 // MAVLINK VERSION
