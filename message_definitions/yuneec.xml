@@ -55,6 +55,12 @@
         <param index="6">Empty</param>
         <param index="7">Empty</param>
       </entry>
+      <entry value="32773" name="VISION_MODULES_VERSION">
+        <description>Request vision modules version information.</description>
+        <param index="1">1: Request optical flow version</param>
+        <param index="2">1: Request realsense version</param>
+        <param index="3">Reserved (all remaining params)</param>
+      </entry>
     </enum>
     <enum name="FLIGHT_TASK">
       <description> The advanced function mode.</description>
@@ -677,6 +683,13 @@
       <field type="float" name="param5">Parameter 5, as defined by TASK_CMD enum.</field>
       <field type="float" name="param6">Parameter 6, as defined by TASK_CMD enum.</field>
       <field type="float" name="param7">Parameter 7, as defined by TASK_CMD enum.</field>
+    </message>
+    <message id="4006" name="VISION_MODULES_VERSIONS">
+      <description>Vision modules versions message.</description>
+      <field type="uint32_t" name="optical_software_version">Optical flow software version</field>
+      <field type="uint32_t" name="optical_hardware_version">Optical flow hardware version</field>
+      <field type="uint32_t" name="realsense_software_version">Realsense software version</field>
+      <field type="uint32_t" name="realsense_hardware_version">Realsense hardware version</field>
     </message>
     <message id="5000" name="GIMBAL_CONTROL">
       <description>Gimbal control packet from flight control.</description>
