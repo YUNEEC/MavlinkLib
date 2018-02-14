@@ -657,6 +657,13 @@
       <description>Gimbal bootload data packet(133 bytes).</description>
       <field type="int8_t[133]" name="bootload_data">gimbal bootload data.</field>
     </message>
+    <message id="5004" name="GIMBAL_ADDITIONAL_ATTITUDE">
+      <description>Gimbal additional attitude data required by the camera.</description>
+      <field type="uint32_t" name="time_boot_ms">timesmap</field>
+      <field type="float" name="roll_relative">Roll angle relative to vehicle in degrees.</field>
+      <field type="float" name="pitch_relative">Pitch angle relative to vehicle in degrees.</field>
+      <field type="float" name="yaw_global">Global yaw angle estimate in degrees.</field>
+    </message>
     <message id="6000" name="UPDATE_STATUS_FEEDBACK">
       <description>Update status feedback for modules.</description>
       <field type="uint8_t" name="target_system">System ID</field>
