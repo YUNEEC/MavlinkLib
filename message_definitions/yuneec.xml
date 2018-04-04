@@ -556,6 +556,61 @@
         <description>0xA7 Host gets sonstant information of battery.</description>
       </entry>
     </enum>
+    <!-- ESTIMATOR_MODE_FLAGS - these values should be bit-and with the messages flags field to know if flag has been set -->
+    <enum name="ESTIMATOR_MODE_FLAGS">
+      <description>Flags in EKF_STATUS message</description>
+      <entry value="1" name="ESTIMATOR_TILT_ALIGNMENT">
+        <description>True if the filter tilt alignment is complete</description>
+      </entry>
+      <entry value="2" name="ESTIMATOR_YAW_ALIGNMENT">
+        <description>True if the filter yaw alignment is complete</description>
+      </entry>
+      <entry value="4" name="ESTIMATOR_GPS">
+        <description>True if GPS measurements are being fused</description>
+      </entry>
+      <entry value="8" name="ESTIMATOR_OPTICAL_FLOW">
+        <description>True if optical flow measurements are being fused</description>
+      </entry>
+      <entry value="16" name="ESTIMATOR_MAGNETIC_YAW">
+        <description>True if a simple magnetic yaw heading is being fused</description>
+      </entry>
+      <entry value="32" name="ESTIMATOR_MAGNETOMETER">
+        <description>True if 3-axis magnetometer measurement are being fused</description>
+      </entry>
+      <entry value="64" name="ESTIMATOR_SYNTHETIC_MAGNETIC">
+        <description>True if synthetic magnetic declination measurements are being fused</description>
+      </entry>
+      <entry value="128" name="ESTIMATOR_VEHICLE_AIRBORNE">
+        <description>True when the vehicle is airborne</description>
+      </entry>
+      <entry value="256" name="ESTIMATOR_WIND_VELOCITY">
+        <description>True when wind velocity is being estimated</description>
+      </entry>
+      <entry value="512" name="ESTIMATOR_BARO_ALT">
+        <description>True when baro height is being fused as a primary height reference</description>
+      </entry>
+      <entry value="1024" name="ESTIMATOR_RANGE_DISTANCE">
+        <description>True when range finder height is being fused as a primary height reference</description>
+      </entry>
+      <entry value="2048" name="ESTIMATOR_GPS_ALT">
+        <description>True when GPS height is being fused as a primary height reference</description>
+      </entry>
+      <entry value="8192" name="ESTIMATOR_LOCAL_POSITION_VISION">
+        <description>True when local position data from extern_al vision is being fused</description>
+      </entry>
+      <entry value="16384" name="ESTIMATOR_YAW_VISION">
+        <description>True when yaw data from external vision measurements is being fused</description>
+      </entry>
+      <entry value="32768" name="ESTIMATOR_ALT_VISION">
+        <description>True when height data from external vision measurements is being fused</description>
+      </entry>
+      <entry value="65536" name="ESTIMATOR_SYNTHETIC_SIDESLIP">
+        <description>True when synthetic sideslip measurements are being fused</description>
+      </entry>
+      <entry value="131072" name="ESTIMATOR_UPDATED_MAGNETOMETER">
+        <description>True when only the magnetic field states are updated by the magnetometer</description>
+      </entry>
+    </enum>
   </enums>
   <messages>
     <message id="4000" name="VISUAL_TRACKING">
@@ -623,6 +678,10 @@
       <field type="uint32_t" name="optical_hardware_version">Optical flow hardware version</field>
       <field type="uint32_t" name="realsense_software_version">Realsense software version</field>
       <field type="uint32_t" name="realsense_hardware_version">Realsense hardware version</field>
+    </message>
+    <message id="4007" name="ESTIMATOR_MODE_ADDITIONS">
+      <description>Integer bitmask indicating which valid data of EKF is fused. This message is added until proper support is added upstream.</description>
+      <field type="uint32_t" name="estimator_mode">Estimator mode flags according to the ESTIMATOR_MODE_FLAGS enum.</field>
     </message>
     <message id="5000" name="GIMBAL_CONTROL">
       <description>Gimbal control packet from flight control.</description>
