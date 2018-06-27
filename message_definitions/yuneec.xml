@@ -727,8 +727,8 @@
       <description>Update status feedback for modules.</description>
       <field type="uint8_t" name="target_system">System ID</field>
       <field type="uint8_t" name="target_component">Component ID</field>
-      <field type="uint8_t" name="module_name">update module name, 1 is autopilot, 2 is gimbal, 3 is camera, 4 is remote controller, 5 is opticalflow</field>
-      <field type="uint8_t" name="update_status">update status, 0 is ready, 1 is in progress, 2 is finished</field>
+      <field type="uint8_t" name="module_name">update module name, 1 is autopilot, 2 is gimbal, 3 is camera, 4 is remote controller, 5 is opticalflow, 6 is OTA bundle firmware</field>
+      <field type="uint8_t" name="update_status">update status, 0 is ready, 1 is in progress, 2 is finished, 3 is failed</field>
       <field type="uint8_t" name="progress">update progress(percentage), value range 0-100, the real value is progress*0.01f</field>
     </message>
     <message id="7050" name="MAV_RC_CMD">

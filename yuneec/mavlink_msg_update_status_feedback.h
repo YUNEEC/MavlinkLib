@@ -7,8 +7,8 @@ MAVPACKED(
 typedef struct __mavlink_update_status_feedback_t {
  uint8_t target_system; /*< System ID*/
  uint8_t target_component; /*< Component ID*/
- uint8_t module_name; /*< update module name, 1 is autopilot, 2 is gimbal, 3 is camera, 4 is remote controller, 5 is opticalflow*/
- uint8_t update_status; /*< update status, 0 is ready, 1 is in progress, 2 is finished*/
+ uint8_t module_name; /*< update module name, 1 is autopilot, 2 is gimbal, 3 is camera, 4 is remote controller, 5 is opticalflow, 6 is OTA bundle firmware*/
+ uint8_t update_status; /*< update status, 0 is ready, 1 is in progress, 2 is finished, 3 is failed*/
  uint8_t progress; /*< update progress(percentage), value range 0-100, the real value is progress*0.01f*/
 }) mavlink_update_status_feedback_t;
 
@@ -55,8 +55,8 @@ typedef struct __mavlink_update_status_feedback_t {
  *
  * @param target_system System ID
  * @param target_component Component ID
- * @param module_name update module name, 1 is autopilot, 2 is gimbal, 3 is camera, 4 is remote controller, 5 is opticalflow
- * @param update_status update status, 0 is ready, 1 is in progress, 2 is finished
+ * @param module_name update module name, 1 is autopilot, 2 is gimbal, 3 is camera, 4 is remote controller, 5 is opticalflow, 6 is OTA bundle firmware
+ * @param update_status update status, 0 is ready, 1 is in progress, 2 is finished, 3 is failed
  * @param progress update progress(percentage), value range 0-100, the real value is progress*0.01f
  * @return length of the message in bytes (excluding serial stream start sign)
  */
@@ -95,8 +95,8 @@ static inline uint16_t mavlink_msg_update_status_feedback_pack(uint8_t system_id
  * @param msg The MAVLink message to compress the data into
  * @param target_system System ID
  * @param target_component Component ID
- * @param module_name update module name, 1 is autopilot, 2 is gimbal, 3 is camera, 4 is remote controller, 5 is opticalflow
- * @param update_status update status, 0 is ready, 1 is in progress, 2 is finished
+ * @param module_name update module name, 1 is autopilot, 2 is gimbal, 3 is camera, 4 is remote controller, 5 is opticalflow, 6 is OTA bundle firmware
+ * @param update_status update status, 0 is ready, 1 is in progress, 2 is finished, 3 is failed
  * @param progress update progress(percentage), value range 0-100, the real value is progress*0.01f
  * @return length of the message in bytes (excluding serial stream start sign)
  */
@@ -161,8 +161,8 @@ static inline uint16_t mavlink_msg_update_status_feedback_encode_chan(uint8_t sy
  *
  * @param target_system System ID
  * @param target_component Component ID
- * @param module_name update module name, 1 is autopilot, 2 is gimbal, 3 is camera, 4 is remote controller, 5 is opticalflow
- * @param update_status update status, 0 is ready, 1 is in progress, 2 is finished
+ * @param module_name update module name, 1 is autopilot, 2 is gimbal, 3 is camera, 4 is remote controller, 5 is opticalflow, 6 is OTA bundle firmware
+ * @param update_status update status, 0 is ready, 1 is in progress, 2 is finished, 3 is failed
  * @param progress update progress(percentage), value range 0-100, the real value is progress*0.01f
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
@@ -264,7 +264,7 @@ static inline uint8_t mavlink_msg_update_status_feedback_get_target_component(co
 /**
  * @brief Get field module_name from update_status_feedback message
  *
- * @return update module name, 1 is autopilot, 2 is gimbal, 3 is camera, 4 is remote controller, 5 is opticalflow
+ * @return update module name, 1 is autopilot, 2 is gimbal, 3 is camera, 4 is remote controller, 5 is opticalflow, 6 is OTA bundle firmware
  */
 static inline uint8_t mavlink_msg_update_status_feedback_get_module_name(const mavlink_message_t* msg)
 {
@@ -274,7 +274,7 @@ static inline uint8_t mavlink_msg_update_status_feedback_get_module_name(const m
 /**
  * @brief Get field update_status from update_status_feedback message
  *
- * @return update status, 0 is ready, 1 is in progress, 2 is finished
+ * @return update status, 0 is ready, 1 is in progress, 2 is finished, 3 is failed
  */
 static inline uint8_t mavlink_msg_update_status_feedback_get_update_status(const mavlink_message_t* msg)
 {
