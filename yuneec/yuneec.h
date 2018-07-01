@@ -183,6 +183,7 @@ typedef enum MAV_CMD
    MAV_CMD_SMART_BATTERY=32769, /* Command of host to battery. |Command ID for smart battery, as define by enum COMMAND_LIST| Communication status, 0 indicates not work, 1 indicates work.| Synchronize status, 0 indicates not asynchronous, 1 indicates synchronous.| Flying check, 0 indicates not flying, 1 indicates flying.| Empty| Empty| Empty|  */
    MAV_CMD_OPTICAL_FLOW_UPGRADE=32770, /* Start the optical flow upgrade command. |=0,Stop the optical flow upgrade;=1,Start the optical flow upgrade| Empty| Empty| Empty| Empty| Empty| Empty|  */
    MAV_CMD_TEAM_MODE=32771, /* Switch Team Mode ON/OFF; OFF: One remote controls aircraft and gimbal; ON: The master remote controls the aircraft, the slave remote controls the gimbal. |0 = OFF Team Mode; 1 = ON Team Mode.| Empty| Empty| Empty| Empty| Empty| Empty|  */
+   MAV_CMD_EMERGENCY_BRAKE=32772, /* Emergency brake command. The drone will emergency braking without any acceleration limit. |Empty| Empty| Empty| Empty| Empty| Empty| Empty|  */
    VISION_MODULES_VERSION=32773, /* Request vision modules version information. |1: Request optical flow version| 1: Request realsense version| Reserved (all remaining params)|  */
    MAV_CMD_ENUM_END=32774, /*  | */
 } MAV_CMD;

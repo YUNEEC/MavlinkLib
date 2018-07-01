@@ -45,6 +45,16 @@
         <param index="6">Empty</param>
         <param index="7">Empty</param>
       </entry>
+      <entry value="32772" name="MAV_CMD_EMERGENCY_BRAKE">
+        <description>Emergency brake command. The drone will emergency braking without any acceleration limit.</description>
+        <param index="1">Empty</param>
+        <param index="2">Empty</param>
+        <param index="3">Empty</param>
+        <param index="4">Empty</param>
+        <param index="5">Empty</param>
+        <param index="6">Empty</param>
+        <param index="7">Empty</param>
+      </entry>
       <entry value="32773" name="VISION_MODULES_VERSION">
         <description>Request vision modules version information.</description>
         <param index="1">1: Request optical flow version</param>
