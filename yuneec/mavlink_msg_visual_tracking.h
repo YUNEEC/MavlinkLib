@@ -5,14 +5,14 @@
 
 MAVPACKED(
 typedef struct __mavlink_visual_tracking_t {
- uint64_t time_usec; /*< Timestamp (microseconds since boot or Unix epoch).*/
- float width; /*< The width of the visual target (no unit).*/
- float height; /*< The height of the visual target (no unit).*/
- float x; /*< Upper left coordinate value x (normalized, no unit).*/
- float y; /*< Upper left coordinate value y (normalized, no unit).*/
- float center_x; /*< Center coordinate value x (normalized, no unit).*/
- float center_y; /*< Center coordinate value y (normalized, no unit).*/
- uint8_t track_quality; /*< = 0: abnormal or lost; = 1: weak signal ; = 2: signal health.*/
+ uint64_t time_usec; /*<  Timestamp (microseconds since boot or Unix epoch).*/
+ float width; /*<  The width of the visual target (no unit).*/
+ float height; /*<  The height of the visual target (no unit).*/
+ float x; /*<  Upper left coordinate value x (normalized, no unit).*/
+ float y; /*<  Upper left coordinate value y (normalized, no unit).*/
+ float center_x; /*<  Center coordinate value x (normalized, no unit).*/
+ float center_y; /*<  Center coordinate value y (normalized, no unit).*/
+ uint8_t track_quality; /*<  = 0: abnormal or lost; = 1: weak signal ; = 2: signal health.*/
 }) mavlink_visual_tracking_t;
 
 #define MAVLINK_MSG_ID_VISUAL_TRACKING_LEN 33
@@ -62,14 +62,14 @@ typedef struct __mavlink_visual_tracking_t {
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param msg The MAVLink message to compress the data into
  *
- * @param time_usec Timestamp (microseconds since boot or Unix epoch).
- * @param track_quality = 0: abnormal or lost; = 1: weak signal ; = 2: signal health.
- * @param width The width of the visual target (no unit).
- * @param height The height of the visual target (no unit).
- * @param x Upper left coordinate value x (normalized, no unit).
- * @param y Upper left coordinate value y (normalized, no unit).
- * @param center_x Center coordinate value x (normalized, no unit).
- * @param center_y Center coordinate value y (normalized, no unit).
+ * @param time_usec  Timestamp (microseconds since boot or Unix epoch).
+ * @param track_quality  = 0: abnormal or lost; = 1: weak signal ; = 2: signal health.
+ * @param width  The width of the visual target (no unit).
+ * @param height  The height of the visual target (no unit).
+ * @param x  Upper left coordinate value x (normalized, no unit).
+ * @param y  Upper left coordinate value y (normalized, no unit).
+ * @param center_x  Center coordinate value x (normalized, no unit).
+ * @param center_y  Center coordinate value y (normalized, no unit).
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_visual_tracking_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
@@ -111,14 +111,14 @@ static inline uint16_t mavlink_msg_visual_tracking_pack(uint8_t system_id, uint8
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param chan The MAVLink channel this message will be sent over
  * @param msg The MAVLink message to compress the data into
- * @param time_usec Timestamp (microseconds since boot or Unix epoch).
- * @param track_quality = 0: abnormal or lost; = 1: weak signal ; = 2: signal health.
- * @param width The width of the visual target (no unit).
- * @param height The height of the visual target (no unit).
- * @param x Upper left coordinate value x (normalized, no unit).
- * @param y Upper left coordinate value y (normalized, no unit).
- * @param center_x Center coordinate value x (normalized, no unit).
- * @param center_y Center coordinate value y (normalized, no unit).
+ * @param time_usec  Timestamp (microseconds since boot or Unix epoch).
+ * @param track_quality  = 0: abnormal or lost; = 1: weak signal ; = 2: signal health.
+ * @param width  The width of the visual target (no unit).
+ * @param height  The height of the visual target (no unit).
+ * @param x  Upper left coordinate value x (normalized, no unit).
+ * @param y  Upper left coordinate value y (normalized, no unit).
+ * @param center_x  Center coordinate value x (normalized, no unit).
+ * @param center_y  Center coordinate value y (normalized, no unit).
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_visual_tracking_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
@@ -186,14 +186,14 @@ static inline uint16_t mavlink_msg_visual_tracking_encode_chan(uint8_t system_id
  * @brief Send a visual_tracking message
  * @param chan MAVLink channel to send the message
  *
- * @param time_usec Timestamp (microseconds since boot or Unix epoch).
- * @param track_quality = 0: abnormal or lost; = 1: weak signal ; = 2: signal health.
- * @param width The width of the visual target (no unit).
- * @param height The height of the visual target (no unit).
- * @param x Upper left coordinate value x (normalized, no unit).
- * @param y Upper left coordinate value y (normalized, no unit).
- * @param center_x Center coordinate value x (normalized, no unit).
- * @param center_y Center coordinate value y (normalized, no unit).
+ * @param time_usec  Timestamp (microseconds since boot or Unix epoch).
+ * @param track_quality  = 0: abnormal or lost; = 1: weak signal ; = 2: signal health.
+ * @param width  The width of the visual target (no unit).
+ * @param height  The height of the visual target (no unit).
+ * @param x  Upper left coordinate value x (normalized, no unit).
+ * @param y  Upper left coordinate value y (normalized, no unit).
+ * @param center_x  Center coordinate value x (normalized, no unit).
+ * @param center_y  Center coordinate value y (normalized, no unit).
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
@@ -286,7 +286,7 @@ static inline void mavlink_msg_visual_tracking_send_buf(mavlink_message_t *msgbu
 /**
  * @brief Get field time_usec from visual_tracking message
  *
- * @return Timestamp (microseconds since boot or Unix epoch).
+ * @return  Timestamp (microseconds since boot or Unix epoch).
  */
 static inline uint64_t mavlink_msg_visual_tracking_get_time_usec(const mavlink_message_t* msg)
 {
@@ -296,7 +296,7 @@ static inline uint64_t mavlink_msg_visual_tracking_get_time_usec(const mavlink_m
 /**
  * @brief Get field track_quality from visual_tracking message
  *
- * @return = 0: abnormal or lost; = 1: weak signal ; = 2: signal health.
+ * @return  = 0: abnormal or lost; = 1: weak signal ; = 2: signal health.
  */
 static inline uint8_t mavlink_msg_visual_tracking_get_track_quality(const mavlink_message_t* msg)
 {
@@ -306,7 +306,7 @@ static inline uint8_t mavlink_msg_visual_tracking_get_track_quality(const mavlin
 /**
  * @brief Get field width from visual_tracking message
  *
- * @return The width of the visual target (no unit).
+ * @return  The width of the visual target (no unit).
  */
 static inline float mavlink_msg_visual_tracking_get_width(const mavlink_message_t* msg)
 {
@@ -316,7 +316,7 @@ static inline float mavlink_msg_visual_tracking_get_width(const mavlink_message_
 /**
  * @brief Get field height from visual_tracking message
  *
- * @return The height of the visual target (no unit).
+ * @return  The height of the visual target (no unit).
  */
 static inline float mavlink_msg_visual_tracking_get_height(const mavlink_message_t* msg)
 {
@@ -326,7 +326,7 @@ static inline float mavlink_msg_visual_tracking_get_height(const mavlink_message
 /**
  * @brief Get field x from visual_tracking message
  *
- * @return Upper left coordinate value x (normalized, no unit).
+ * @return  Upper left coordinate value x (normalized, no unit).
  */
 static inline float mavlink_msg_visual_tracking_get_x(const mavlink_message_t* msg)
 {
@@ -336,7 +336,7 @@ static inline float mavlink_msg_visual_tracking_get_x(const mavlink_message_t* m
 /**
  * @brief Get field y from visual_tracking message
  *
- * @return Upper left coordinate value y (normalized, no unit).
+ * @return  Upper left coordinate value y (normalized, no unit).
  */
 static inline float mavlink_msg_visual_tracking_get_y(const mavlink_message_t* msg)
 {
@@ -346,7 +346,7 @@ static inline float mavlink_msg_visual_tracking_get_y(const mavlink_message_t* m
 /**
  * @brief Get field center_x from visual_tracking message
  *
- * @return Center coordinate value x (normalized, no unit).
+ * @return  Center coordinate value x (normalized, no unit).
  */
 static inline float mavlink_msg_visual_tracking_get_center_x(const mavlink_message_t* msg)
 {
@@ -356,7 +356,7 @@ static inline float mavlink_msg_visual_tracking_get_center_x(const mavlink_messa
 /**
  * @brief Get field center_y from visual_tracking message
  *
- * @return Center coordinate value y (normalized, no unit).
+ * @return  Center coordinate value y (normalized, no unit).
  */
 static inline float mavlink_msg_visual_tracking_get_center_y(const mavlink_message_t* msg)
 {

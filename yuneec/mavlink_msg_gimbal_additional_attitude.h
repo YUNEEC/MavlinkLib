@@ -5,10 +5,10 @@
 
 MAVPACKED(
 typedef struct __mavlink_gimbal_additional_attitude_t {
- uint32_t time_boot_ms; /*< timesmap*/
- float roll_relative; /*< Roll angle relative to vehicle in degrees.*/
- float pitch_relative; /*< Pitch angle relative to vehicle in degrees.*/
- float yaw_global; /*< Global yaw angle estimate in degrees.*/
+ uint32_t time_boot_ms; /*<  timesmap*/
+ float roll_relative; /*<  Roll angle relative to vehicle in degrees.*/
+ float pitch_relative; /*<  Pitch angle relative to vehicle in degrees.*/
+ float yaw_global; /*<  Global yaw angle estimate in degrees.*/
 }) mavlink_gimbal_additional_attitude_t;
 
 #define MAVLINK_MSG_ID_GIMBAL_ADDITIONAL_ATTITUDE_LEN 16
@@ -50,10 +50,10 @@ typedef struct __mavlink_gimbal_additional_attitude_t {
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param msg The MAVLink message to compress the data into
  *
- * @param time_boot_ms timesmap
- * @param roll_relative Roll angle relative to vehicle in degrees.
- * @param pitch_relative Pitch angle relative to vehicle in degrees.
- * @param yaw_global Global yaw angle estimate in degrees.
+ * @param time_boot_ms  timesmap
+ * @param roll_relative  Roll angle relative to vehicle in degrees.
+ * @param pitch_relative  Pitch angle relative to vehicle in degrees.
+ * @param yaw_global  Global yaw angle estimate in degrees.
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_gimbal_additional_attitude_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
@@ -87,10 +87,10 @@ static inline uint16_t mavlink_msg_gimbal_additional_attitude_pack(uint8_t syste
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param chan The MAVLink channel this message will be sent over
  * @param msg The MAVLink message to compress the data into
- * @param time_boot_ms timesmap
- * @param roll_relative Roll angle relative to vehicle in degrees.
- * @param pitch_relative Pitch angle relative to vehicle in degrees.
- * @param yaw_global Global yaw angle estimate in degrees.
+ * @param time_boot_ms  timesmap
+ * @param roll_relative  Roll angle relative to vehicle in degrees.
+ * @param pitch_relative  Pitch angle relative to vehicle in degrees.
+ * @param yaw_global  Global yaw angle estimate in degrees.
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_gimbal_additional_attitude_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
@@ -150,10 +150,10 @@ static inline uint16_t mavlink_msg_gimbal_additional_attitude_encode_chan(uint8_
  * @brief Send a gimbal_additional_attitude message
  * @param chan MAVLink channel to send the message
  *
- * @param time_boot_ms timesmap
- * @param roll_relative Roll angle relative to vehicle in degrees.
- * @param pitch_relative Pitch angle relative to vehicle in degrees.
- * @param yaw_global Global yaw angle estimate in degrees.
+ * @param time_boot_ms  timesmap
+ * @param roll_relative  Roll angle relative to vehicle in degrees.
+ * @param pitch_relative  Pitch angle relative to vehicle in degrees.
+ * @param yaw_global  Global yaw angle estimate in degrees.
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
@@ -230,7 +230,7 @@ static inline void mavlink_msg_gimbal_additional_attitude_send_buf(mavlink_messa
 /**
  * @brief Get field time_boot_ms from gimbal_additional_attitude message
  *
- * @return timesmap
+ * @return  timesmap
  */
 static inline uint32_t mavlink_msg_gimbal_additional_attitude_get_time_boot_ms(const mavlink_message_t* msg)
 {
@@ -240,7 +240,7 @@ static inline uint32_t mavlink_msg_gimbal_additional_attitude_get_time_boot_ms(c
 /**
  * @brief Get field roll_relative from gimbal_additional_attitude message
  *
- * @return Roll angle relative to vehicle in degrees.
+ * @return  Roll angle relative to vehicle in degrees.
  */
 static inline float mavlink_msg_gimbal_additional_attitude_get_roll_relative(const mavlink_message_t* msg)
 {
@@ -250,7 +250,7 @@ static inline float mavlink_msg_gimbal_additional_attitude_get_roll_relative(con
 /**
  * @brief Get field pitch_relative from gimbal_additional_attitude message
  *
- * @return Pitch angle relative to vehicle in degrees.
+ * @return  Pitch angle relative to vehicle in degrees.
  */
 static inline float mavlink_msg_gimbal_additional_attitude_get_pitch_relative(const mavlink_message_t* msg)
 {
@@ -260,7 +260,7 @@ static inline float mavlink_msg_gimbal_additional_attitude_get_pitch_relative(co
 /**
  * @brief Get field yaw_global from gimbal_additional_attitude message
  *
- * @return Global yaw angle estimate in degrees.
+ * @return  Global yaw angle estimate in degrees.
  */
 static inline float mavlink_msg_gimbal_additional_attitude_get_yaw_global(const mavlink_message_t* msg)
 {

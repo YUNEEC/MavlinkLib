@@ -5,7 +5,7 @@
 
 MAVPACKED(
 typedef struct __mavlink_estimator_mode_additions_t {
- uint32_t estimator_mode; /*< Estimator mode flags according to the ESTIMATOR_MODE_FLAGS enum.*/
+ uint32_t estimator_mode; /*<  Estimator mode flags according to the ESTIMATOR_MODE_FLAGS enum.*/
 }) mavlink_estimator_mode_additions_t;
 
 #define MAVLINK_MSG_ID_ESTIMATOR_MODE_ADDITIONS_LEN 4
@@ -41,7 +41,7 @@ typedef struct __mavlink_estimator_mode_additions_t {
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param msg The MAVLink message to compress the data into
  *
- * @param estimator_mode Estimator mode flags according to the ESTIMATOR_MODE_FLAGS enum.
+ * @param estimator_mode  Estimator mode flags according to the ESTIMATOR_MODE_FLAGS enum.
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_estimator_mode_additions_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
@@ -69,7 +69,7 @@ static inline uint16_t mavlink_msg_estimator_mode_additions_pack(uint8_t system_
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param chan The MAVLink channel this message will be sent over
  * @param msg The MAVLink message to compress the data into
- * @param estimator_mode Estimator mode flags according to the ESTIMATOR_MODE_FLAGS enum.
+ * @param estimator_mode  Estimator mode flags according to the ESTIMATOR_MODE_FLAGS enum.
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_estimator_mode_additions_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
@@ -123,7 +123,7 @@ static inline uint16_t mavlink_msg_estimator_mode_additions_encode_chan(uint8_t 
  * @brief Send a estimator_mode_additions message
  * @param chan MAVLink channel to send the message
  *
- * @param estimator_mode Estimator mode flags according to the ESTIMATOR_MODE_FLAGS enum.
+ * @param estimator_mode  Estimator mode flags according to the ESTIMATOR_MODE_FLAGS enum.
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
@@ -188,7 +188,7 @@ static inline void mavlink_msg_estimator_mode_additions_send_buf(mavlink_message
 /**
  * @brief Get field estimator_mode from estimator_mode_additions message
  *
- * @return Estimator mode flags according to the ESTIMATOR_MODE_FLAGS enum.
+ * @return  Estimator mode flags according to the ESTIMATOR_MODE_FLAGS enum.
  */
 static inline uint32_t mavlink_msg_estimator_mode_additions_get_estimator_mode(const mavlink_message_t* msg)
 {

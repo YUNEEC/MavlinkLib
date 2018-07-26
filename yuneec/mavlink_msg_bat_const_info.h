@@ -5,14 +5,14 @@
 
 MAVPACKED(
 typedef struct __mavlink_bat_const_info_t {
- uint32_t firmwareVersion; /*< firmwareVersion. version 101 means 1.01*/
- uint32_t bootloaderVersion; /*< bootloaderVersion.version 101 means 1.01*/
- uint32_t hardwareVersion; /*< hardwareVersion.version 101 means 1.01*/
- uint32_t firmwareSize; /*< firmwareSize.the value of application in bytes*/
- uint16_t designCap; /*< The battery design capacity in units mAh*/
- uint8_t MCUType[11]; /*< MCU type.*/
- uint8_t companyOfBat[32]; /*< Name of our company*/
- uint8_t nCell; /*< The Cells of battery*/
+ uint32_t firmwareVersion; /*<  firmwareVersion. version 101 means 1.01*/
+ uint32_t bootloaderVersion; /*<  bootloaderVersion.version 101 means 1.01*/
+ uint32_t hardwareVersion; /*<  hardwareVersion.version 101 means 1.01*/
+ uint32_t firmwareSize; /*<  firmwareSize.the value of application in bytes*/
+ uint16_t designCap; /*< [mAh] The battery design capacity in units mAh*/
+ uint8_t MCUType[11]; /*<  MCU type.*/
+ uint8_t companyOfBat[32]; /*<  Name of our company*/
+ uint8_t nCell; /*<  The Cells of battery*/
 }) mavlink_bat_const_info_t;
 
 #define MAVLINK_MSG_ID_BAT_CONST_INFO_LEN 62
@@ -63,14 +63,14 @@ typedef struct __mavlink_bat_const_info_t {
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param msg The MAVLink message to compress the data into
  *
- * @param firmwareVersion firmwareVersion. version 101 means 1.01
- * @param bootloaderVersion bootloaderVersion.version 101 means 1.01
- * @param hardwareVersion hardwareVersion.version 101 means 1.01
- * @param firmwareSize firmwareSize.the value of application in bytes
- * @param MCUType MCU type.
- * @param companyOfBat Name of our company
- * @param nCell The Cells of battery
- * @param designCap The battery design capacity in units mAh
+ * @param firmwareVersion  firmwareVersion. version 101 means 1.01
+ * @param bootloaderVersion  bootloaderVersion.version 101 means 1.01
+ * @param hardwareVersion  hardwareVersion.version 101 means 1.01
+ * @param firmwareSize  firmwareSize.the value of application in bytes
+ * @param MCUType  MCU type.
+ * @param companyOfBat  Name of our company
+ * @param nCell  The Cells of battery
+ * @param designCap [mAh] The battery design capacity in units mAh
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_bat_const_info_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
@@ -110,14 +110,14 @@ static inline uint16_t mavlink_msg_bat_const_info_pack(uint8_t system_id, uint8_
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param chan The MAVLink channel this message will be sent over
  * @param msg The MAVLink message to compress the data into
- * @param firmwareVersion firmwareVersion. version 101 means 1.01
- * @param bootloaderVersion bootloaderVersion.version 101 means 1.01
- * @param hardwareVersion hardwareVersion.version 101 means 1.01
- * @param firmwareSize firmwareSize.the value of application in bytes
- * @param MCUType MCU type.
- * @param companyOfBat Name of our company
- * @param nCell The Cells of battery
- * @param designCap The battery design capacity in units mAh
+ * @param firmwareVersion  firmwareVersion. version 101 means 1.01
+ * @param bootloaderVersion  bootloaderVersion.version 101 means 1.01
+ * @param hardwareVersion  hardwareVersion.version 101 means 1.01
+ * @param firmwareSize  firmwareSize.the value of application in bytes
+ * @param MCUType  MCU type.
+ * @param companyOfBat  Name of our company
+ * @param nCell  The Cells of battery
+ * @param designCap [mAh] The battery design capacity in units mAh
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_bat_const_info_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
@@ -183,14 +183,14 @@ static inline uint16_t mavlink_msg_bat_const_info_encode_chan(uint8_t system_id,
  * @brief Send a bat_const_info message
  * @param chan MAVLink channel to send the message
  *
- * @param firmwareVersion firmwareVersion. version 101 means 1.01
- * @param bootloaderVersion bootloaderVersion.version 101 means 1.01
- * @param hardwareVersion hardwareVersion.version 101 means 1.01
- * @param firmwareSize firmwareSize.the value of application in bytes
- * @param MCUType MCU type.
- * @param companyOfBat Name of our company
- * @param nCell The Cells of battery
- * @param designCap The battery design capacity in units mAh
+ * @param firmwareVersion  firmwareVersion. version 101 means 1.01
+ * @param bootloaderVersion  bootloaderVersion.version 101 means 1.01
+ * @param hardwareVersion  hardwareVersion.version 101 means 1.01
+ * @param firmwareSize  firmwareSize.the value of application in bytes
+ * @param MCUType  MCU type.
+ * @param companyOfBat  Name of our company
+ * @param nCell  The Cells of battery
+ * @param designCap [mAh] The battery design capacity in units mAh
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
@@ -279,7 +279,7 @@ static inline void mavlink_msg_bat_const_info_send_buf(mavlink_message_t *msgbuf
 /**
  * @brief Get field firmwareVersion from bat_const_info message
  *
- * @return firmwareVersion. version 101 means 1.01
+ * @return  firmwareVersion. version 101 means 1.01
  */
 static inline uint32_t mavlink_msg_bat_const_info_get_firmwareVersion(const mavlink_message_t* msg)
 {
@@ -289,7 +289,7 @@ static inline uint32_t mavlink_msg_bat_const_info_get_firmwareVersion(const mavl
 /**
  * @brief Get field bootloaderVersion from bat_const_info message
  *
- * @return bootloaderVersion.version 101 means 1.01
+ * @return  bootloaderVersion.version 101 means 1.01
  */
 static inline uint32_t mavlink_msg_bat_const_info_get_bootloaderVersion(const mavlink_message_t* msg)
 {
@@ -299,7 +299,7 @@ static inline uint32_t mavlink_msg_bat_const_info_get_bootloaderVersion(const ma
 /**
  * @brief Get field hardwareVersion from bat_const_info message
  *
- * @return hardwareVersion.version 101 means 1.01
+ * @return  hardwareVersion.version 101 means 1.01
  */
 static inline uint32_t mavlink_msg_bat_const_info_get_hardwareVersion(const mavlink_message_t* msg)
 {
@@ -309,7 +309,7 @@ static inline uint32_t mavlink_msg_bat_const_info_get_hardwareVersion(const mavl
 /**
  * @brief Get field firmwareSize from bat_const_info message
  *
- * @return firmwareSize.the value of application in bytes
+ * @return  firmwareSize.the value of application in bytes
  */
 static inline uint32_t mavlink_msg_bat_const_info_get_firmwareSize(const mavlink_message_t* msg)
 {
@@ -319,7 +319,7 @@ static inline uint32_t mavlink_msg_bat_const_info_get_firmwareSize(const mavlink
 /**
  * @brief Get field MCUType from bat_const_info message
  *
- * @return MCU type.
+ * @return  MCU type.
  */
 static inline uint16_t mavlink_msg_bat_const_info_get_MCUType(const mavlink_message_t* msg, uint8_t *MCUType)
 {
@@ -329,7 +329,7 @@ static inline uint16_t mavlink_msg_bat_const_info_get_MCUType(const mavlink_mess
 /**
  * @brief Get field companyOfBat from bat_const_info message
  *
- * @return Name of our company
+ * @return  Name of our company
  */
 static inline uint16_t mavlink_msg_bat_const_info_get_companyOfBat(const mavlink_message_t* msg, uint8_t *companyOfBat)
 {
@@ -339,7 +339,7 @@ static inline uint16_t mavlink_msg_bat_const_info_get_companyOfBat(const mavlink
 /**
  * @brief Get field nCell from bat_const_info message
  *
- * @return The Cells of battery
+ * @return  The Cells of battery
  */
 static inline uint8_t mavlink_msg_bat_const_info_get_nCell(const mavlink_message_t* msg)
 {
@@ -349,7 +349,7 @@ static inline uint8_t mavlink_msg_bat_const_info_get_nCell(const mavlink_message
 /**
  * @brief Get field designCap from bat_const_info message
  *
- * @return The battery design capacity in units mAh
+ * @return [mAh] The battery design capacity in units mAh
  */
 static inline uint16_t mavlink_msg_bat_const_info_get_designCap(const mavlink_message_t* msg)
 {

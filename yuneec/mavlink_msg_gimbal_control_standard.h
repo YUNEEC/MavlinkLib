@@ -5,14 +5,14 @@
 
 MAVPACKED(
 typedef struct __mavlink_gimbal_control_standard_t {
- float yaw_channel; /*< yaw channel value,if yaw mode is angle ,this value is angle.if yaw mode is velocity,this value is velocity..*/
- float pitch_channel; /*<  pitch channel value,if pitch mode is angle ,this value is angle.if pitch mode is velocity,this value is velocity..*/
- float roll_channel; /*< roll channel value,if roll mode is angle ,this value is angle.if roll mode is velocity,this value is velocity..*/
- float drones_yawvelocity_desire; /*< drone's yaw desired anguler velocity.*/
- uint8_t priority; /*< the priority of this control packet.range is 1~253,1 is the highest and 253 is lowest;self-control is 1,the packet send by GIMBAL_CONTROL is 10,and the packet send by GIMBAL_DEBUGDATA is 20,the others number belong to user. */
- uint8_t yaw_mode; /*< yaw mode value,1 is follow_head,2 is follow_angle,3 is follow_velocity;4 is global_angle,5 is global_velocity.*/
- uint8_t pitch_mode; /*< pitch mode value,1 is follow_head,2 is follow_angle,3 is follow_velocity;4 is global_angle,5 is global_velocity.*/
- uint8_t roll_mode; /*< roll mode value,1 is follow_head,2 is follow_angle,3 is follow_velocity;4 is global_angle,5 is global_velocity.*/
+ float yaw_channel; /*<  yaw channel value,if yaw mode is angle ,this value is angle.if yaw mode is velocity,this value is velocity..*/
+ float pitch_channel; /*<   pitch channel value,if pitch mode is angle ,this value is angle.if pitch mode is velocity,this value is velocity..*/
+ float roll_channel; /*<  roll channel value,if roll mode is angle ,this value is angle.if roll mode is velocity,this value is velocity..*/
+ float drones_yawvelocity_desire; /*<  drone's yaw desired anguler velocity.*/
+ uint8_t priority; /*<  the priority of this control packet.range is 1~253,1 is the highest and 253 is lowest;self-control is 1,the packet send by GIMBAL_CONTROL is 10,and the packet send by GIMBAL_DEBUGDATA is 20,the others number belong to user. */
+ uint8_t yaw_mode; /*<  yaw mode value,1 is follow_head,2 is follow_angle,3 is follow_velocity;4 is global_angle,5 is global_velocity.*/
+ uint8_t pitch_mode; /*<  pitch mode value,1 is follow_head,2 is follow_angle,3 is follow_velocity;4 is global_angle,5 is global_velocity.*/
+ uint8_t roll_mode; /*<  roll mode value,1 is follow_head,2 is follow_angle,3 is follow_velocity;4 is global_angle,5 is global_velocity.*/
 }) mavlink_gimbal_control_standard_t;
 
 #define MAVLINK_MSG_ID_GIMBAL_CONTROL_STANDARD_LEN 20
@@ -62,14 +62,14 @@ typedef struct __mavlink_gimbal_control_standard_t {
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param msg The MAVLink message to compress the data into
  *
- * @param priority the priority of this control packet.range is 1~253,1 is the highest and 253 is lowest;self-control is 1,the packet send by GIMBAL_CONTROL is 10,and the packet send by GIMBAL_DEBUGDATA is 20,the others number belong to user. 
- * @param yaw_mode yaw mode value,1 is follow_head,2 is follow_angle,3 is follow_velocity;4 is global_angle,5 is global_velocity.
- * @param pitch_mode pitch mode value,1 is follow_head,2 is follow_angle,3 is follow_velocity;4 is global_angle,5 is global_velocity.
- * @param roll_mode roll mode value,1 is follow_head,2 is follow_angle,3 is follow_velocity;4 is global_angle,5 is global_velocity.
- * @param yaw_channel yaw channel value,if yaw mode is angle ,this value is angle.if yaw mode is velocity,this value is velocity..
- * @param pitch_channel  pitch channel value,if pitch mode is angle ,this value is angle.if pitch mode is velocity,this value is velocity..
- * @param roll_channel roll channel value,if roll mode is angle ,this value is angle.if roll mode is velocity,this value is velocity..
- * @param drones_yawvelocity_desire drone's yaw desired anguler velocity.
+ * @param priority  the priority of this control packet.range is 1~253,1 is the highest and 253 is lowest;self-control is 1,the packet send by GIMBAL_CONTROL is 10,and the packet send by GIMBAL_DEBUGDATA is 20,the others number belong to user. 
+ * @param yaw_mode  yaw mode value,1 is follow_head,2 is follow_angle,3 is follow_velocity;4 is global_angle,5 is global_velocity.
+ * @param pitch_mode  pitch mode value,1 is follow_head,2 is follow_angle,3 is follow_velocity;4 is global_angle,5 is global_velocity.
+ * @param roll_mode  roll mode value,1 is follow_head,2 is follow_angle,3 is follow_velocity;4 is global_angle,5 is global_velocity.
+ * @param yaw_channel  yaw channel value,if yaw mode is angle ,this value is angle.if yaw mode is velocity,this value is velocity..
+ * @param pitch_channel   pitch channel value,if pitch mode is angle ,this value is angle.if pitch mode is velocity,this value is velocity..
+ * @param roll_channel  roll channel value,if roll mode is angle ,this value is angle.if roll mode is velocity,this value is velocity..
+ * @param drones_yawvelocity_desire  drone's yaw desired anguler velocity.
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_gimbal_control_standard_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
@@ -111,14 +111,14 @@ static inline uint16_t mavlink_msg_gimbal_control_standard_pack(uint8_t system_i
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param chan The MAVLink channel this message will be sent over
  * @param msg The MAVLink message to compress the data into
- * @param priority the priority of this control packet.range is 1~253,1 is the highest and 253 is lowest;self-control is 1,the packet send by GIMBAL_CONTROL is 10,and the packet send by GIMBAL_DEBUGDATA is 20,the others number belong to user. 
- * @param yaw_mode yaw mode value,1 is follow_head,2 is follow_angle,3 is follow_velocity;4 is global_angle,5 is global_velocity.
- * @param pitch_mode pitch mode value,1 is follow_head,2 is follow_angle,3 is follow_velocity;4 is global_angle,5 is global_velocity.
- * @param roll_mode roll mode value,1 is follow_head,2 is follow_angle,3 is follow_velocity;4 is global_angle,5 is global_velocity.
- * @param yaw_channel yaw channel value,if yaw mode is angle ,this value is angle.if yaw mode is velocity,this value is velocity..
- * @param pitch_channel  pitch channel value,if pitch mode is angle ,this value is angle.if pitch mode is velocity,this value is velocity..
- * @param roll_channel roll channel value,if roll mode is angle ,this value is angle.if roll mode is velocity,this value is velocity..
- * @param drones_yawvelocity_desire drone's yaw desired anguler velocity.
+ * @param priority  the priority of this control packet.range is 1~253,1 is the highest and 253 is lowest;self-control is 1,the packet send by GIMBAL_CONTROL is 10,and the packet send by GIMBAL_DEBUGDATA is 20,the others number belong to user. 
+ * @param yaw_mode  yaw mode value,1 is follow_head,2 is follow_angle,3 is follow_velocity;4 is global_angle,5 is global_velocity.
+ * @param pitch_mode  pitch mode value,1 is follow_head,2 is follow_angle,3 is follow_velocity;4 is global_angle,5 is global_velocity.
+ * @param roll_mode  roll mode value,1 is follow_head,2 is follow_angle,3 is follow_velocity;4 is global_angle,5 is global_velocity.
+ * @param yaw_channel  yaw channel value,if yaw mode is angle ,this value is angle.if yaw mode is velocity,this value is velocity..
+ * @param pitch_channel   pitch channel value,if pitch mode is angle ,this value is angle.if pitch mode is velocity,this value is velocity..
+ * @param roll_channel  roll channel value,if roll mode is angle ,this value is angle.if roll mode is velocity,this value is velocity..
+ * @param drones_yawvelocity_desire  drone's yaw desired anguler velocity.
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_gimbal_control_standard_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
@@ -186,14 +186,14 @@ static inline uint16_t mavlink_msg_gimbal_control_standard_encode_chan(uint8_t s
  * @brief Send a gimbal_control_standard message
  * @param chan MAVLink channel to send the message
  *
- * @param priority the priority of this control packet.range is 1~253,1 is the highest and 253 is lowest;self-control is 1,the packet send by GIMBAL_CONTROL is 10,and the packet send by GIMBAL_DEBUGDATA is 20,the others number belong to user. 
- * @param yaw_mode yaw mode value,1 is follow_head,2 is follow_angle,3 is follow_velocity;4 is global_angle,5 is global_velocity.
- * @param pitch_mode pitch mode value,1 is follow_head,2 is follow_angle,3 is follow_velocity;4 is global_angle,5 is global_velocity.
- * @param roll_mode roll mode value,1 is follow_head,2 is follow_angle,3 is follow_velocity;4 is global_angle,5 is global_velocity.
- * @param yaw_channel yaw channel value,if yaw mode is angle ,this value is angle.if yaw mode is velocity,this value is velocity..
- * @param pitch_channel  pitch channel value,if pitch mode is angle ,this value is angle.if pitch mode is velocity,this value is velocity..
- * @param roll_channel roll channel value,if roll mode is angle ,this value is angle.if roll mode is velocity,this value is velocity..
- * @param drones_yawvelocity_desire drone's yaw desired anguler velocity.
+ * @param priority  the priority of this control packet.range is 1~253,1 is the highest and 253 is lowest;self-control is 1,the packet send by GIMBAL_CONTROL is 10,and the packet send by GIMBAL_DEBUGDATA is 20,the others number belong to user. 
+ * @param yaw_mode  yaw mode value,1 is follow_head,2 is follow_angle,3 is follow_velocity;4 is global_angle,5 is global_velocity.
+ * @param pitch_mode  pitch mode value,1 is follow_head,2 is follow_angle,3 is follow_velocity;4 is global_angle,5 is global_velocity.
+ * @param roll_mode  roll mode value,1 is follow_head,2 is follow_angle,3 is follow_velocity;4 is global_angle,5 is global_velocity.
+ * @param yaw_channel  yaw channel value,if yaw mode is angle ,this value is angle.if yaw mode is velocity,this value is velocity..
+ * @param pitch_channel   pitch channel value,if pitch mode is angle ,this value is angle.if pitch mode is velocity,this value is velocity..
+ * @param roll_channel  roll channel value,if roll mode is angle ,this value is angle.if roll mode is velocity,this value is velocity..
+ * @param drones_yawvelocity_desire  drone's yaw desired anguler velocity.
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
@@ -286,7 +286,7 @@ static inline void mavlink_msg_gimbal_control_standard_send_buf(mavlink_message_
 /**
  * @brief Get field priority from gimbal_control_standard message
  *
- * @return the priority of this control packet.range is 1~253,1 is the highest and 253 is lowest;self-control is 1,the packet send by GIMBAL_CONTROL is 10,and the packet send by GIMBAL_DEBUGDATA is 20,the others number belong to user. 
+ * @return  the priority of this control packet.range is 1~253,1 is the highest and 253 is lowest;self-control is 1,the packet send by GIMBAL_CONTROL is 10,and the packet send by GIMBAL_DEBUGDATA is 20,the others number belong to user. 
  */
 static inline uint8_t mavlink_msg_gimbal_control_standard_get_priority(const mavlink_message_t* msg)
 {
@@ -296,7 +296,7 @@ static inline uint8_t mavlink_msg_gimbal_control_standard_get_priority(const mav
 /**
  * @brief Get field yaw_mode from gimbal_control_standard message
  *
- * @return yaw mode value,1 is follow_head,2 is follow_angle,3 is follow_velocity;4 is global_angle,5 is global_velocity.
+ * @return  yaw mode value,1 is follow_head,2 is follow_angle,3 is follow_velocity;4 is global_angle,5 is global_velocity.
  */
 static inline uint8_t mavlink_msg_gimbal_control_standard_get_yaw_mode(const mavlink_message_t* msg)
 {
@@ -306,7 +306,7 @@ static inline uint8_t mavlink_msg_gimbal_control_standard_get_yaw_mode(const mav
 /**
  * @brief Get field pitch_mode from gimbal_control_standard message
  *
- * @return pitch mode value,1 is follow_head,2 is follow_angle,3 is follow_velocity;4 is global_angle,5 is global_velocity.
+ * @return  pitch mode value,1 is follow_head,2 is follow_angle,3 is follow_velocity;4 is global_angle,5 is global_velocity.
  */
 static inline uint8_t mavlink_msg_gimbal_control_standard_get_pitch_mode(const mavlink_message_t* msg)
 {
@@ -316,7 +316,7 @@ static inline uint8_t mavlink_msg_gimbal_control_standard_get_pitch_mode(const m
 /**
  * @brief Get field roll_mode from gimbal_control_standard message
  *
- * @return roll mode value,1 is follow_head,2 is follow_angle,3 is follow_velocity;4 is global_angle,5 is global_velocity.
+ * @return  roll mode value,1 is follow_head,2 is follow_angle,3 is follow_velocity;4 is global_angle,5 is global_velocity.
  */
 static inline uint8_t mavlink_msg_gimbal_control_standard_get_roll_mode(const mavlink_message_t* msg)
 {
@@ -326,7 +326,7 @@ static inline uint8_t mavlink_msg_gimbal_control_standard_get_roll_mode(const ma
 /**
  * @brief Get field yaw_channel from gimbal_control_standard message
  *
- * @return yaw channel value,if yaw mode is angle ,this value is angle.if yaw mode is velocity,this value is velocity..
+ * @return  yaw channel value,if yaw mode is angle ,this value is angle.if yaw mode is velocity,this value is velocity..
  */
 static inline float mavlink_msg_gimbal_control_standard_get_yaw_channel(const mavlink_message_t* msg)
 {
@@ -336,7 +336,7 @@ static inline float mavlink_msg_gimbal_control_standard_get_yaw_channel(const ma
 /**
  * @brief Get field pitch_channel from gimbal_control_standard message
  *
- * @return  pitch channel value,if pitch mode is angle ,this value is angle.if pitch mode is velocity,this value is velocity..
+ * @return   pitch channel value,if pitch mode is angle ,this value is angle.if pitch mode is velocity,this value is velocity..
  */
 static inline float mavlink_msg_gimbal_control_standard_get_pitch_channel(const mavlink_message_t* msg)
 {
@@ -346,7 +346,7 @@ static inline float mavlink_msg_gimbal_control_standard_get_pitch_channel(const 
 /**
  * @brief Get field roll_channel from gimbal_control_standard message
  *
- * @return roll channel value,if roll mode is angle ,this value is angle.if roll mode is velocity,this value is velocity..
+ * @return  roll channel value,if roll mode is angle ,this value is angle.if roll mode is velocity,this value is velocity..
  */
 static inline float mavlink_msg_gimbal_control_standard_get_roll_channel(const mavlink_message_t* msg)
 {
@@ -356,7 +356,7 @@ static inline float mavlink_msg_gimbal_control_standard_get_roll_channel(const m
 /**
  * @brief Get field drones_yawvelocity_desire from gimbal_control_standard message
  *
- * @return drone's yaw desired anguler velocity.
+ * @return  drone's yaw desired anguler velocity.
  */
 static inline float mavlink_msg_gimbal_control_standard_get_drones_yawvelocity_desire(const mavlink_message_t* msg)
 {

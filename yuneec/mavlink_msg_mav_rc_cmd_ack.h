@@ -5,9 +5,9 @@
 
 MAVPACKED(
 typedef struct __mavlink_mav_rc_cmd_ack_t {
- uint8_t command; /*< */
- uint8_t code; /*< */
- uint8_t params[253]; /*< */
+ uint8_t command; /*<  */
+ uint8_t code; /*<  */
+ uint8_t params[253]; /*<  */
 }) mavlink_mav_rc_cmd_ack_t;
 
 #define MAVLINK_MSG_ID_MAV_RC_CMD_ACK_LEN 255
@@ -47,9 +47,9 @@ typedef struct __mavlink_mav_rc_cmd_ack_t {
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param msg The MAVLink message to compress the data into
  *
- * @param command 
- * @param code 
- * @param params 
+ * @param command  
+ * @param code  
+ * @param params  
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_mav_rc_cmd_ack_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
@@ -79,9 +79,9 @@ static inline uint16_t mavlink_msg_mav_rc_cmd_ack_pack(uint8_t system_id, uint8_
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param chan The MAVLink channel this message will be sent over
  * @param msg The MAVLink message to compress the data into
- * @param command 
- * @param code 
- * @param params 
+ * @param command  
+ * @param code  
+ * @param params  
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_mav_rc_cmd_ack_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
@@ -137,9 +137,9 @@ static inline uint16_t mavlink_msg_mav_rc_cmd_ack_encode_chan(uint8_t system_id,
  * @brief Send a mav_rc_cmd_ack message
  * @param chan MAVLink channel to send the message
  *
- * @param command 
- * @param code 
- * @param params 
+ * @param command  
+ * @param code  
+ * @param params  
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
@@ -208,7 +208,7 @@ static inline void mavlink_msg_mav_rc_cmd_ack_send_buf(mavlink_message_t *msgbuf
 /**
  * @brief Get field command from mav_rc_cmd_ack message
  *
- * @return 
+ * @return  
  */
 static inline uint8_t mavlink_msg_mav_rc_cmd_ack_get_command(const mavlink_message_t* msg)
 {
@@ -218,7 +218,7 @@ static inline uint8_t mavlink_msg_mav_rc_cmd_ack_get_command(const mavlink_messa
 /**
  * @brief Get field code from mav_rc_cmd_ack message
  *
- * @return 
+ * @return  
  */
 static inline uint8_t mavlink_msg_mav_rc_cmd_ack_get_code(const mavlink_message_t* msg)
 {
@@ -228,7 +228,7 @@ static inline uint8_t mavlink_msg_mav_rc_cmd_ack_get_code(const mavlink_message_
 /**
  * @brief Get field params from mav_rc_cmd_ack message
  *
- * @return 
+ * @return  
  */
 static inline uint16_t mavlink_msg_mav_rc_cmd_ack_get_params(const mavlink_message_t* msg, uint8_t *params)
 {

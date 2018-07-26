@@ -5,24 +5,24 @@
 
 MAVPACKED(
 typedef struct __mavlink_bat_general_info_t {
- uint32_t alert; /*< the warning items in discharge mode.*/
- uint16_t capacity; /*< the full battery capacity in units mAh, it will reduce with usage.*/
- uint16_t remCap; /*< the predicted remaining battery capacity in units mAh.*/
- uint16_t remSOC; /*< the current capacity in percentage of capacity.*/
- int16_t temperature; /*< the temperature of battery in units Centigrade.*/
- uint16_t packVolt; /*< the pack voltage in units mV.*/
- uint16_t allVolt; /*< sum of each cell voltage in units mV.*/
- uint16_t cellnVolt[12]; /*< each cell voltage in units mV.*/
- uint16_t health; /*< the State-of-Health information of the battery in percentage of design capacity and design energy.*/
- uint16_t cycle; /*< the charge-discharge cycle number.*/
- uint16_t maxVn[12]; /*< the maximum voltage of each cell has ever been experienced in units mV.*/
- uint16_t minVn[12]; /*<  the minimum voltage of each cell has ever been experienced in units mV.*/
- int16_t maxChargeCurrent; /*< the max charging current of the battery has ever been experienced in units 10mA.*/
- int16_t maxDishargeCurrent; /*< the max discharging current of the battery has ever been experienced in units 10mA.*/
- uint16_t numOfOverCharge; /*< the overcharge times of the battery.*/
- uint8_t onOff; /*< the state of the key,which 0x00 indicates pulling up and 0xff indicates pulling down.*/
- int8_t maxTem; /*< the max temperature of the battery has ever been experienced in units Centigrade.*/
- uint8_t minTem; /*< the minimum temperature of the battery has ever been experienced in units Centigrade.*/
+ uint32_t alert; /*<  the warning items in discharge mode.*/
+ uint16_t capacity; /*< [mAh] the full battery capacity in units mAh, it will reduce with usage.*/
+ uint16_t remCap; /*< [mAh] the predicted remaining battery capacity in units mAh.*/
+ uint16_t remSOC; /*<  the current capacity in percentage of capacity.*/
+ int16_t temperature; /*< [celsius] the temperature of battery in units Centigrade.*/
+ uint16_t packVolt; /*< [mV] the pack voltage in units mV.*/
+ uint16_t allVolt; /*< [mV] sum of each cell voltage in units mV.*/
+ uint16_t cellnVolt[12]; /*< [mV] each cell voltage in units mV.*/
+ uint16_t health; /*<  the State-of-Health information of the battery in percentage of design capacity and design energy.*/
+ uint16_t cycle; /*<  the charge-discharge cycle number.*/
+ uint16_t maxVn[12]; /*< [mV] the maximum voltage of each cell has ever been experienced in units mV.*/
+ uint16_t minVn[12]; /*< [mV]  the minimum voltage of each cell has ever been experienced in units mV.*/
+ int16_t maxChargeCurrent; /*< [10mA] the max charging current of the battery has ever been experienced in units 10mA.*/
+ int16_t maxDishargeCurrent; /*< [10mA] the max discharging current of the battery has ever been experienced in units 10mA.*/
+ uint16_t numOfOverCharge; /*<  the overcharge times of the battery.*/
+ uint8_t onOff; /*<  the state of the key,which 0x00 indicates pulling up and 0xff indicates pulling down.*/
+ int8_t maxTem; /*< [celsius] the max temperature of the battery has ever been experienced in units Centigrade.*/
+ uint8_t minTem; /*< [celsius] the minimum temperature of the battery has ever been experienced in units Centigrade.*/
 }) mavlink_bat_general_info_t;
 
 #define MAVLINK_MSG_ID_BAT_GENERAL_INFO_LEN 101
@@ -94,24 +94,24 @@ typedef struct __mavlink_bat_general_info_t {
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param msg The MAVLink message to compress the data into
  *
- * @param capacity the full battery capacity in units mAh, it will reduce with usage.
- * @param remCap the predicted remaining battery capacity in units mAh.
- * @param remSOC the current capacity in percentage of capacity.
- * @param temperature the temperature of battery in units Centigrade.
- * @param packVolt the pack voltage in units mV.
- * @param allVolt sum of each cell voltage in units mV.
- * @param cellnVolt each cell voltage in units mV.
- * @param health the State-of-Health information of the battery in percentage of design capacity and design energy.
- * @param alert the warning items in discharge mode.
- * @param onOff the state of the key,which 0x00 indicates pulling up and 0xff indicates pulling down.
- * @param cycle the charge-discharge cycle number.
- * @param maxVn the maximum voltage of each cell has ever been experienced in units mV.
- * @param minVn  the minimum voltage of each cell has ever been experienced in units mV.
- * @param maxTem the max temperature of the battery has ever been experienced in units Centigrade.
- * @param minTem the minimum temperature of the battery has ever been experienced in units Centigrade.
- * @param maxChargeCurrent the max charging current of the battery has ever been experienced in units 10mA.
- * @param maxDishargeCurrent the max discharging current of the battery has ever been experienced in units 10mA.
- * @param numOfOverCharge the overcharge times of the battery.
+ * @param capacity [mAh] the full battery capacity in units mAh, it will reduce with usage.
+ * @param remCap [mAh] the predicted remaining battery capacity in units mAh.
+ * @param remSOC  the current capacity in percentage of capacity.
+ * @param temperature [celsius] the temperature of battery in units Centigrade.
+ * @param packVolt [mV] the pack voltage in units mV.
+ * @param allVolt [mV] sum of each cell voltage in units mV.
+ * @param cellnVolt [mV] each cell voltage in units mV.
+ * @param health  the State-of-Health information of the battery in percentage of design capacity and design energy.
+ * @param alert  the warning items in discharge mode.
+ * @param onOff  the state of the key,which 0x00 indicates pulling up and 0xff indicates pulling down.
+ * @param cycle  the charge-discharge cycle number.
+ * @param maxVn [mV] the maximum voltage of each cell has ever been experienced in units mV.
+ * @param minVn [mV]  the minimum voltage of each cell has ever been experienced in units mV.
+ * @param maxTem [celsius] the max temperature of the battery has ever been experienced in units Centigrade.
+ * @param minTem [celsius] the minimum temperature of the battery has ever been experienced in units Centigrade.
+ * @param maxChargeCurrent [10mA] the max charging current of the battery has ever been experienced in units 10mA.
+ * @param maxDishargeCurrent [10mA] the max discharging current of the battery has ever been experienced in units 10mA.
+ * @param numOfOverCharge  the overcharge times of the battery.
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_bat_general_info_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
@@ -171,24 +171,24 @@ static inline uint16_t mavlink_msg_bat_general_info_pack(uint8_t system_id, uint
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param chan The MAVLink channel this message will be sent over
  * @param msg The MAVLink message to compress the data into
- * @param capacity the full battery capacity in units mAh, it will reduce with usage.
- * @param remCap the predicted remaining battery capacity in units mAh.
- * @param remSOC the current capacity in percentage of capacity.
- * @param temperature the temperature of battery in units Centigrade.
- * @param packVolt the pack voltage in units mV.
- * @param allVolt sum of each cell voltage in units mV.
- * @param cellnVolt each cell voltage in units mV.
- * @param health the State-of-Health information of the battery in percentage of design capacity and design energy.
- * @param alert the warning items in discharge mode.
- * @param onOff the state of the key,which 0x00 indicates pulling up and 0xff indicates pulling down.
- * @param cycle the charge-discharge cycle number.
- * @param maxVn the maximum voltage of each cell has ever been experienced in units mV.
- * @param minVn  the minimum voltage of each cell has ever been experienced in units mV.
- * @param maxTem the max temperature of the battery has ever been experienced in units Centigrade.
- * @param minTem the minimum temperature of the battery has ever been experienced in units Centigrade.
- * @param maxChargeCurrent the max charging current of the battery has ever been experienced in units 10mA.
- * @param maxDishargeCurrent the max discharging current of the battery has ever been experienced in units 10mA.
- * @param numOfOverCharge the overcharge times of the battery.
+ * @param capacity [mAh] the full battery capacity in units mAh, it will reduce with usage.
+ * @param remCap [mAh] the predicted remaining battery capacity in units mAh.
+ * @param remSOC  the current capacity in percentage of capacity.
+ * @param temperature [celsius] the temperature of battery in units Centigrade.
+ * @param packVolt [mV] the pack voltage in units mV.
+ * @param allVolt [mV] sum of each cell voltage in units mV.
+ * @param cellnVolt [mV] each cell voltage in units mV.
+ * @param health  the State-of-Health information of the battery in percentage of design capacity and design energy.
+ * @param alert  the warning items in discharge mode.
+ * @param onOff  the state of the key,which 0x00 indicates pulling up and 0xff indicates pulling down.
+ * @param cycle  the charge-discharge cycle number.
+ * @param maxVn [mV] the maximum voltage of each cell has ever been experienced in units mV.
+ * @param minVn [mV]  the minimum voltage of each cell has ever been experienced in units mV.
+ * @param maxTem [celsius] the max temperature of the battery has ever been experienced in units Centigrade.
+ * @param minTem [celsius] the minimum temperature of the battery has ever been experienced in units Centigrade.
+ * @param maxChargeCurrent [10mA] the max charging current of the battery has ever been experienced in units 10mA.
+ * @param maxDishargeCurrent [10mA] the max discharging current of the battery has ever been experienced in units 10mA.
+ * @param numOfOverCharge  the overcharge times of the battery.
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_bat_general_info_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
@@ -274,24 +274,24 @@ static inline uint16_t mavlink_msg_bat_general_info_encode_chan(uint8_t system_i
  * @brief Send a bat_general_info message
  * @param chan MAVLink channel to send the message
  *
- * @param capacity the full battery capacity in units mAh, it will reduce with usage.
- * @param remCap the predicted remaining battery capacity in units mAh.
- * @param remSOC the current capacity in percentage of capacity.
- * @param temperature the temperature of battery in units Centigrade.
- * @param packVolt the pack voltage in units mV.
- * @param allVolt sum of each cell voltage in units mV.
- * @param cellnVolt each cell voltage in units mV.
- * @param health the State-of-Health information of the battery in percentage of design capacity and design energy.
- * @param alert the warning items in discharge mode.
- * @param onOff the state of the key,which 0x00 indicates pulling up and 0xff indicates pulling down.
- * @param cycle the charge-discharge cycle number.
- * @param maxVn the maximum voltage of each cell has ever been experienced in units mV.
- * @param minVn  the minimum voltage of each cell has ever been experienced in units mV.
- * @param maxTem the max temperature of the battery has ever been experienced in units Centigrade.
- * @param minTem the minimum temperature of the battery has ever been experienced in units Centigrade.
- * @param maxChargeCurrent the max charging current of the battery has ever been experienced in units 10mA.
- * @param maxDishargeCurrent the max discharging current of the battery has ever been experienced in units 10mA.
- * @param numOfOverCharge the overcharge times of the battery.
+ * @param capacity [mAh] the full battery capacity in units mAh, it will reduce with usage.
+ * @param remCap [mAh] the predicted remaining battery capacity in units mAh.
+ * @param remSOC  the current capacity in percentage of capacity.
+ * @param temperature [celsius] the temperature of battery in units Centigrade.
+ * @param packVolt [mV] the pack voltage in units mV.
+ * @param allVolt [mV] sum of each cell voltage in units mV.
+ * @param cellnVolt [mV] each cell voltage in units mV.
+ * @param health  the State-of-Health information of the battery in percentage of design capacity and design energy.
+ * @param alert  the warning items in discharge mode.
+ * @param onOff  the state of the key,which 0x00 indicates pulling up and 0xff indicates pulling down.
+ * @param cycle  the charge-discharge cycle number.
+ * @param maxVn [mV] the maximum voltage of each cell has ever been experienced in units mV.
+ * @param minVn [mV]  the minimum voltage of each cell has ever been experienced in units mV.
+ * @param maxTem [celsius] the max temperature of the battery has ever been experienced in units Centigrade.
+ * @param minTem [celsius] the minimum temperature of the battery has ever been experienced in units Centigrade.
+ * @param maxChargeCurrent [10mA] the max charging current of the battery has ever been experienced in units 10mA.
+ * @param maxDishargeCurrent [10mA] the max discharging current of the battery has ever been experienced in units 10mA.
+ * @param numOfOverCharge  the overcharge times of the battery.
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
@@ -420,7 +420,7 @@ static inline void mavlink_msg_bat_general_info_send_buf(mavlink_message_t *msgb
 /**
  * @brief Get field capacity from bat_general_info message
  *
- * @return the full battery capacity in units mAh, it will reduce with usage.
+ * @return [mAh] the full battery capacity in units mAh, it will reduce with usage.
  */
 static inline uint16_t mavlink_msg_bat_general_info_get_capacity(const mavlink_message_t* msg)
 {
@@ -430,7 +430,7 @@ static inline uint16_t mavlink_msg_bat_general_info_get_capacity(const mavlink_m
 /**
  * @brief Get field remCap from bat_general_info message
  *
- * @return the predicted remaining battery capacity in units mAh.
+ * @return [mAh] the predicted remaining battery capacity in units mAh.
  */
 static inline uint16_t mavlink_msg_bat_general_info_get_remCap(const mavlink_message_t* msg)
 {
@@ -440,7 +440,7 @@ static inline uint16_t mavlink_msg_bat_general_info_get_remCap(const mavlink_mes
 /**
  * @brief Get field remSOC from bat_general_info message
  *
- * @return the current capacity in percentage of capacity.
+ * @return  the current capacity in percentage of capacity.
  */
 static inline uint16_t mavlink_msg_bat_general_info_get_remSOC(const mavlink_message_t* msg)
 {
@@ -450,7 +450,7 @@ static inline uint16_t mavlink_msg_bat_general_info_get_remSOC(const mavlink_mes
 /**
  * @brief Get field temperature from bat_general_info message
  *
- * @return the temperature of battery in units Centigrade.
+ * @return [celsius] the temperature of battery in units Centigrade.
  */
 static inline int16_t mavlink_msg_bat_general_info_get_temperature(const mavlink_message_t* msg)
 {
@@ -460,7 +460,7 @@ static inline int16_t mavlink_msg_bat_general_info_get_temperature(const mavlink
 /**
  * @brief Get field packVolt from bat_general_info message
  *
- * @return the pack voltage in units mV.
+ * @return [mV] the pack voltage in units mV.
  */
 static inline uint16_t mavlink_msg_bat_general_info_get_packVolt(const mavlink_message_t* msg)
 {
@@ -470,7 +470,7 @@ static inline uint16_t mavlink_msg_bat_general_info_get_packVolt(const mavlink_m
 /**
  * @brief Get field allVolt from bat_general_info message
  *
- * @return sum of each cell voltage in units mV.
+ * @return [mV] sum of each cell voltage in units mV.
  */
 static inline uint16_t mavlink_msg_bat_general_info_get_allVolt(const mavlink_message_t* msg)
 {
@@ -480,7 +480,7 @@ static inline uint16_t mavlink_msg_bat_general_info_get_allVolt(const mavlink_me
 /**
  * @brief Get field cellnVolt from bat_general_info message
  *
- * @return each cell voltage in units mV.
+ * @return [mV] each cell voltage in units mV.
  */
 static inline uint16_t mavlink_msg_bat_general_info_get_cellnVolt(const mavlink_message_t* msg, uint16_t *cellnVolt)
 {
@@ -490,7 +490,7 @@ static inline uint16_t mavlink_msg_bat_general_info_get_cellnVolt(const mavlink_
 /**
  * @brief Get field health from bat_general_info message
  *
- * @return the State-of-Health information of the battery in percentage of design capacity and design energy.
+ * @return  the State-of-Health information of the battery in percentage of design capacity and design energy.
  */
 static inline uint16_t mavlink_msg_bat_general_info_get_health(const mavlink_message_t* msg)
 {
@@ -500,7 +500,7 @@ static inline uint16_t mavlink_msg_bat_general_info_get_health(const mavlink_mes
 /**
  * @brief Get field alert from bat_general_info message
  *
- * @return the warning items in discharge mode.
+ * @return  the warning items in discharge mode.
  */
 static inline uint32_t mavlink_msg_bat_general_info_get_alert(const mavlink_message_t* msg)
 {
@@ -510,7 +510,7 @@ static inline uint32_t mavlink_msg_bat_general_info_get_alert(const mavlink_mess
 /**
  * @brief Get field onOff from bat_general_info message
  *
- * @return the state of the key,which 0x00 indicates pulling up and 0xff indicates pulling down.
+ * @return  the state of the key,which 0x00 indicates pulling up and 0xff indicates pulling down.
  */
 static inline uint8_t mavlink_msg_bat_general_info_get_onOff(const mavlink_message_t* msg)
 {
@@ -520,7 +520,7 @@ static inline uint8_t mavlink_msg_bat_general_info_get_onOff(const mavlink_messa
 /**
  * @brief Get field cycle from bat_general_info message
  *
- * @return the charge-discharge cycle number.
+ * @return  the charge-discharge cycle number.
  */
 static inline uint16_t mavlink_msg_bat_general_info_get_cycle(const mavlink_message_t* msg)
 {
@@ -530,7 +530,7 @@ static inline uint16_t mavlink_msg_bat_general_info_get_cycle(const mavlink_mess
 /**
  * @brief Get field maxVn from bat_general_info message
  *
- * @return the maximum voltage of each cell has ever been experienced in units mV.
+ * @return [mV] the maximum voltage of each cell has ever been experienced in units mV.
  */
 static inline uint16_t mavlink_msg_bat_general_info_get_maxVn(const mavlink_message_t* msg, uint16_t *maxVn)
 {
@@ -540,7 +540,7 @@ static inline uint16_t mavlink_msg_bat_general_info_get_maxVn(const mavlink_mess
 /**
  * @brief Get field minVn from bat_general_info message
  *
- * @return  the minimum voltage of each cell has ever been experienced in units mV.
+ * @return [mV]  the minimum voltage of each cell has ever been experienced in units mV.
  */
 static inline uint16_t mavlink_msg_bat_general_info_get_minVn(const mavlink_message_t* msg, uint16_t *minVn)
 {
@@ -550,7 +550,7 @@ static inline uint16_t mavlink_msg_bat_general_info_get_minVn(const mavlink_mess
 /**
  * @brief Get field maxTem from bat_general_info message
  *
- * @return the max temperature of the battery has ever been experienced in units Centigrade.
+ * @return [celsius] the max temperature of the battery has ever been experienced in units Centigrade.
  */
 static inline int8_t mavlink_msg_bat_general_info_get_maxTem(const mavlink_message_t* msg)
 {
@@ -560,7 +560,7 @@ static inline int8_t mavlink_msg_bat_general_info_get_maxTem(const mavlink_messa
 /**
  * @brief Get field minTem from bat_general_info message
  *
- * @return the minimum temperature of the battery has ever been experienced in units Centigrade.
+ * @return [celsius] the minimum temperature of the battery has ever been experienced in units Centigrade.
  */
 static inline uint8_t mavlink_msg_bat_general_info_get_minTem(const mavlink_message_t* msg)
 {
@@ -570,7 +570,7 @@ static inline uint8_t mavlink_msg_bat_general_info_get_minTem(const mavlink_mess
 /**
  * @brief Get field maxChargeCurrent from bat_general_info message
  *
- * @return the max charging current of the battery has ever been experienced in units 10mA.
+ * @return [10mA] the max charging current of the battery has ever been experienced in units 10mA.
  */
 static inline int16_t mavlink_msg_bat_general_info_get_maxChargeCurrent(const mavlink_message_t* msg)
 {
@@ -580,7 +580,7 @@ static inline int16_t mavlink_msg_bat_general_info_get_maxChargeCurrent(const ma
 /**
  * @brief Get field maxDishargeCurrent from bat_general_info message
  *
- * @return the max discharging current of the battery has ever been experienced in units 10mA.
+ * @return [10mA] the max discharging current of the battery has ever been experienced in units 10mA.
  */
 static inline int16_t mavlink_msg_bat_general_info_get_maxDishargeCurrent(const mavlink_message_t* msg)
 {
@@ -590,7 +590,7 @@ static inline int16_t mavlink_msg_bat_general_info_get_maxDishargeCurrent(const 
 /**
  * @brief Get field numOfOverCharge from bat_general_info message
  *
- * @return the overcharge times of the battery.
+ * @return  the overcharge times of the battery.
  */
 static inline uint16_t mavlink_msg_bat_general_info_get_numOfOverCharge(const mavlink_message_t* msg)
 {

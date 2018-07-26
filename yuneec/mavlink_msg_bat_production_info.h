@@ -5,8 +5,8 @@
 
 MAVPACKED(
 typedef struct __mavlink_bat_production_info_t {
- uint8_t productionTime[10]; /*< Production time*/
- uint8_t keyOfBat[16]; /*< Key for checking whether the battery is legal.*/
+ uint8_t productionTime[10]; /*<  Production time*/
+ uint8_t keyOfBat[16]; /*<  Key for checking whether the battery is legal.*/
 }) mavlink_bat_production_info_t;
 
 #define MAVLINK_MSG_ID_BAT_PRODUCTION_INFO_LEN 26
@@ -45,8 +45,8 @@ typedef struct __mavlink_bat_production_info_t {
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param msg The MAVLink message to compress the data into
  *
- * @param productionTime Production time
- * @param keyOfBat Key for checking whether the battery is legal.
+ * @param productionTime  Production time
+ * @param keyOfBat  Key for checking whether the battery is legal.
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_bat_production_info_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
@@ -76,8 +76,8 @@ static inline uint16_t mavlink_msg_bat_production_info_pack(uint8_t system_id, u
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param chan The MAVLink channel this message will be sent over
  * @param msg The MAVLink message to compress the data into
- * @param productionTime Production time
- * @param keyOfBat Key for checking whether the battery is legal.
+ * @param productionTime  Production time
+ * @param keyOfBat  Key for checking whether the battery is legal.
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_bat_production_info_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
@@ -133,8 +133,8 @@ static inline uint16_t mavlink_msg_bat_production_info_encode_chan(uint8_t syste
  * @brief Send a bat_production_info message
  * @param chan MAVLink channel to send the message
  *
- * @param productionTime Production time
- * @param keyOfBat Key for checking whether the battery is legal.
+ * @param productionTime  Production time
+ * @param keyOfBat  Key for checking whether the battery is legal.
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
@@ -203,7 +203,7 @@ static inline void mavlink_msg_bat_production_info_send_buf(mavlink_message_t *m
 /**
  * @brief Get field productionTime from bat_production_info message
  *
- * @return Production time
+ * @return  Production time
  */
 static inline uint16_t mavlink_msg_bat_production_info_get_productionTime(const mavlink_message_t* msg, uint8_t *productionTime)
 {
@@ -213,7 +213,7 @@ static inline uint16_t mavlink_msg_bat_production_info_get_productionTime(const 
 /**
  * @brief Get field keyOfBat from bat_production_info message
  *
- * @return Key for checking whether the battery is legal.
+ * @return  Key for checking whether the battery is legal.
  */
 static inline uint16_t mavlink_msg_bat_production_info_get_keyOfBat(const mavlink_message_t* msg, uint8_t *keyOfBat)
 {

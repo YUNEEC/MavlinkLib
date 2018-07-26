@@ -5,15 +5,15 @@
 
 MAVPACKED(
 typedef struct __mavlink_task_down_mis_t {
- float lat; /*< waypoint latitude*/
- float lon; /*< waypoint longitude*/
- float alt; /*< waypoint altitude*/
- float gb_pitch; /*< gimbal pitch value -1f..1f*/
- float uav_yaw; /*< vehicle global yaw*/
- float action; /*< vehicle and camera execution. see enum(TASK_ACTION).*/
- float velocity; /*< flight velocity, unit is meters.*/
- int16_t index; /*< waypoint sequence*/
- int16_t count; /*< waypoint count*/
+ float lat; /*<  waypoint latitude*/
+ float lon; /*<  waypoint longitude*/
+ float alt; /*<  waypoint altitude*/
+ float gb_pitch; /*<  gimbal pitch value -1f..1f*/
+ float uav_yaw; /*<  vehicle global yaw*/
+ float action; /*<  vehicle and camera execution. see enum(TASK_ACTION).*/
+ float velocity; /*<  flight velocity, unit is meters.*/
+ int16_t index; /*<  waypoint sequence*/
+ int16_t count; /*<  waypoint count*/
 }) mavlink_task_down_mis_t;
 
 #define MAVLINK_MSG_ID_TASK_DOWN_MIS_LEN 32
@@ -65,15 +65,15 @@ typedef struct __mavlink_task_down_mis_t {
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param msg The MAVLink message to compress the data into
  *
- * @param index waypoint sequence
- * @param count waypoint count
- * @param lat waypoint latitude
- * @param lon waypoint longitude
- * @param alt waypoint altitude
- * @param gb_pitch gimbal pitch value -1f..1f
- * @param uav_yaw vehicle global yaw
- * @param action vehicle and camera execution. see enum(TASK_ACTION).
- * @param velocity flight velocity, unit is meters.
+ * @param index  waypoint sequence
+ * @param count  waypoint count
+ * @param lat  waypoint latitude
+ * @param lon  waypoint longitude
+ * @param alt  waypoint altitude
+ * @param gb_pitch  gimbal pitch value -1f..1f
+ * @param uav_yaw  vehicle global yaw
+ * @param action  vehicle and camera execution. see enum(TASK_ACTION).
+ * @param velocity  flight velocity, unit is meters.
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_task_down_mis_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
@@ -117,15 +117,15 @@ static inline uint16_t mavlink_msg_task_down_mis_pack(uint8_t system_id, uint8_t
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param chan The MAVLink channel this message will be sent over
  * @param msg The MAVLink message to compress the data into
- * @param index waypoint sequence
- * @param count waypoint count
- * @param lat waypoint latitude
- * @param lon waypoint longitude
- * @param alt waypoint altitude
- * @param gb_pitch gimbal pitch value -1f..1f
- * @param uav_yaw vehicle global yaw
- * @param action vehicle and camera execution. see enum(TASK_ACTION).
- * @param velocity flight velocity, unit is meters.
+ * @param index  waypoint sequence
+ * @param count  waypoint count
+ * @param lat  waypoint latitude
+ * @param lon  waypoint longitude
+ * @param alt  waypoint altitude
+ * @param gb_pitch  gimbal pitch value -1f..1f
+ * @param uav_yaw  vehicle global yaw
+ * @param action  vehicle and camera execution. see enum(TASK_ACTION).
+ * @param velocity  flight velocity, unit is meters.
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_task_down_mis_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
@@ -195,15 +195,15 @@ static inline uint16_t mavlink_msg_task_down_mis_encode_chan(uint8_t system_id, 
  * @brief Send a task_down_mis message
  * @param chan MAVLink channel to send the message
  *
- * @param index waypoint sequence
- * @param count waypoint count
- * @param lat waypoint latitude
- * @param lon waypoint longitude
- * @param alt waypoint altitude
- * @param gb_pitch gimbal pitch value -1f..1f
- * @param uav_yaw vehicle global yaw
- * @param action vehicle and camera execution. see enum(TASK_ACTION).
- * @param velocity flight velocity, unit is meters.
+ * @param index  waypoint sequence
+ * @param count  waypoint count
+ * @param lat  waypoint latitude
+ * @param lon  waypoint longitude
+ * @param alt  waypoint altitude
+ * @param gb_pitch  gimbal pitch value -1f..1f
+ * @param uav_yaw  vehicle global yaw
+ * @param action  vehicle and camera execution. see enum(TASK_ACTION).
+ * @param velocity  flight velocity, unit is meters.
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
@@ -300,7 +300,7 @@ static inline void mavlink_msg_task_down_mis_send_buf(mavlink_message_t *msgbuf,
 /**
  * @brief Get field index from task_down_mis message
  *
- * @return waypoint sequence
+ * @return  waypoint sequence
  */
 static inline int16_t mavlink_msg_task_down_mis_get_index(const mavlink_message_t* msg)
 {
@@ -310,7 +310,7 @@ static inline int16_t mavlink_msg_task_down_mis_get_index(const mavlink_message_
 /**
  * @brief Get field count from task_down_mis message
  *
- * @return waypoint count
+ * @return  waypoint count
  */
 static inline int16_t mavlink_msg_task_down_mis_get_count(const mavlink_message_t* msg)
 {
@@ -320,7 +320,7 @@ static inline int16_t mavlink_msg_task_down_mis_get_count(const mavlink_message_
 /**
  * @brief Get field lat from task_down_mis message
  *
- * @return waypoint latitude
+ * @return  waypoint latitude
  */
 static inline float mavlink_msg_task_down_mis_get_lat(const mavlink_message_t* msg)
 {
@@ -330,7 +330,7 @@ static inline float mavlink_msg_task_down_mis_get_lat(const mavlink_message_t* m
 /**
  * @brief Get field lon from task_down_mis message
  *
- * @return waypoint longitude
+ * @return  waypoint longitude
  */
 static inline float mavlink_msg_task_down_mis_get_lon(const mavlink_message_t* msg)
 {
@@ -340,7 +340,7 @@ static inline float mavlink_msg_task_down_mis_get_lon(const mavlink_message_t* m
 /**
  * @brief Get field alt from task_down_mis message
  *
- * @return waypoint altitude
+ * @return  waypoint altitude
  */
 static inline float mavlink_msg_task_down_mis_get_alt(const mavlink_message_t* msg)
 {
@@ -350,7 +350,7 @@ static inline float mavlink_msg_task_down_mis_get_alt(const mavlink_message_t* m
 /**
  * @brief Get field gb_pitch from task_down_mis message
  *
- * @return gimbal pitch value -1f..1f
+ * @return  gimbal pitch value -1f..1f
  */
 static inline float mavlink_msg_task_down_mis_get_gb_pitch(const mavlink_message_t* msg)
 {
@@ -360,7 +360,7 @@ static inline float mavlink_msg_task_down_mis_get_gb_pitch(const mavlink_message
 /**
  * @brief Get field uav_yaw from task_down_mis message
  *
- * @return vehicle global yaw
+ * @return  vehicle global yaw
  */
 static inline float mavlink_msg_task_down_mis_get_uav_yaw(const mavlink_message_t* msg)
 {
@@ -370,7 +370,7 @@ static inline float mavlink_msg_task_down_mis_get_uav_yaw(const mavlink_message_
 /**
  * @brief Get field action from task_down_mis message
  *
- * @return vehicle and camera execution. see enum(TASK_ACTION).
+ * @return  vehicle and camera execution. see enum(TASK_ACTION).
  */
 static inline float mavlink_msg_task_down_mis_get_action(const mavlink_message_t* msg)
 {
@@ -380,7 +380,7 @@ static inline float mavlink_msg_task_down_mis_get_action(const mavlink_message_t
 /**
  * @brief Get field velocity from task_down_mis message
  *
- * @return flight velocity, unit is meters.
+ * @return  flight velocity, unit is meters.
  */
 static inline float mavlink_msg_task_down_mis_get_velocity(const mavlink_message_t* msg)
 {

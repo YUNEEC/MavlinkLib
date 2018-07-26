@@ -5,14 +5,14 @@
 
 MAVPACKED(
 typedef struct __mavlink_bat_common_info_t {
- uint32_t alert; /*< the warning items in discharge mode.*/
- uint16_t remCap; /*< the predicted remaining battery capacity in units mAh.*/
- uint16_t remSOC; /*< the current capacity in percentage of design capacity.*/
- int16_t temperature; /*< the temperature of battery in units Centigrade.*/
- uint16_t packVolt; /*< the pack voltage in units mV.*/
- uint16_t cellnVolt[12]; /*< each cell voltage in units mV.*/
- int16_t current; /*<  the measured current from coulomb counter in units 10mA.*/
- uint8_t onOff; /*< the state of the key,which 0x00 indicates pulling up and 0xff indicates pulling down.*/
+ uint32_t alert; /*<  the warning items in discharge mode.*/
+ uint16_t remCap; /*< [mAh] the predicted remaining battery capacity in units mAh.*/
+ uint16_t remSOC; /*<  the current capacity in percentage of design capacity.*/
+ int16_t temperature; /*< [celsius] the temperature of battery in units Centigrade.*/
+ uint16_t packVolt; /*< [mV] the pack voltage in units mV.*/
+ uint16_t cellnVolt[12]; /*< [mAh] each cell voltage in units mV.*/
+ int16_t current; /*< [10mA]  the measured current from coulomb counter in units 10mA.*/
+ uint8_t onOff; /*<  the state of the key,which 0x00 indicates pulling up and 0xff indicates pulling down.*/
 }) mavlink_bat_common_info_t;
 
 #define MAVLINK_MSG_ID_BAT_COMMON_INFO_LEN 39
@@ -62,14 +62,14 @@ typedef struct __mavlink_bat_common_info_t {
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param msg The MAVLink message to compress the data into
  *
- * @param remCap the predicted remaining battery capacity in units mAh.
- * @param remSOC the current capacity in percentage of design capacity.
- * @param temperature the temperature of battery in units Centigrade.
- * @param packVolt the pack voltage in units mV.
- * @param cellnVolt each cell voltage in units mV.
- * @param current  the measured current from coulomb counter in units 10mA.
- * @param alert the warning items in discharge mode.
- * @param onOff the state of the key,which 0x00 indicates pulling up and 0xff indicates pulling down.
+ * @param remCap [mAh] the predicted remaining battery capacity in units mAh.
+ * @param remSOC  the current capacity in percentage of design capacity.
+ * @param temperature [celsius] the temperature of battery in units Centigrade.
+ * @param packVolt [mV] the pack voltage in units mV.
+ * @param cellnVolt [mAh] each cell voltage in units mV.
+ * @param current [10mA]  the measured current from coulomb counter in units 10mA.
+ * @param alert  the warning items in discharge mode.
+ * @param onOff  the state of the key,which 0x00 indicates pulling up and 0xff indicates pulling down.
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_bat_common_info_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
@@ -109,14 +109,14 @@ static inline uint16_t mavlink_msg_bat_common_info_pack(uint8_t system_id, uint8
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param chan The MAVLink channel this message will be sent over
  * @param msg The MAVLink message to compress the data into
- * @param remCap the predicted remaining battery capacity in units mAh.
- * @param remSOC the current capacity in percentage of design capacity.
- * @param temperature the temperature of battery in units Centigrade.
- * @param packVolt the pack voltage in units mV.
- * @param cellnVolt each cell voltage in units mV.
- * @param current  the measured current from coulomb counter in units 10mA.
- * @param alert the warning items in discharge mode.
- * @param onOff the state of the key,which 0x00 indicates pulling up and 0xff indicates pulling down.
+ * @param remCap [mAh] the predicted remaining battery capacity in units mAh.
+ * @param remSOC  the current capacity in percentage of design capacity.
+ * @param temperature [celsius] the temperature of battery in units Centigrade.
+ * @param packVolt [mV] the pack voltage in units mV.
+ * @param cellnVolt [mAh] each cell voltage in units mV.
+ * @param current [10mA]  the measured current from coulomb counter in units 10mA.
+ * @param alert  the warning items in discharge mode.
+ * @param onOff  the state of the key,which 0x00 indicates pulling up and 0xff indicates pulling down.
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_bat_common_info_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
@@ -182,14 +182,14 @@ static inline uint16_t mavlink_msg_bat_common_info_encode_chan(uint8_t system_id
  * @brief Send a bat_common_info message
  * @param chan MAVLink channel to send the message
  *
- * @param remCap the predicted remaining battery capacity in units mAh.
- * @param remSOC the current capacity in percentage of design capacity.
- * @param temperature the temperature of battery in units Centigrade.
- * @param packVolt the pack voltage in units mV.
- * @param cellnVolt each cell voltage in units mV.
- * @param current  the measured current from coulomb counter in units 10mA.
- * @param alert the warning items in discharge mode.
- * @param onOff the state of the key,which 0x00 indicates pulling up and 0xff indicates pulling down.
+ * @param remCap [mAh] the predicted remaining battery capacity in units mAh.
+ * @param remSOC  the current capacity in percentage of design capacity.
+ * @param temperature [celsius] the temperature of battery in units Centigrade.
+ * @param packVolt [mV] the pack voltage in units mV.
+ * @param cellnVolt [mAh] each cell voltage in units mV.
+ * @param current [10mA]  the measured current from coulomb counter in units 10mA.
+ * @param alert  the warning items in discharge mode.
+ * @param onOff  the state of the key,which 0x00 indicates pulling up and 0xff indicates pulling down.
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
@@ -278,7 +278,7 @@ static inline void mavlink_msg_bat_common_info_send_buf(mavlink_message_t *msgbu
 /**
  * @brief Get field remCap from bat_common_info message
  *
- * @return the predicted remaining battery capacity in units mAh.
+ * @return [mAh] the predicted remaining battery capacity in units mAh.
  */
 static inline uint16_t mavlink_msg_bat_common_info_get_remCap(const mavlink_message_t* msg)
 {
@@ -288,7 +288,7 @@ static inline uint16_t mavlink_msg_bat_common_info_get_remCap(const mavlink_mess
 /**
  * @brief Get field remSOC from bat_common_info message
  *
- * @return the current capacity in percentage of design capacity.
+ * @return  the current capacity in percentage of design capacity.
  */
 static inline uint16_t mavlink_msg_bat_common_info_get_remSOC(const mavlink_message_t* msg)
 {
@@ -298,7 +298,7 @@ static inline uint16_t mavlink_msg_bat_common_info_get_remSOC(const mavlink_mess
 /**
  * @brief Get field temperature from bat_common_info message
  *
- * @return the temperature of battery in units Centigrade.
+ * @return [celsius] the temperature of battery in units Centigrade.
  */
 static inline int16_t mavlink_msg_bat_common_info_get_temperature(const mavlink_message_t* msg)
 {
@@ -308,7 +308,7 @@ static inline int16_t mavlink_msg_bat_common_info_get_temperature(const mavlink_
 /**
  * @brief Get field packVolt from bat_common_info message
  *
- * @return the pack voltage in units mV.
+ * @return [mV] the pack voltage in units mV.
  */
 static inline uint16_t mavlink_msg_bat_common_info_get_packVolt(const mavlink_message_t* msg)
 {
@@ -318,7 +318,7 @@ static inline uint16_t mavlink_msg_bat_common_info_get_packVolt(const mavlink_me
 /**
  * @brief Get field cellnVolt from bat_common_info message
  *
- * @return each cell voltage in units mV.
+ * @return [mAh] each cell voltage in units mV.
  */
 static inline uint16_t mavlink_msg_bat_common_info_get_cellnVolt(const mavlink_message_t* msg, uint16_t *cellnVolt)
 {
@@ -328,7 +328,7 @@ static inline uint16_t mavlink_msg_bat_common_info_get_cellnVolt(const mavlink_m
 /**
  * @brief Get field current from bat_common_info message
  *
- * @return  the measured current from coulomb counter in units 10mA.
+ * @return [10mA]  the measured current from coulomb counter in units 10mA.
  */
 static inline int16_t mavlink_msg_bat_common_info_get_current(const mavlink_message_t* msg)
 {
@@ -338,7 +338,7 @@ static inline int16_t mavlink_msg_bat_common_info_get_current(const mavlink_mess
 /**
  * @brief Get field alert from bat_common_info message
  *
- * @return the warning items in discharge mode.
+ * @return  the warning items in discharge mode.
  */
 static inline uint32_t mavlink_msg_bat_common_info_get_alert(const mavlink_message_t* msg)
 {
@@ -348,7 +348,7 @@ static inline uint32_t mavlink_msg_bat_common_info_get_alert(const mavlink_messa
 /**
  * @brief Get field onOff from bat_common_info message
  *
- * @return the state of the key,which 0x00 indicates pulling up and 0xff indicates pulling down.
+ * @return  the state of the key,which 0x00 indicates pulling up and 0xff indicates pulling down.
  */
 static inline uint8_t mavlink_msg_bat_common_info_get_onOff(const mavlink_message_t* msg)
 {

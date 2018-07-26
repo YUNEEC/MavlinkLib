@@ -5,15 +5,15 @@
 
 MAVPACKED(
 typedef struct __mavlink_task_state_feedback_t {
- float param1; /*< Parameter 1, as defined by TASK_CMD enum.*/
- float param2; /*< Parameter 2, as defined by TASK_CMD enum.*/
- float param3; /*< Parameter 3, as defined by TASK_CMD enum.*/
- float param4; /*< Parameter 4, as defined by TASK_CMD enum.*/
- float param5; /*< Parameter 5, as defined by TASK_CMD enum.*/
- float param6; /*< Parameter 6, as defined by TASK_CMD enum.*/
- float param7; /*< Parameter 7, as defined by TASK_CMD enum.*/
- uint8_t task_mode; /*< Flight tasks mode, as defined by TASK_CMD enum*/
- uint8_t task_state; /*< Flight tasks state, as defined by TASK_STATE enum*/
+ float param1; /*<  Parameter 1, as defined by TASK_CMD enum.*/
+ float param2; /*<  Parameter 2, as defined by TASK_CMD enum.*/
+ float param3; /*<  Parameter 3, as defined by TASK_CMD enum.*/
+ float param4; /*<  Parameter 4, as defined by TASK_CMD enum.*/
+ float param5; /*<  Parameter 5, as defined by TASK_CMD enum.*/
+ float param6; /*<  Parameter 6, as defined by TASK_CMD enum.*/
+ float param7; /*<  Parameter 7, as defined by TASK_CMD enum.*/
+ uint8_t task_mode; /*<  Flight tasks mode, as defined by TASK_CMD enum*/
+ uint8_t task_state; /*<  Flight tasks state, as defined by TASK_STATE enum*/
 }) mavlink_task_state_feedback_t;
 
 #define MAVLINK_MSG_ID_TASK_STATE_FEEDBACK_LEN 30
@@ -65,15 +65,15 @@ typedef struct __mavlink_task_state_feedback_t {
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param msg The MAVLink message to compress the data into
  *
- * @param task_mode Flight tasks mode, as defined by TASK_CMD enum
- * @param task_state Flight tasks state, as defined by TASK_STATE enum
- * @param param1 Parameter 1, as defined by TASK_CMD enum.
- * @param param2 Parameter 2, as defined by TASK_CMD enum.
- * @param param3 Parameter 3, as defined by TASK_CMD enum.
- * @param param4 Parameter 4, as defined by TASK_CMD enum.
- * @param param5 Parameter 5, as defined by TASK_CMD enum.
- * @param param6 Parameter 6, as defined by TASK_CMD enum.
- * @param param7 Parameter 7, as defined by TASK_CMD enum.
+ * @param task_mode  Flight tasks mode, as defined by TASK_CMD enum
+ * @param task_state  Flight tasks state, as defined by TASK_STATE enum
+ * @param param1  Parameter 1, as defined by TASK_CMD enum.
+ * @param param2  Parameter 2, as defined by TASK_CMD enum.
+ * @param param3  Parameter 3, as defined by TASK_CMD enum.
+ * @param param4  Parameter 4, as defined by TASK_CMD enum.
+ * @param param5  Parameter 5, as defined by TASK_CMD enum.
+ * @param param6  Parameter 6, as defined by TASK_CMD enum.
+ * @param param7  Parameter 7, as defined by TASK_CMD enum.
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_task_state_feedback_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
@@ -117,15 +117,15 @@ static inline uint16_t mavlink_msg_task_state_feedback_pack(uint8_t system_id, u
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param chan The MAVLink channel this message will be sent over
  * @param msg The MAVLink message to compress the data into
- * @param task_mode Flight tasks mode, as defined by TASK_CMD enum
- * @param task_state Flight tasks state, as defined by TASK_STATE enum
- * @param param1 Parameter 1, as defined by TASK_CMD enum.
- * @param param2 Parameter 2, as defined by TASK_CMD enum.
- * @param param3 Parameter 3, as defined by TASK_CMD enum.
- * @param param4 Parameter 4, as defined by TASK_CMD enum.
- * @param param5 Parameter 5, as defined by TASK_CMD enum.
- * @param param6 Parameter 6, as defined by TASK_CMD enum.
- * @param param7 Parameter 7, as defined by TASK_CMD enum.
+ * @param task_mode  Flight tasks mode, as defined by TASK_CMD enum
+ * @param task_state  Flight tasks state, as defined by TASK_STATE enum
+ * @param param1  Parameter 1, as defined by TASK_CMD enum.
+ * @param param2  Parameter 2, as defined by TASK_CMD enum.
+ * @param param3  Parameter 3, as defined by TASK_CMD enum.
+ * @param param4  Parameter 4, as defined by TASK_CMD enum.
+ * @param param5  Parameter 5, as defined by TASK_CMD enum.
+ * @param param6  Parameter 6, as defined by TASK_CMD enum.
+ * @param param7  Parameter 7, as defined by TASK_CMD enum.
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_task_state_feedback_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
@@ -195,15 +195,15 @@ static inline uint16_t mavlink_msg_task_state_feedback_encode_chan(uint8_t syste
  * @brief Send a task_state_feedback message
  * @param chan MAVLink channel to send the message
  *
- * @param task_mode Flight tasks mode, as defined by TASK_CMD enum
- * @param task_state Flight tasks state, as defined by TASK_STATE enum
- * @param param1 Parameter 1, as defined by TASK_CMD enum.
- * @param param2 Parameter 2, as defined by TASK_CMD enum.
- * @param param3 Parameter 3, as defined by TASK_CMD enum.
- * @param param4 Parameter 4, as defined by TASK_CMD enum.
- * @param param5 Parameter 5, as defined by TASK_CMD enum.
- * @param param6 Parameter 6, as defined by TASK_CMD enum.
- * @param param7 Parameter 7, as defined by TASK_CMD enum.
+ * @param task_mode  Flight tasks mode, as defined by TASK_CMD enum
+ * @param task_state  Flight tasks state, as defined by TASK_STATE enum
+ * @param param1  Parameter 1, as defined by TASK_CMD enum.
+ * @param param2  Parameter 2, as defined by TASK_CMD enum.
+ * @param param3  Parameter 3, as defined by TASK_CMD enum.
+ * @param param4  Parameter 4, as defined by TASK_CMD enum.
+ * @param param5  Parameter 5, as defined by TASK_CMD enum.
+ * @param param6  Parameter 6, as defined by TASK_CMD enum.
+ * @param param7  Parameter 7, as defined by TASK_CMD enum.
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
@@ -300,7 +300,7 @@ static inline void mavlink_msg_task_state_feedback_send_buf(mavlink_message_t *m
 /**
  * @brief Get field task_mode from task_state_feedback message
  *
- * @return Flight tasks mode, as defined by TASK_CMD enum
+ * @return  Flight tasks mode, as defined by TASK_CMD enum
  */
 static inline uint8_t mavlink_msg_task_state_feedback_get_task_mode(const mavlink_message_t* msg)
 {
@@ -310,7 +310,7 @@ static inline uint8_t mavlink_msg_task_state_feedback_get_task_mode(const mavlin
 /**
  * @brief Get field task_state from task_state_feedback message
  *
- * @return Flight tasks state, as defined by TASK_STATE enum
+ * @return  Flight tasks state, as defined by TASK_STATE enum
  */
 static inline uint8_t mavlink_msg_task_state_feedback_get_task_state(const mavlink_message_t* msg)
 {
@@ -320,7 +320,7 @@ static inline uint8_t mavlink_msg_task_state_feedback_get_task_state(const mavli
 /**
  * @brief Get field param1 from task_state_feedback message
  *
- * @return Parameter 1, as defined by TASK_CMD enum.
+ * @return  Parameter 1, as defined by TASK_CMD enum.
  */
 static inline float mavlink_msg_task_state_feedback_get_param1(const mavlink_message_t* msg)
 {
@@ -330,7 +330,7 @@ static inline float mavlink_msg_task_state_feedback_get_param1(const mavlink_mes
 /**
  * @brief Get field param2 from task_state_feedback message
  *
- * @return Parameter 2, as defined by TASK_CMD enum.
+ * @return  Parameter 2, as defined by TASK_CMD enum.
  */
 static inline float mavlink_msg_task_state_feedback_get_param2(const mavlink_message_t* msg)
 {
@@ -340,7 +340,7 @@ static inline float mavlink_msg_task_state_feedback_get_param2(const mavlink_mes
 /**
  * @brief Get field param3 from task_state_feedback message
  *
- * @return Parameter 3, as defined by TASK_CMD enum.
+ * @return  Parameter 3, as defined by TASK_CMD enum.
  */
 static inline float mavlink_msg_task_state_feedback_get_param3(const mavlink_message_t* msg)
 {
@@ -350,7 +350,7 @@ static inline float mavlink_msg_task_state_feedback_get_param3(const mavlink_mes
 /**
  * @brief Get field param4 from task_state_feedback message
  *
- * @return Parameter 4, as defined by TASK_CMD enum.
+ * @return  Parameter 4, as defined by TASK_CMD enum.
  */
 static inline float mavlink_msg_task_state_feedback_get_param4(const mavlink_message_t* msg)
 {
@@ -360,7 +360,7 @@ static inline float mavlink_msg_task_state_feedback_get_param4(const mavlink_mes
 /**
  * @brief Get field param5 from task_state_feedback message
  *
- * @return Parameter 5, as defined by TASK_CMD enum.
+ * @return  Parameter 5, as defined by TASK_CMD enum.
  */
 static inline float mavlink_msg_task_state_feedback_get_param5(const mavlink_message_t* msg)
 {
@@ -370,7 +370,7 @@ static inline float mavlink_msg_task_state_feedback_get_param5(const mavlink_mes
 /**
  * @brief Get field param6 from task_state_feedback message
  *
- * @return Parameter 6, as defined by TASK_CMD enum.
+ * @return  Parameter 6, as defined by TASK_CMD enum.
  */
 static inline float mavlink_msg_task_state_feedback_get_param6(const mavlink_message_t* msg)
 {
@@ -380,7 +380,7 @@ static inline float mavlink_msg_task_state_feedback_get_param6(const mavlink_mes
 /**
  * @brief Get field param7 from task_state_feedback message
  *
- * @return Parameter 7, as defined by TASK_CMD enum.
+ * @return  Parameter 7, as defined by TASK_CMD enum.
  */
 static inline float mavlink_msg_task_state_feedback_get_param7(const mavlink_message_t* msg)
 {

@@ -5,8 +5,8 @@
 
 MAVPACKED(
 typedef struct __mavlink_gimbal_debugdata_t {
- uint8_t msg_type; /*< gimbal debudata type.*/
- int8_t debug_data[49]; /*< gimbal debudata.*/
+ uint8_t msg_type; /*<  gimbal debudata type.*/
+ int8_t debug_data[49]; /*<  gimbal debudata.*/
 }) mavlink_gimbal_debugdata_t;
 
 #define MAVLINK_MSG_ID_GIMBAL_DEBUGDATA_LEN 50
@@ -44,8 +44,8 @@ typedef struct __mavlink_gimbal_debugdata_t {
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param msg The MAVLink message to compress the data into
  *
- * @param msg_type gimbal debudata type.
- * @param debug_data gimbal debudata.
+ * @param msg_type  gimbal debudata type.
+ * @param debug_data  gimbal debudata.
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_gimbal_debugdata_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
@@ -73,8 +73,8 @@ static inline uint16_t mavlink_msg_gimbal_debugdata_pack(uint8_t system_id, uint
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param chan The MAVLink channel this message will be sent over
  * @param msg The MAVLink message to compress the data into
- * @param msg_type gimbal debudata type.
- * @param debug_data gimbal debudata.
+ * @param msg_type  gimbal debudata type.
+ * @param debug_data  gimbal debudata.
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_gimbal_debugdata_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
@@ -128,8 +128,8 @@ static inline uint16_t mavlink_msg_gimbal_debugdata_encode_chan(uint8_t system_i
  * @brief Send a gimbal_debugdata message
  * @param chan MAVLink channel to send the message
  *
- * @param msg_type gimbal debudata type.
- * @param debug_data gimbal debudata.
+ * @param msg_type  gimbal debudata type.
+ * @param debug_data  gimbal debudata.
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
@@ -194,7 +194,7 @@ static inline void mavlink_msg_gimbal_debugdata_send_buf(mavlink_message_t *msgb
 /**
  * @brief Get field msg_type from gimbal_debugdata message
  *
- * @return gimbal debudata type.
+ * @return  gimbal debudata type.
  */
 static inline uint8_t mavlink_msg_gimbal_debugdata_get_msg_type(const mavlink_message_t* msg)
 {
@@ -204,7 +204,7 @@ static inline uint8_t mavlink_msg_gimbal_debugdata_get_msg_type(const mavlink_me
 /**
  * @brief Get field debug_data from gimbal_debugdata message
  *
- * @return gimbal debudata.
+ * @return  gimbal debudata.
  */
 static inline uint16_t mavlink_msg_gimbal_debugdata_get_debug_data(const mavlink_message_t* msg, int8_t *debug_data)
 {

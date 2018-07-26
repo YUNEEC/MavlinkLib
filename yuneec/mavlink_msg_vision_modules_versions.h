@@ -5,10 +5,10 @@
 
 MAVPACKED(
 typedef struct __mavlink_vision_modules_versions_t {
- uint32_t optical_software_version; /*< Optical flow software version*/
- uint32_t optical_hardware_version; /*< Optical flow hardware version*/
- uint32_t realsense_software_version; /*< Realsense software version*/
- uint32_t realsense_hardware_version; /*< Realsense hardware version*/
+ uint32_t optical_software_version; /*<  Optical flow software version*/
+ uint32_t optical_hardware_version; /*<  Optical flow hardware version*/
+ uint32_t realsense_software_version; /*<  Realsense software version*/
+ uint32_t realsense_hardware_version; /*<  Realsense hardware version*/
 }) mavlink_vision_modules_versions_t;
 
 #define MAVLINK_MSG_ID_VISION_MODULES_VERSIONS_LEN 16
@@ -50,10 +50,10 @@ typedef struct __mavlink_vision_modules_versions_t {
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param msg The MAVLink message to compress the data into
  *
- * @param optical_software_version Optical flow software version
- * @param optical_hardware_version Optical flow hardware version
- * @param realsense_software_version Realsense software version
- * @param realsense_hardware_version Realsense hardware version
+ * @param optical_software_version  Optical flow software version
+ * @param optical_hardware_version  Optical flow hardware version
+ * @param realsense_software_version  Realsense software version
+ * @param realsense_hardware_version  Realsense hardware version
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_vision_modules_versions_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
@@ -87,10 +87,10 @@ static inline uint16_t mavlink_msg_vision_modules_versions_pack(uint8_t system_i
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param chan The MAVLink channel this message will be sent over
  * @param msg The MAVLink message to compress the data into
- * @param optical_software_version Optical flow software version
- * @param optical_hardware_version Optical flow hardware version
- * @param realsense_software_version Realsense software version
- * @param realsense_hardware_version Realsense hardware version
+ * @param optical_software_version  Optical flow software version
+ * @param optical_hardware_version  Optical flow hardware version
+ * @param realsense_software_version  Realsense software version
+ * @param realsense_hardware_version  Realsense hardware version
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_vision_modules_versions_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
@@ -150,10 +150,10 @@ static inline uint16_t mavlink_msg_vision_modules_versions_encode_chan(uint8_t s
  * @brief Send a vision_modules_versions message
  * @param chan MAVLink channel to send the message
  *
- * @param optical_software_version Optical flow software version
- * @param optical_hardware_version Optical flow hardware version
- * @param realsense_software_version Realsense software version
- * @param realsense_hardware_version Realsense hardware version
+ * @param optical_software_version  Optical flow software version
+ * @param optical_hardware_version  Optical flow hardware version
+ * @param realsense_software_version  Realsense software version
+ * @param realsense_hardware_version  Realsense hardware version
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
@@ -230,7 +230,7 @@ static inline void mavlink_msg_vision_modules_versions_send_buf(mavlink_message_
 /**
  * @brief Get field optical_software_version from vision_modules_versions message
  *
- * @return Optical flow software version
+ * @return  Optical flow software version
  */
 static inline uint32_t mavlink_msg_vision_modules_versions_get_optical_software_version(const mavlink_message_t* msg)
 {
@@ -240,7 +240,7 @@ static inline uint32_t mavlink_msg_vision_modules_versions_get_optical_software_
 /**
  * @brief Get field optical_hardware_version from vision_modules_versions message
  *
- * @return Optical flow hardware version
+ * @return  Optical flow hardware version
  */
 static inline uint32_t mavlink_msg_vision_modules_versions_get_optical_hardware_version(const mavlink_message_t* msg)
 {
@@ -250,7 +250,7 @@ static inline uint32_t mavlink_msg_vision_modules_versions_get_optical_hardware_
 /**
  * @brief Get field realsense_software_version from vision_modules_versions message
  *
- * @return Realsense software version
+ * @return  Realsense software version
  */
 static inline uint32_t mavlink_msg_vision_modules_versions_get_realsense_software_version(const mavlink_message_t* msg)
 {
@@ -260,7 +260,7 @@ static inline uint32_t mavlink_msg_vision_modules_versions_get_realsense_softwar
 /**
  * @brief Get field realsense_hardware_version from vision_modules_versions message
  *
- * @return Realsense hardware version
+ * @return  Realsense hardware version
  */
 static inline uint32_t mavlink_msg_vision_modules_versions_get_realsense_hardware_version(const mavlink_message_t* msg)
 {

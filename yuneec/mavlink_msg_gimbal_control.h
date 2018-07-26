@@ -5,16 +5,16 @@
 
 MAVPACKED(
 typedef struct __mavlink_gimbal_control_t {
- int16_t quaternion[4]; /*< drone's quaternion, multiplied by 10000.*/
- int16_t hvel; /*< drone's horizontal velocity in cm/s unit.*/
- int16_t hacc; /*< drone's horizontal acceleration in cm/s/s unit.*/
- int16_t yaw_deg_desire; /*< Current yaw angular rate in of drone in 0.1*degrees/second.*/
- uint16_t yaw_channel; /*< yaw channel value,value range 0-4096,follow point ahead mode is none;degree = -((channel_value-2048)*0.03dgree+45dgree); velocity=-(channel_value-2130)/41 or velocity=-(channel_value-1966)/41 there has a lsb deadline.*/
- uint16_t pitch_channel; /*< pitch channel value,value range 0-4096,follow point ahead mode is none;degree = -((channel_value-2048)*0.03dgree+45dgree); velocity=-(channel_value-2130)/41 or velocity=-(channel_value-1966)/41 there has a lsb deadline.*/
- uint16_t roll_channel; /*< roll channel value,value range 0-4096,follow point ahead mode is none;degree = -((channel_value-2048)*0.03dgree+45dgree); velocity=-(channel_value-2130)/41 or velocity=-(channel_value-1966)/41 there has a lsb deadline.*/
- uint16_t yaw_mode; /*< yaw mode value, 410-820 is mode :follow point ahead;820-1229 is mode:follow point angle changeable, 1229-1638 is mode:follow point velocity  changeable,2048-2458 is mode:global angle changeable, 2867-3686 is mode: global velocity  changeable.*/
- uint16_t pitch_mode; /*< pitch mode value, 410-820 is mode :follow point  ahead;820-1229 is mode:follow point angle changeable, 1229-1638 is mode:follow point velocity  changeable,2048-2458 is mode:global angle changeable, 2867-3686 is mode: global velocity  changeable.*/
- uint16_t roll_mode; /*< roll mode value, 410-820 is mode :follow point  ahead;820-1229 is mode:follow point angle changeable, 1229-1638 is mode:follow point velocity  changeable,2048-2458 is mode:global angle changeable, 2867-3686 is mode: global velocity changeable.*/
+ int16_t quaternion[4]; /*<  drone's quaternion, multiplied by 10000.*/
+ int16_t hvel; /*<  drone's horizontal velocity in cm/s unit.*/
+ int16_t hacc; /*<  drone's horizontal acceleration in cm/s/s unit.*/
+ int16_t yaw_deg_desire; /*<  Current yaw angular rate in of drone in 0.1*degrees/second.*/
+ uint16_t yaw_channel; /*<  yaw channel value,value range 0-4096,follow point ahead mode is none;degree = -((channel_value-2048)*0.03dgree+45dgree); velocity=-(channel_value-2130)/41 or velocity=-(channel_value-1966)/41 there has a lsb deadline.*/
+ uint16_t pitch_channel; /*<  pitch channel value,value range 0-4096,follow point ahead mode is none;degree = -((channel_value-2048)*0.03dgree+45dgree); velocity=-(channel_value-2130)/41 or velocity=-(channel_value-1966)/41 there has a lsb deadline.*/
+ uint16_t roll_channel; /*<  roll channel value,value range 0-4096,follow point ahead mode is none;degree = -((channel_value-2048)*0.03dgree+45dgree); velocity=-(channel_value-2130)/41 or velocity=-(channel_value-1966)/41 there has a lsb deadline.*/
+ uint16_t yaw_mode; /*<  yaw mode value, 410-820 is mode :follow point ahead;820-1229 is mode:follow point angle changeable, 1229-1638 is mode:follow point velocity  changeable,2048-2458 is mode:global angle changeable, 2867-3686 is mode: global velocity  changeable.*/
+ uint16_t pitch_mode; /*<  pitch mode value, 410-820 is mode :follow point  ahead;820-1229 is mode:follow point angle changeable, 1229-1638 is mode:follow point velocity  changeable,2048-2458 is mode:global angle changeable, 2867-3686 is mode: global velocity  changeable.*/
+ uint16_t roll_mode; /*<  roll mode value, 410-820 is mode :follow point  ahead;820-1229 is mode:follow point angle changeable, 1229-1638 is mode:follow point velocity  changeable,2048-2458 is mode:global angle changeable, 2867-3686 is mode: global velocity changeable.*/
 }) mavlink_gimbal_control_t;
 
 #define MAVLINK_MSG_ID_GIMBAL_CONTROL_LEN 26
@@ -68,16 +68,16 @@ typedef struct __mavlink_gimbal_control_t {
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param msg The MAVLink message to compress the data into
  *
- * @param quaternion drone's quaternion, multiplied by 10000.
- * @param hvel drone's horizontal velocity in cm/s unit.
- * @param hacc drone's horizontal acceleration in cm/s/s unit.
- * @param yaw_deg_desire Current yaw angular rate in of drone in 0.1*degrees/second.
- * @param yaw_channel yaw channel value,value range 0-4096,follow point ahead mode is none;degree = -((channel_value-2048)*0.03dgree+45dgree); velocity=-(channel_value-2130)/41 or velocity=-(channel_value-1966)/41 there has a lsb deadline.
- * @param pitch_channel pitch channel value,value range 0-4096,follow point ahead mode is none;degree = -((channel_value-2048)*0.03dgree+45dgree); velocity=-(channel_value-2130)/41 or velocity=-(channel_value-1966)/41 there has a lsb deadline.
- * @param roll_channel roll channel value,value range 0-4096,follow point ahead mode is none;degree = -((channel_value-2048)*0.03dgree+45dgree); velocity=-(channel_value-2130)/41 or velocity=-(channel_value-1966)/41 there has a lsb deadline.
- * @param yaw_mode yaw mode value, 410-820 is mode :follow point ahead;820-1229 is mode:follow point angle changeable, 1229-1638 is mode:follow point velocity  changeable,2048-2458 is mode:global angle changeable, 2867-3686 is mode: global velocity  changeable.
- * @param pitch_mode pitch mode value, 410-820 is mode :follow point  ahead;820-1229 is mode:follow point angle changeable, 1229-1638 is mode:follow point velocity  changeable,2048-2458 is mode:global angle changeable, 2867-3686 is mode: global velocity  changeable.
- * @param roll_mode roll mode value, 410-820 is mode :follow point  ahead;820-1229 is mode:follow point angle changeable, 1229-1638 is mode:follow point velocity  changeable,2048-2458 is mode:global angle changeable, 2867-3686 is mode: global velocity changeable.
+ * @param quaternion  drone's quaternion, multiplied by 10000.
+ * @param hvel  drone's horizontal velocity in cm/s unit.
+ * @param hacc  drone's horizontal acceleration in cm/s/s unit.
+ * @param yaw_deg_desire  Current yaw angular rate in of drone in 0.1*degrees/second.
+ * @param yaw_channel  yaw channel value,value range 0-4096,follow point ahead mode is none;degree = -((channel_value-2048)*0.03dgree+45dgree); velocity=-(channel_value-2130)/41 or velocity=-(channel_value-1966)/41 there has a lsb deadline.
+ * @param pitch_channel  pitch channel value,value range 0-4096,follow point ahead mode is none;degree = -((channel_value-2048)*0.03dgree+45dgree); velocity=-(channel_value-2130)/41 or velocity=-(channel_value-1966)/41 there has a lsb deadline.
+ * @param roll_channel  roll channel value,value range 0-4096,follow point ahead mode is none;degree = -((channel_value-2048)*0.03dgree+45dgree); velocity=-(channel_value-2130)/41 or velocity=-(channel_value-1966)/41 there has a lsb deadline.
+ * @param yaw_mode  yaw mode value, 410-820 is mode :follow point ahead;820-1229 is mode:follow point angle changeable, 1229-1638 is mode:follow point velocity  changeable,2048-2458 is mode:global angle changeable, 2867-3686 is mode: global velocity  changeable.
+ * @param pitch_mode  pitch mode value, 410-820 is mode :follow point  ahead;820-1229 is mode:follow point angle changeable, 1229-1638 is mode:follow point velocity  changeable,2048-2458 is mode:global angle changeable, 2867-3686 is mode: global velocity  changeable.
+ * @param roll_mode  roll mode value, 410-820 is mode :follow point  ahead;820-1229 is mode:follow point angle changeable, 1229-1638 is mode:follow point velocity  changeable,2048-2458 is mode:global angle changeable, 2867-3686 is mode: global velocity changeable.
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_gimbal_control_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
@@ -121,16 +121,16 @@ static inline uint16_t mavlink_msg_gimbal_control_pack(uint8_t system_id, uint8_
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param chan The MAVLink channel this message will be sent over
  * @param msg The MAVLink message to compress the data into
- * @param quaternion drone's quaternion, multiplied by 10000.
- * @param hvel drone's horizontal velocity in cm/s unit.
- * @param hacc drone's horizontal acceleration in cm/s/s unit.
- * @param yaw_deg_desire Current yaw angular rate in of drone in 0.1*degrees/second.
- * @param yaw_channel yaw channel value,value range 0-4096,follow point ahead mode is none;degree = -((channel_value-2048)*0.03dgree+45dgree); velocity=-(channel_value-2130)/41 or velocity=-(channel_value-1966)/41 there has a lsb deadline.
- * @param pitch_channel pitch channel value,value range 0-4096,follow point ahead mode is none;degree = -((channel_value-2048)*0.03dgree+45dgree); velocity=-(channel_value-2130)/41 or velocity=-(channel_value-1966)/41 there has a lsb deadline.
- * @param roll_channel roll channel value,value range 0-4096,follow point ahead mode is none;degree = -((channel_value-2048)*0.03dgree+45dgree); velocity=-(channel_value-2130)/41 or velocity=-(channel_value-1966)/41 there has a lsb deadline.
- * @param yaw_mode yaw mode value, 410-820 is mode :follow point ahead;820-1229 is mode:follow point angle changeable, 1229-1638 is mode:follow point velocity  changeable,2048-2458 is mode:global angle changeable, 2867-3686 is mode: global velocity  changeable.
- * @param pitch_mode pitch mode value, 410-820 is mode :follow point  ahead;820-1229 is mode:follow point angle changeable, 1229-1638 is mode:follow point velocity  changeable,2048-2458 is mode:global angle changeable, 2867-3686 is mode: global velocity  changeable.
- * @param roll_mode roll mode value, 410-820 is mode :follow point  ahead;820-1229 is mode:follow point angle changeable, 1229-1638 is mode:follow point velocity  changeable,2048-2458 is mode:global angle changeable, 2867-3686 is mode: global velocity changeable.
+ * @param quaternion  drone's quaternion, multiplied by 10000.
+ * @param hvel  drone's horizontal velocity in cm/s unit.
+ * @param hacc  drone's horizontal acceleration in cm/s/s unit.
+ * @param yaw_deg_desire  Current yaw angular rate in of drone in 0.1*degrees/second.
+ * @param yaw_channel  yaw channel value,value range 0-4096,follow point ahead mode is none;degree = -((channel_value-2048)*0.03dgree+45dgree); velocity=-(channel_value-2130)/41 or velocity=-(channel_value-1966)/41 there has a lsb deadline.
+ * @param pitch_channel  pitch channel value,value range 0-4096,follow point ahead mode is none;degree = -((channel_value-2048)*0.03dgree+45dgree); velocity=-(channel_value-2130)/41 or velocity=-(channel_value-1966)/41 there has a lsb deadline.
+ * @param roll_channel  roll channel value,value range 0-4096,follow point ahead mode is none;degree = -((channel_value-2048)*0.03dgree+45dgree); velocity=-(channel_value-2130)/41 or velocity=-(channel_value-1966)/41 there has a lsb deadline.
+ * @param yaw_mode  yaw mode value, 410-820 is mode :follow point ahead;820-1229 is mode:follow point angle changeable, 1229-1638 is mode:follow point velocity  changeable,2048-2458 is mode:global angle changeable, 2867-3686 is mode: global velocity  changeable.
+ * @param pitch_mode  pitch mode value, 410-820 is mode :follow point  ahead;820-1229 is mode:follow point angle changeable, 1229-1638 is mode:follow point velocity  changeable,2048-2458 is mode:global angle changeable, 2867-3686 is mode: global velocity  changeable.
+ * @param roll_mode  roll mode value, 410-820 is mode :follow point  ahead;820-1229 is mode:follow point angle changeable, 1229-1638 is mode:follow point velocity  changeable,2048-2458 is mode:global angle changeable, 2867-3686 is mode: global velocity changeable.
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_gimbal_control_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
@@ -200,16 +200,16 @@ static inline uint16_t mavlink_msg_gimbal_control_encode_chan(uint8_t system_id,
  * @brief Send a gimbal_control message
  * @param chan MAVLink channel to send the message
  *
- * @param quaternion drone's quaternion, multiplied by 10000.
- * @param hvel drone's horizontal velocity in cm/s unit.
- * @param hacc drone's horizontal acceleration in cm/s/s unit.
- * @param yaw_deg_desire Current yaw angular rate in of drone in 0.1*degrees/second.
- * @param yaw_channel yaw channel value,value range 0-4096,follow point ahead mode is none;degree = -((channel_value-2048)*0.03dgree+45dgree); velocity=-(channel_value-2130)/41 or velocity=-(channel_value-1966)/41 there has a lsb deadline.
- * @param pitch_channel pitch channel value,value range 0-4096,follow point ahead mode is none;degree = -((channel_value-2048)*0.03dgree+45dgree); velocity=-(channel_value-2130)/41 or velocity=-(channel_value-1966)/41 there has a lsb deadline.
- * @param roll_channel roll channel value,value range 0-4096,follow point ahead mode is none;degree = -((channel_value-2048)*0.03dgree+45dgree); velocity=-(channel_value-2130)/41 or velocity=-(channel_value-1966)/41 there has a lsb deadline.
- * @param yaw_mode yaw mode value, 410-820 is mode :follow point ahead;820-1229 is mode:follow point angle changeable, 1229-1638 is mode:follow point velocity  changeable,2048-2458 is mode:global angle changeable, 2867-3686 is mode: global velocity  changeable.
- * @param pitch_mode pitch mode value, 410-820 is mode :follow point  ahead;820-1229 is mode:follow point angle changeable, 1229-1638 is mode:follow point velocity  changeable,2048-2458 is mode:global angle changeable, 2867-3686 is mode: global velocity  changeable.
- * @param roll_mode roll mode value, 410-820 is mode :follow point  ahead;820-1229 is mode:follow point angle changeable, 1229-1638 is mode:follow point velocity  changeable,2048-2458 is mode:global angle changeable, 2867-3686 is mode: global velocity changeable.
+ * @param quaternion  drone's quaternion, multiplied by 10000.
+ * @param hvel  drone's horizontal velocity in cm/s unit.
+ * @param hacc  drone's horizontal acceleration in cm/s/s unit.
+ * @param yaw_deg_desire  Current yaw angular rate in of drone in 0.1*degrees/second.
+ * @param yaw_channel  yaw channel value,value range 0-4096,follow point ahead mode is none;degree = -((channel_value-2048)*0.03dgree+45dgree); velocity=-(channel_value-2130)/41 or velocity=-(channel_value-1966)/41 there has a lsb deadline.
+ * @param pitch_channel  pitch channel value,value range 0-4096,follow point ahead mode is none;degree = -((channel_value-2048)*0.03dgree+45dgree); velocity=-(channel_value-2130)/41 or velocity=-(channel_value-1966)/41 there has a lsb deadline.
+ * @param roll_channel  roll channel value,value range 0-4096,follow point ahead mode is none;degree = -((channel_value-2048)*0.03dgree+45dgree); velocity=-(channel_value-2130)/41 or velocity=-(channel_value-1966)/41 there has a lsb deadline.
+ * @param yaw_mode  yaw mode value, 410-820 is mode :follow point ahead;820-1229 is mode:follow point angle changeable, 1229-1638 is mode:follow point velocity  changeable,2048-2458 is mode:global angle changeable, 2867-3686 is mode: global velocity  changeable.
+ * @param pitch_mode  pitch mode value, 410-820 is mode :follow point  ahead;820-1229 is mode:follow point angle changeable, 1229-1638 is mode:follow point velocity  changeable,2048-2458 is mode:global angle changeable, 2867-3686 is mode: global velocity  changeable.
+ * @param roll_mode  roll mode value, 410-820 is mode :follow point  ahead;820-1229 is mode:follow point angle changeable, 1229-1638 is mode:follow point velocity  changeable,2048-2458 is mode:global angle changeable, 2867-3686 is mode: global velocity changeable.
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
@@ -306,7 +306,7 @@ static inline void mavlink_msg_gimbal_control_send_buf(mavlink_message_t *msgbuf
 /**
  * @brief Get field quaternion from gimbal_control message
  *
- * @return drone's quaternion, multiplied by 10000.
+ * @return  drone's quaternion, multiplied by 10000.
  */
 static inline uint16_t mavlink_msg_gimbal_control_get_quaternion(const mavlink_message_t* msg, int16_t *quaternion)
 {
@@ -316,7 +316,7 @@ static inline uint16_t mavlink_msg_gimbal_control_get_quaternion(const mavlink_m
 /**
  * @brief Get field hvel from gimbal_control message
  *
- * @return drone's horizontal velocity in cm/s unit.
+ * @return  drone's horizontal velocity in cm/s unit.
  */
 static inline int16_t mavlink_msg_gimbal_control_get_hvel(const mavlink_message_t* msg)
 {
@@ -326,7 +326,7 @@ static inline int16_t mavlink_msg_gimbal_control_get_hvel(const mavlink_message_
 /**
  * @brief Get field hacc from gimbal_control message
  *
- * @return drone's horizontal acceleration in cm/s/s unit.
+ * @return  drone's horizontal acceleration in cm/s/s unit.
  */
 static inline int16_t mavlink_msg_gimbal_control_get_hacc(const mavlink_message_t* msg)
 {
@@ -336,7 +336,7 @@ static inline int16_t mavlink_msg_gimbal_control_get_hacc(const mavlink_message_
 /**
  * @brief Get field yaw_deg_desire from gimbal_control message
  *
- * @return Current yaw angular rate in of drone in 0.1*degrees/second.
+ * @return  Current yaw angular rate in of drone in 0.1*degrees/second.
  */
 static inline int16_t mavlink_msg_gimbal_control_get_yaw_deg_desire(const mavlink_message_t* msg)
 {
@@ -346,7 +346,7 @@ static inline int16_t mavlink_msg_gimbal_control_get_yaw_deg_desire(const mavlin
 /**
  * @brief Get field yaw_channel from gimbal_control message
  *
- * @return yaw channel value,value range 0-4096,follow point ahead mode is none;degree = -((channel_value-2048)*0.03dgree+45dgree); velocity=-(channel_value-2130)/41 or velocity=-(channel_value-1966)/41 there has a lsb deadline.
+ * @return  yaw channel value,value range 0-4096,follow point ahead mode is none;degree = -((channel_value-2048)*0.03dgree+45dgree); velocity=-(channel_value-2130)/41 or velocity=-(channel_value-1966)/41 there has a lsb deadline.
  */
 static inline uint16_t mavlink_msg_gimbal_control_get_yaw_channel(const mavlink_message_t* msg)
 {
@@ -356,7 +356,7 @@ static inline uint16_t mavlink_msg_gimbal_control_get_yaw_channel(const mavlink_
 /**
  * @brief Get field pitch_channel from gimbal_control message
  *
- * @return pitch channel value,value range 0-4096,follow point ahead mode is none;degree = -((channel_value-2048)*0.03dgree+45dgree); velocity=-(channel_value-2130)/41 or velocity=-(channel_value-1966)/41 there has a lsb deadline.
+ * @return  pitch channel value,value range 0-4096,follow point ahead mode is none;degree = -((channel_value-2048)*0.03dgree+45dgree); velocity=-(channel_value-2130)/41 or velocity=-(channel_value-1966)/41 there has a lsb deadline.
  */
 static inline uint16_t mavlink_msg_gimbal_control_get_pitch_channel(const mavlink_message_t* msg)
 {
@@ -366,7 +366,7 @@ static inline uint16_t mavlink_msg_gimbal_control_get_pitch_channel(const mavlin
 /**
  * @brief Get field roll_channel from gimbal_control message
  *
- * @return roll channel value,value range 0-4096,follow point ahead mode is none;degree = -((channel_value-2048)*0.03dgree+45dgree); velocity=-(channel_value-2130)/41 or velocity=-(channel_value-1966)/41 there has a lsb deadline.
+ * @return  roll channel value,value range 0-4096,follow point ahead mode is none;degree = -((channel_value-2048)*0.03dgree+45dgree); velocity=-(channel_value-2130)/41 or velocity=-(channel_value-1966)/41 there has a lsb deadline.
  */
 static inline uint16_t mavlink_msg_gimbal_control_get_roll_channel(const mavlink_message_t* msg)
 {
@@ -376,7 +376,7 @@ static inline uint16_t mavlink_msg_gimbal_control_get_roll_channel(const mavlink
 /**
  * @brief Get field yaw_mode from gimbal_control message
  *
- * @return yaw mode value, 410-820 is mode :follow point ahead;820-1229 is mode:follow point angle changeable, 1229-1638 is mode:follow point velocity  changeable,2048-2458 is mode:global angle changeable, 2867-3686 is mode: global velocity  changeable.
+ * @return  yaw mode value, 410-820 is mode :follow point ahead;820-1229 is mode:follow point angle changeable, 1229-1638 is mode:follow point velocity  changeable,2048-2458 is mode:global angle changeable, 2867-3686 is mode: global velocity  changeable.
  */
 static inline uint16_t mavlink_msg_gimbal_control_get_yaw_mode(const mavlink_message_t* msg)
 {
@@ -386,7 +386,7 @@ static inline uint16_t mavlink_msg_gimbal_control_get_yaw_mode(const mavlink_mes
 /**
  * @brief Get field pitch_mode from gimbal_control message
  *
- * @return pitch mode value, 410-820 is mode :follow point  ahead;820-1229 is mode:follow point angle changeable, 1229-1638 is mode:follow point velocity  changeable,2048-2458 is mode:global angle changeable, 2867-3686 is mode: global velocity  changeable.
+ * @return  pitch mode value, 410-820 is mode :follow point  ahead;820-1229 is mode:follow point angle changeable, 1229-1638 is mode:follow point velocity  changeable,2048-2458 is mode:global angle changeable, 2867-3686 is mode: global velocity  changeable.
  */
 static inline uint16_t mavlink_msg_gimbal_control_get_pitch_mode(const mavlink_message_t* msg)
 {
@@ -396,7 +396,7 @@ static inline uint16_t mavlink_msg_gimbal_control_get_pitch_mode(const mavlink_m
 /**
  * @brief Get field roll_mode from gimbal_control message
  *
- * @return roll mode value, 410-820 is mode :follow point  ahead;820-1229 is mode:follow point angle changeable, 1229-1638 is mode:follow point velocity  changeable,2048-2458 is mode:global angle changeable, 2867-3686 is mode: global velocity changeable.
+ * @return  roll mode value, 410-820 is mode :follow point  ahead;820-1229 is mode:follow point angle changeable, 1229-1638 is mode:follow point velocity  changeable,2048-2458 is mode:global angle changeable, 2867-3686 is mode: global velocity changeable.
  */
 static inline uint16_t mavlink_msg_gimbal_control_get_roll_mode(const mavlink_message_t* msg)
 {
