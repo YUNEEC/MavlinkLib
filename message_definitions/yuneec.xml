@@ -693,6 +693,10 @@
       <description>Integer bitmask indicating which valid data of EKF is fused. This message is added until proper support is added upstream.</description>
       <field type="uint32_t" name="estimator_mode">Estimator mode flags according to the ESTIMATOR_MODE_FLAGS enum.</field>
     </message>
+    <message id="4008" name="NO_FLY_ZONE_UNLOCKING">
+      <description>Unlock key for no-fly zone. The string is 0 terminated, 33 bytes. We will decrypt this key and decide whether to cancel the no-fly zone check.</description>
+      <field type="char[33]" name="no_fly_zone_key">Unlock key for no-fly zone.</field>
+    </message>
     <message id="5000" name="GIMBAL_CONTROL">
       <description>Gimbal control packet from flight control.</description>
       <field type="int16_t[4]" name="quaternion">drone's quaternion, multiplied by 10000.</field>
