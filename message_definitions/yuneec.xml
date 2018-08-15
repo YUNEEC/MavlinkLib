@@ -697,6 +697,24 @@
       <description>Unlock key for no-fly zone. The string is 0 terminated, 33 bytes. We will decrypt this key and decide whether to cancel the no-fly zone check.</description>
       <field type="char[33]" name="no_fly_zone_key">Unlock key for no-fly zone.</field>
     </message>
+    <message id="4009" name="YUNEEC_OPTICAL_FLOW_RAD">
+      <description>Optical flow from an angular rate flow sensor (e.g. PX4FLOW or mouse sensor)</description>
+      <field type="uint64_t" name="time_usec" units="us">Timestamp (microseconds, synced to UNIX time or since system boot)</field>
+      <field type="uint8_t" name="sensor_id">Sensor ID</field>
+      <field type="uint32_t" name="integration_time_us" units="us">Integration time in microseconds. Divide integrated_x and integrated_y by the integration time to obtain average flow. The integration time also indicates the.</field>
+      <field type="float" name="integrated_x" units="rad">Flow in radians around X axis (Sensor RH rotation about the X axis induces a positive flow. Sensor linear motion along the positive Y axis induces a negative flow.)</field>
+      <field type="float" name="integrated_y" units="rad">Flow in radians around Y axis (Sensor RH rotation about the Y axis induces a positive flow. Sensor linear motion along the positive X axis induces a positive flow.)</field>
+      <field type="float" name="integrated_xgyro" units="rad">RH rotation around X axis (rad)</field>
+      <field type="float" name="integrated_ygyro" units="rad">RH rotation around Y axis (rad)</field>
+      <field type="float" name="integrated_zgyro" units="rad">RH rotation around Z axis (rad)</field>
+      <field type="int16_t" name="temperature" units="cdegC">Temperature * 100 in centi-degrees Celsius</field>
+      <field type="uint8_t" name="quality">Optical flow quality / confidence. 0: no valid flow, 255: maximum quality</field>
+      <field type="uint32_t" name="time_delta_distance_us" units="us">Time in microseconds since the distance was sampled.</field>
+      <field type="float" name="distance" units="m">Distance to the center of the flow field in meters. Positive value (including zero): distance known. Negative value: Unknown distance.</field>
+      <field type="uint8_t" name="sonar_level"> sonar sensitivity level. 0 means the lowest amplifier regulation level. 255 means the biggest level</field>
+      <field type="uint8_t" name="luminance">optical flow luminance. 0 means the lowest brightness and 255 means the highest brightness. No specific unit for it.</field>
+      <field type="uint32_t" name="distance_count">count of sonar distance capture</field>
+    </message>
     <message id="5000" name="GIMBAL_CONTROL">
       <description>Gimbal control packet from flight control.</description>
       <field type="int16_t[4]" name="quaternion">drone's quaternion, multiplied by 10000.</field>
