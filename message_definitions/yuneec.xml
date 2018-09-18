@@ -61,6 +61,26 @@
         <param index="2">1: Request realsense version</param>
         <param index="3">Reserved (all remaining params)</param>
       </entry>
+      <entry value="32774" name="MAV_CMD_FORCE_IPS_MODE">
+        <description>Force ips (indoor position system) mode, using optical flow instead of GPS.</description>
+        <param index="1">=0: disable; 1: enable.</param>
+        <param index="2">Empty</param>
+        <param index="3">Empty</param>
+        <param index="4">Empty</param>
+        <param index="5">Empty</param>
+        <param index="6">Empty</param>
+        <param index="7">Empty</param>
+      </entry>
+      <entry value="32775" name="MAV_CMD_FORCE_MANUAL_MODE">
+        <description>Force manual (altitude control) mode, disable position control and the drone is controlled manually.</description>
+        <param index="1">0: disable; 1: enable.</param>
+        <param index="2">Empty</param>
+        <param index="3">Empty</param>
+        <param index="4">Empty</param>
+        <param index="5">Empty</param>
+        <param index="6">Empty</param>
+        <param index="7">Empty</param>
+      </entry>
     </enum>
     <enum name="FLIGHT_TASK">
       <description> The advanced function mode.</description>

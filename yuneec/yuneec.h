@@ -187,7 +187,9 @@ typedef enum MAV_CMD
    MAV_CMD_TEAM_MODE=32771, /* Switch Team Mode ON/OFF; OFF: One remote controls aircraft and gimbal; ON: The master remote controls the aircraft, the slave remote controls the gimbal. |0 = OFF Team Mode; 1 = ON Team Mode.| Empty| Empty| Empty| Empty| Empty| Empty|  */
    MAV_CMD_EMERGENCY_BRAKE=32772, /* Emergency brake command. The drone will emergency braking without any acceleration limit. |Empty| Empty| Empty| Empty| Empty| Empty| Empty|  */
    VISION_MODULES_VERSION=32773, /* Request vision modules version information. |1: Request optical flow version| 1: Request realsense version| Reserved (all remaining params)|  */
-   MAV_CMD_ENUM_END=32774, /*  | */
+   MAV_CMD_FORCE_IPS_MODE=32774, /* Force ips (indoor position system) mode, using optical flow instead of GPS. |=0: disable; 1: enable.| Empty| Empty| Empty| Empty| Empty| Empty|  */
+   MAV_CMD_FORCE_MANUAL_MODE=32775, /* Force manual (altitude control) mode, disable position control and the drone is controlled manually. |0: disable; 1: enable.| Empty| Empty| Empty| Empty| Empty| Empty|  */
+   MAV_CMD_ENUM_END=32776, /*  | */
 } MAV_CMD;
 #endif
 
