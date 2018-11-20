@@ -158,12 +158,21 @@
       </entry>
       <entry value="9" name="FLIGHT_TASK_VISUAL_TRACKING">
         <description>visual tracking.</description>
-        <param index="2">=1,Pause the current task; =2 Continue/start the current task</param>
+        <param index="2">=1, Pause the current task; =2 Continue/start the current task</param>
         <param index="3">Sub-mode under the visual tracking,see enum (VISUAL_TRACKING_MODE).</param>
         <param index="4">Empty</param>
         <param index="5">Empty</param>
         <param index="6">Empty</param>
         <param index="7">Empty</param>
+      </entry>
+      <entry value="10" name="FLIGHT_TASK_TOWER_DETECTION">
+        <description>tower detection.</description>
+        <param index="2">=1, Pause the current task; =2 Continue/start the current task.</param>
+        <param index="3">Around the radius, the unit is meters, range (5-50m).</param>
+        <param index="4">Flight velocity, unit is m/s, range (1-10).</param>
+        <param index="5">Number of tasks performed.</param>
+        <param index="6">Number of photos taken after one rotation.</param>
+        <param index="7">Altitude change, unit is m.</param>
       </entry>
     </enum>
     <enum name="VISUAL_TRACKING_MODE">
@@ -373,6 +382,16 @@
       </entry>
       <entry value="9" name="TASK_VISUAL_TRACKING_MODE">
         <description>visual tracking mode.</description>
+        <param index="1">Empty</param>
+        <param index="2">Empty</param>
+        <param index="3">Empty</param>
+        <param index="4">Empty</param>
+        <param index="5">Empty</param>
+        <param index="6">Empty</param>
+        <param index="7">Empty</param>
+      </entry>
+      <entry value="10" name="TASK_TOWER_DETECTION_MODE">
+        <description>tower detection.</description>
         <param index="1">Empty</param>
         <param index="2">Empty</param>
         <param index="3">Empty</param>

@@ -206,8 +206,9 @@ typedef enum FLIGHT_TASK
    FLIGHT_TASK_AUTO_RECORD=6, /* auto record mode. |=1, Pause the current task; =2 Continue/Start the current task| sub_mode, see enum(AUTO_RECORD)| Empty| Empty| Empty| Empty|  */
    FLIGHT_TASK_SPEECH_RECOGNITION=7, /* speech recognition mode. |=1 Pause the current task; =2 Continue/Start the current task.| sub_mode, see enum(SPEECH_RECOGNITION)| Empty| Empty| Empty| Empty|  */
    FLIGHT_TASK_FACE_RECOGNITION=8, /* face recognition mode. |=1 Pause the current task; =2 Continue/Start the current task.| face numbers. 0 : No face recognized.| Empty| Empty| Empty| Empty|  */
-   FLIGHT_TASK_VISUAL_TRACKING=9, /* visual tracking. |=1,Pause the current task; =2 Continue/start the current task| Sub-mode under the visual tracking,see enum (VISUAL_TRACKING_MODE).| Empty| Empty| Empty| Empty|  */
-   FLIGHT_TASK_ENUM_END=10, /*  | */
+   FLIGHT_TASK_VISUAL_TRACKING=9, /* visual tracking. |=1, Pause the current task; =2 Continue/start the current task| Sub-mode under the visual tracking,see enum (VISUAL_TRACKING_MODE).| Empty| Empty| Empty| Empty|  */
+   FLIGHT_TASK_TOWER_DETECTION=10, /* tower detection. |=1, Pause the current task; =2 Continue/start the current task.| Around the radius, the unit is meters, range (5-50m).| Flight velocity, unit is m/s, range (1-10).| Number of tasks performed.| Number of photos taken after one rotation.| Altitude change, unit is m.|  */
+   FLIGHT_TASK_ENUM_END=11, /*  | */
 } FLIGHT_TASK;
 #endif
 
@@ -330,7 +331,8 @@ typedef enum TASK_CMD
    TASK_SPEECH_RECOGNITION_MODE=7, /* speech recognition mode. |Empty| Empty| Empty| Empty| Empty| Empty| Empty|  */
    TASK_FACE_RECOGNITION_MODE=8, /* face recognition mode. |Empty| Empty| Empty| Empty| Empty| Empty| Empty|  */
    TASK_VISUAL_TRACKING_MODE=9, /* visual tracking mode. |Empty| Empty| Empty| Empty| Empty| Empty| Empty|  */
-   TASK_CMD_ENUM_END=10, /*  | */
+   TASK_TOWER_DETECTION_MODE=10, /* tower detection. |Empty| Empty| Empty| Empty| Empty| Empty| Empty|  */
+   TASK_CMD_ENUM_END=11, /*  | */
 } TASK_CMD;
 #endif
 
