@@ -81,6 +81,16 @@
         <param index="6">Empty</param>
         <param index="7">Empty</param>
       </entry>
+      <entry value="32776" name="MAV_CMD_SIMPLE_MOVE">
+        <description>Make vehicle perform a simple move.</description>
+        <param index="1">sub_mode, see enum(SIMPLE_MOVE_TYPE)</param>
+        <param index="2">Required distance of movement(in unit of 0.1m), or angle of turning(in degree)</param>
+        <param index="3">Empty</param>
+        <param index="4">Empty</param>
+        <param index="5">Empty</param>
+        <param index="6">Empty</param>
+        <param index="7">Empty</param>
+      </entry>
     </enum>
     <enum name="FLIGHT_TASK">
       <description> The advanced function mode.</description>
@@ -133,15 +143,6 @@
         <description>auto record mode.</description>
         <param index="2">=1, Pause the current task; =2 Continue/Start the current task</param>
         <param index="3">sub_mode, see enum(AUTO_RECORD)</param>
-        <param index="4">Empty</param>
-        <param index="5">Empty</param>
-        <param index="6">Empty</param>
-        <param index="7">Empty</param>
-      </entry>
-      <entry value="7" name="FLIGHT_TASK_SPEECH_RECOGNITION">
-        <description>speech recognition mode.</description>
-        <param index="2">=1 Pause the current task; =2 Continue/Start the current task.</param>
-        <param index="3">sub_mode, see enum(SPEECH_RECOGNITION)</param>
         <param index="4">Empty</param>
         <param index="5">Empty</param>
         <param index="6">Empty</param>
@@ -211,31 +212,31 @@
         <description>Comprehensive panorama take photo.</description>
       </entry>
     </enum>
-    <enum name="SPEECH_RECOGNITION">
-      <description>Several sub modes under speech recognition mode.</description>
+    <enum name="SIMPLE_MOVE_TYPE">
+      <description>Simple move types for command MAV_CMD_SIMPLE_MOVE.</description>
       <entry value="1" name="GO_FORWARD">
-        <description>The voice said go forward, the aircraft moved forward 0.5m, velocity is 1m/s.</description>
+        <description>Go forward in speed at 1m/s.</description>
       </entry>
       <entry value="2" name="GO_BACKWARD">
-        <description>The voice said go backward, the aircraft moved backward 0.5m, velocity is 1m/s.</description>
+        <description>Move backward in speed at 1m/s.</description>
       </entry>
       <entry value="3" name="GO_LEFT">
-        <description>The voice said go left, the aircraft moved left 0.5m, velocity is 1m/s.</description>
+        <description>Move to left in speed at 1m/s.</description>
       </entry>
       <entry value="4" name="GO_RIGHT">
-        <description>The voice said turn right, the aircraft moved right 0.5m, velocity is 1m/s.</description>
+        <description>Move to right in speed at 1m/s.</description>
       </entry>
       <entry value="5" name="GO_UP">
-        <description>The voice said go up, the aircraft moved up 0.5m, velocity is 1m/s.</description>
+        <description>Flight upward in speed at 1m/s.</description>
       </entry>
       <entry value="6" name="GO_DOWN">
-        <description>The voice said go down, the aircraft moved down 0.5m, velocity is 1m/s.</description>
+        <description>Descend in speed at 1m/s.</description>
       </entry>
       <entry value="7" name="TURN_RIGHT">
-        <description>The voice said turn right, the aircraft turn right rotate 45 degree, max velocity 120 degree/s.</description>
+        <description>Turn right, max velocity 120 degree/s.</description>
       </entry>
       <entry value="8" name="TURN_LEFT">
-        <description>The voice said turn left, the aircraft turn left rotate 45 degree, max velocity 120 degree/s.</description>
+        <description>Turn left, max velocity 120 degree/s.</description>
       </entry>
       <entry value="9" name="EMERGENCY_STOP">
         <description>The aircraft emergency brake, and keep hovering.</description>
@@ -343,16 +344,6 @@
       </entry>
       <entry value="6" name="TASK_AUTO_RECORD_MODE">
         <description>Auto record mode.</description>
-        <param index="1">Empty</param>
-        <param index="2">Empty</param>
-        <param index="3">Empty</param>
-        <param index="4">Empty</param>
-        <param index="5">Empty</param>
-        <param index="6">Empty</param>
-        <param index="7">Empty</param>
-      </entry>
-      <entry value="7" name="TASK_SPEECH_RECOGNITION_MODE">
-        <description>speech recognition mode.</description>
         <param index="1">Empty</param>
         <param index="2">Empty</param>
         <param index="3">Empty</param>

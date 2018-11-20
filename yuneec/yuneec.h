@@ -189,7 +189,8 @@ typedef enum MAV_CMD
    VISION_MODULES_VERSION=32773, /* Request vision modules version information. |1: Request optical flow version| 1: Request realsense version| Reserved (all remaining params)|  */
    MAV_CMD_FORCE_IPS_MODE=32774, /* Force ips (indoor position system) mode, using optical flow instead of GPS. |=0: disable; 1: enable.| Empty| Empty| Empty| Empty| Empty| Empty|  */
    MAV_CMD_FORCE_MANUAL_MODE=32775, /* Force manual (altitude control) mode, disable position control and the drone is controlled manually. |0: disable; 1: enable.| Empty| Empty| Empty| Empty| Empty| Empty|  */
-   MAV_CMD_ENUM_END=32776, /*  | */
+   MAV_CMD_SIMPLE_MOVE=32776, /* Make vehicle perform a simple move. |sub_mode, see enum(SIMPLE_MOVE_TYPE)| Required distance of movement(in unit of 0.1m), or angle of turning(in degree)| Empty| Empty| Empty| Empty| Empty|  */
+   MAV_CMD_ENUM_END=32777, /*  | */
 } MAV_CMD;
 #endif
 
@@ -204,7 +205,6 @@ typedef enum FLIGHT_TASK
    FLIGHT_TASK_GPS_FOLLOW=4, /* Move through the gps follow the target. |=1, Pause the current task; =2 Continue/start the current task.| sub_mode, =0 follow me; =1 watch and follow me| Empty| Empty|  =1, gimbal visuial adjust| Empty|  */
    FLIGHT_TASK_CCC=5, /* Spline Curves. Full name:Curve Cable Cam. |=1, Pause the current task; =2 Continue/start the current task.| sub_mode, see enum (CURVE_CABLE_CAM).| Empty| Empty| Empty| Empty|  */
    FLIGHT_TASK_AUTO_RECORD=6, /* auto record mode. |=1, Pause the current task; =2 Continue/Start the current task| sub_mode, see enum(AUTO_RECORD)| Empty| Empty| Empty| Empty|  */
-   FLIGHT_TASK_SPEECH_RECOGNITION=7, /* speech recognition mode. |=1 Pause the current task; =2 Continue/Start the current task.| sub_mode, see enum(SPEECH_RECOGNITION)| Empty| Empty| Empty| Empty|  */
    FLIGHT_TASK_FACE_RECOGNITION=8, /* face recognition mode. |=1 Pause the current task; =2 Continue/Start the current task.| face numbers. 0 : No face recognized.| Empty| Empty| Empty| Empty|  */
    FLIGHT_TASK_VISUAL_TRACKING=9, /* visual tracking. |=1,Pause the current task; =2 Continue/start the current task| Sub-mode under the visual tracking,see enum (VISUAL_TRACKING_MODE).| Empty| Empty| Empty| Empty|  */
    FLIGHT_TASK_ENUM_END=10, /*  | */
@@ -250,22 +250,22 @@ typedef enum AUTO_RECORD
 } AUTO_RECORD;
 #endif
 
-/** @brief Several sub modes under speech recognition mode. */
-#ifndef HAVE_ENUM_SPEECH_RECOGNITION
-#define HAVE_ENUM_SPEECH_RECOGNITION
-typedef enum SPEECH_RECOGNITION
+/** @brief Simple move types for command MAV_CMD_SIMPLE_MOVE. */
+#ifndef HAVE_ENUM_SIMPLE_MOVE_TYPE
+#define HAVE_ENUM_SIMPLE_MOVE_TYPE
+typedef enum SIMPLE_MOVE_TYPE
 {
-   GO_FORWARD=1, /* The voice said go forward, the aircraft moved forward 0.5m, velocity is 1m/s. | */
-   GO_BACKWARD=2, /* The voice said go backward, the aircraft moved backward 0.5m, velocity is 1m/s. | */
-   GO_LEFT=3, /* The voice said go left, the aircraft moved left 0.5m, velocity is 1m/s. | */
-   GO_RIGHT=4, /* The voice said turn right, the aircraft moved right 0.5m, velocity is 1m/s. | */
-   GO_UP=5, /* The voice said go up, the aircraft moved up 0.5m, velocity is 1m/s. | */
-   GO_DOWN=6, /* The voice said go down, the aircraft moved down 0.5m, velocity is 1m/s. | */
-   TURN_RIGHT=7, /* The voice said turn right, the aircraft turn right rotate 45 degree, max velocity 120 degree/s. | */
-   TURN_LEFT=8, /* The voice said turn left, the aircraft turn left rotate 45 degree, max velocity 120 degree/s. | */
+   GO_FORWARD=1, /* Go forward in speed at 1m/s. | */
+   GO_BACKWARD=2, /* Move backward in speed at 1m/s. | */
+   GO_LEFT=3, /* Move to left in speed at 1m/s. | */
+   GO_RIGHT=4, /* Move to right in speed at 1m/s. | */
+   GO_UP=5, /* Flight upward in speed at 1m/s. | */
+   GO_DOWN=6, /* Descend in speed at 1m/s. | */
+   TURN_RIGHT=7, /* Turn right, max velocity 120 degree/s. | */
+   TURN_LEFT=8, /* Turn left, max velocity 120 degree/s. | */
    EMERGENCY_STOP=9, /* The aircraft emergency brake, and keep hovering. | */
-   SPEECH_RECOGNITION_ENUM_END=10, /*  | */
-} SPEECH_RECOGNITION;
+   SIMPLE_MOVE_TYPE_ENUM_END=10, /*  | */
+} SIMPLE_MOVE_TYPE;
 #endif
 
 /** @brief task result type */
@@ -327,7 +327,6 @@ typedef enum TASK_CMD
    TASK_GPS_FOLLOW_MODE=4, /* Gps follow me mode, move through the gps follow the target. |Empty| Empty| Empty| Empty| Empty| Empty| Empty|  */
    TASK_CCC_MODE=5, /* CCC mode, spline Curves. Full name: Curve Cable Cam. |Waypoint execute direction, =0 Positive movement, =1 Reverse movement.| The current number of waypoints.| The distance from the current waypoint to the next waypoint.| Empty| Empty| Empty| Empty|  */
    TASK_AUTO_RECORD_MODE=6, /* Auto record mode. |Empty| Empty| Empty| Empty| Empty| Empty| Empty|  */
-   TASK_SPEECH_RECOGNITION_MODE=7, /* speech recognition mode. |Empty| Empty| Empty| Empty| Empty| Empty| Empty|  */
    TASK_FACE_RECOGNITION_MODE=8, /* face recognition mode. |Empty| Empty| Empty| Empty| Empty| Empty| Empty|  */
    TASK_VISUAL_TRACKING_MODE=9, /* visual tracking mode. |Empty| Empty| Empty| Empty| Empty| Empty| Empty|  */
    TASK_CMD_ENUM_END=10, /*  | */
