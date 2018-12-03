@@ -109,7 +109,7 @@
         <param index="3">Around the radius, the unit is meters, range (5-50m)</param>
         <param index="4">Flight velocity, unit is m/s,range (1-10)</param>
         <param index="5">Surround direction, =0 clockwise rotation, =1 Anticlockwise rotation.</param>
-        <param index="6">Empty</param>
+        <param index="6">Choose how to draw points of interest, =0 Manually draw points of interest, =1 Automatically draw points of interest.</param>
         <param index="7">Empty</param>
       </entry>
       <entry value="3" name="FLIGHT_TASK_JOUR">
@@ -775,10 +775,12 @@
       <field type="uint8_t" name="progress">update progress(percentage), value range 0-100, the real value is progress*0.01f</field>
     </message>
     <message id="7050" name="MAV_RC_CMD">
+      <description>MAV RC command.</description>
       <field type="uint8_t" name="command" enum="MAV_RC_COMMAND"/>
       <field type="uint8_t[254]" name="params"/>
     </message>
     <message id="7051" name="MAV_RC_CMD_ACK">
+      <description>MAV RC command ACK.</description>
       <field type="uint8_t" name="command" enum="MAV_RC_COMMAND"/>
       <field type="uint8_t" name="code" enum="MAV_RC_ERROR_CODE"/>
       <field type="uint8_t[253]" name="params"/>
@@ -788,7 +790,7 @@
       <field type="uint16_t" name="capacity" units="mAh">the full battery capacity in units mAh, it will reduce with usage.</field>
       <field type="uint16_t" name="remCap" units="mAh">the predicted remaining battery capacity in units mAh.</field>
       <field type="uint16_t" name="remSOC">the current capacity in percentage of capacity.</field>
-      <field type="int16_t" name="temperature" units="celsius">the temperature of battery in units Centigrade.</field>
+      <field type="int16_t" name="temperature" units="cdegC">the temperature of battery in units Centigrade.</field>
       <field type="uint16_t" name="packVolt" units="mV">the pack voltage in units mV.</field>
       <field type="uint16_t" name="allVolt" units="mV">sum of each cell voltage in units mV.</field>
       <field type="uint16_t[12]" name="cellnVolt" units="mV">each cell voltage in units mV.</field>
@@ -798,20 +800,20 @@
       <field type="uint16_t" name="cycle">the charge-discharge cycle number.</field>
       <field type="uint16_t[12]" name="maxVn" units="mV">the maximum voltage of each cell has ever been experienced in units mV.</field>
       <field type="uint16_t[12]" name="minVn" units="mV"> the minimum voltage of each cell has ever been experienced in units mV.</field>
-      <field type="int8_t" name="maxTem" units="celsius">the max temperature of the battery has ever been experienced in units Centigrade.</field>
-      <field type="uint8_t" name="minTem" units="celsius">the minimum temperature of the battery has ever been experienced in units Centigrade.</field>
-      <field type="int16_t" name="maxChargeCurrent" units="10mA">the max charging current of the battery has ever been experienced in units 10mA.</field>
-      <field type="int16_t" name="maxDishargeCurrent" units="10mA">the max discharging current of the battery has ever been experienced in units 10mA.</field>
+      <field type="int8_t" name="maxTem" units="cdegC">the max temperature of the battery has ever been experienced in units Centigrade.</field>
+      <field type="uint8_t" name="minTem" units="cdegC">the minimum temperature of the battery has ever been experienced in units Centigrade.</field>
+      <field type="int16_t" name="maxChargeCurrent" units="mA">the max charging current of the battery has ever been experienced in units 10mA.</field>
+      <field type="int16_t" name="maxDishargeCurrent" units="mA">the max discharging current of the battery has ever been experienced in units 10mA.</field>
       <field type="uint16_t" name="numOfOverCharge">the overcharge times of the battery.</field>
     </message>
     <message id="9003" name="BAT_COMMON_INFO">
       <description>command of host to battery.</description>
       <field type="uint16_t" name="remCap" units="mAh">the predicted remaining battery capacity in units mAh.</field>
       <field type="uint16_t" name="remSOC">the current capacity in percentage of design capacity.</field>
-      <field type="int16_t" name="temperature" units="celsius">the temperature of battery in units Centigrade.</field>
+      <field type="int16_t" name="temperature" units="cdegC">the temperature of battery in units Centigrade.</field>
       <field type="uint16_t" name="packVolt" units="mV">the pack voltage in units mV.</field>
       <field type="uint16_t[12]" name="cellnVolt" units="mAh">each cell voltage in units mV.</field>
-      <field type="int16_t" name="current" units="10mA"> the measured current from coulomb counter in units 10mA.</field>
+      <field type="int16_t" name="current" units="mA"> the measured current from coulomb counter in units 10mA.</field>
       <field type="uint32_t" name="alert">the warning items in discharge mode.</field>
       <field type="uint8_t" name="onOff">the state of the key,which 0x00 indicates pulling up and 0xff indicates pulling down.</field>
     </message>

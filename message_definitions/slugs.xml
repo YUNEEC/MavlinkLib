@@ -116,16 +116,16 @@
       </entry>
     </enum>
   </enums>
-  <!-- 
-  <enum name="WP_PROTOCOL_STATE" > 
-    <description> Waypoint Protocol States </description> 
-    <entry name = "WP_PROT_IDLE"> 
-    <entry name = "WP_PROT_LIST_REQUESTED"> 
+  <!--
+  <enum name="WP_PROTOCOL_STATE" >
+    <description> Waypoint Protocol States </description>
+    <entry name = "WP_PROT_IDLE">
+    <entry name = "WP_PROT_LIST_REQUESTED">
     <entry name = "WP_PROT_NUM_SENT">
-    <entry name = "WP_PROT_TX_WP"> 
-    <entry name = "WP_PROT_RX_WP"> 
-    <entry name = "WP_PROT_SENDING_WP_IDLE"> 
-    <entry name = "WP_PROT_GETTING_WP_IDLE"> 
+    <entry name = "WP_PROT_TX_WP">
+    <entry name = "WP_PROT_RX_WP">
+    <entry name = "WP_PROT_SENDING_WP_IDLE">
+    <entry name = "WP_PROT_GETTING_WP_IDLE">
   </enum>
   -->
   <messages>
@@ -164,7 +164,7 @@
       <field name="dist2Go" type="float">Remaining distance to Run on this leg of Navigation</field>
       <field name="fromWP" type="uint8_t">Origin WP</field>
       <field name="toWP" type="uint8_t">Destination WP</field>
-      <field name="h_c" type="uint16_t" units="dm">Commanded altitude</field>
+      <field name="h_c" type="uint16_t" units="dm">Commanded altitude (MSL)</field>
     </message>
     <message name="DATA_LOG" id="177">
       <description>Configurable data log probes to be used inside Simulink</description>
@@ -193,7 +193,7 @@
     <message name="MID_LVL_CMDS" id="180">
       <description>Mid Level commands sent from the GS to the autopilot. These are only sent when being operated in mid-level commands mode from the ground.</description>
       <field name="target" type="uint8_t">The system setting the commands</field>
-      <field name="hCommand" type="float" units="m">Commanded Altitude</field>
+      <field name="hCommand" type="float" units="m">Commanded altitude (MSL)</field>
       <field name="uCommand" type="float" units="m/s">Commanded Airspeed</field>
       <field name="rCommand" type="float" units="rad/s">Commanded Turnrate</field>
     </message>
@@ -249,7 +249,7 @@
       <field name="option3" type="uint8_t">Option 3</field>
     </message>
     <!-- Removed to MAV_CMD_TURN_LIGHT -->
-    <!-- 
+    <!--
     <message name="TURN_LIGHT" id="190">
         <description>Transmits the order to turn on lights</description>
         <field name="target" type="uint8_t">The system ordered to turn on lights</field>
