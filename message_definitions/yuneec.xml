@@ -726,6 +726,21 @@
       <field type="uint8_t" name="luminance">optical flow luminance. 0 means the lowest brightness and 255 means the highest brightness. No specific unit for it.</field>
       <field type="uint32_t" name="distance_count">count of sonar distance capture</field>
     </message>
+    <message id="4018" name="EXPOSURE_INFO_REQUEST">
+      <description>Request all information cached by exposure event of this component. After this request, all information are emitted.</description>
+      <field type="uint8_t" name="target_system">System ID</field>
+      <field type="uint8_t" name="target_component">Component ID</field>
+    </message>
+    <message id="4019" name="EXPOSURE_INFO_ACK">
+      <description>Response from a EXPOSURE_INFO_REQUEST message.</description>
+      <field type="uint64_t" name="time_utc">[us] Time in UTC, 0 for unknown</field>
+      <field type="double" name="lat">[deg] Latitude (WGS84)</field>
+      <field type="double" name="lon">[deg] Longitude (WGS84)</field>
+      <field type="int32_t" name="alt">[mm] Altitude (MSL). Positive for up</field>
+      <field type="float" name="roll">[rad] Gimbal roll angle (-pi..+pi)</field>
+      <field type="float" name="pitch">[rad] Gimbal pitch angle (-pi..+pi)</field>
+      <field type="float" name="yaw">[rad] Gimbal yaw angle (-pi..+pi)</field>
+    </message>
     <message id="5000" name="GIMBAL_CONTROL">
       <description>Gimbal control packet from flight control.</description>
       <field type="int16_t[4]" name="quaternion">drone's quaternion, multiplied by 10000.</field>
